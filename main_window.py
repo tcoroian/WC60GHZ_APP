@@ -3,11 +3,14 @@ from PySide6 import QtWidgets
 from ui_alternativewindow import Ui_AlternativeWindow
 
 import iio
+import constants
+import status_monitor
 
 
 class MainWindow(QtWidgets.QMainWindow):
 
     iio_ctx = iio.Context()
+    monitors = status_monitor.StatusMonitor()
 
     def switch_tuning_options_tx(self, enable = True):
         self.ui.lbl_gain_tx.setEnabled(enable)
@@ -33,11 +36,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def switch_status_options_tx(self, enable = True):
         self.ui.gb_status_tx.setEnabled(enable)
-        self.ui.cw_lock_detect_tx.setVisible(enable)
 
     def switch_status_options_rx(self, enable = True):
         self.ui.gb_status_rx.setEnabled(enable)
-        self.ui.cw_lock_detect_rx.setVisible(enable)
 
     def switch_register_map_tx(self, enable = True):
         self.ui.tb_registers_tx.setEnabled(enable)
@@ -63,6 +64,10 @@ class MainWindow(QtWidgets.QMainWindow):
         self.switch_status_options_rx(False)
         self.switch_register_map_rx(False)
         self.switch_register_map_tx(False)
+
+        # Disable leds for lock detection
+        self.ui.cw_lock_detect_tx.setStyleSheet(constants.style_led_grey)
+        self.ui.cw_lock_detect_rx.setStyleSheet(constants.style_led_grey)
 
     def __init__(self):
         super(MainWindow, self).__init__()
@@ -131,11 +136,13 @@ class MainWindow(QtWidgets.QMainWindow):
             self.switch_tuning_options_tx(not autotuning)
             self.switch_status_options_tx()
             self.switch_register_map_tx()
+            self.monitors.start_monitoring_lock_tx(self.ui.cw_lock_detect_tx)
         else:
             self.switch_device_options_tx(False)
             self.switch_tuning_options_tx(False)
             self.switch_status_options_tx(False)
             self.switch_register_map_tx(False)
+            self.monitors.stop_monitoring_lock_tx()
 
     def power_switch_rx(self, value):
         if value == 1:
@@ -144,11 +151,13 @@ class MainWindow(QtWidgets.QMainWindow):
             self.switch_tuning_options_rx(not autotuning)
             self.switch_status_options_rx()
             self.switch_register_map_rx()
+            self.monitors.start_monitoring_lock_rx(self.ui.cw_lock_detect_rx)
         else:
             self.switch_device_options_rx(False)
             self.switch_tuning_options_rx(False)
             self.switch_status_options_rx(False)
             self.switch_register_map_rx(False)
+            self.monitors.stop_monitoring_lock_rx()
 
     def autotuning_switch_tx(self, state):
         self.switch_tuning_options_tx(not state)
