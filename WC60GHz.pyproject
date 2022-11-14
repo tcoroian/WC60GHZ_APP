@@ -1,3 +1,3 @@
 {
-    "files": ["ui_alternativewindow.py","main.py","alternativewindow.ui","main_window.py","constants.py","status_monitor.py"]
+    "files": ["constants.py","ui_alternativewindow.py","main.py","alternativewindow.ui","status_monitor.py","main_window.py"]
 }

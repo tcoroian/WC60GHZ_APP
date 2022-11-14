@@ -127,9 +127,13 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.chk_autotuning_tx.clicked.connect(self.autotuning_switch_tx)
         self.ui.chk_autotuning_rx.clicked.connect(self.autotuning_switch_rx)
 
-        # Connect slots to refresh registers button
+        # Connect slots to refresh registers buttons
         self.ui.btn_refresh_regs_tx.clicked.connect(self.read_regs_tx)
         self.ui.btn_refresh_regs_rx.clicked.connect(self.read_regs_rx)
+
+        # Connect slots to reset registers buttons
+        self.ui.btn_reset_regs_tx.clicked.connect(self.reset_regs_tx)
+        self.ui.btn_reset_regs_rx.clicked.connect(self.reset_regs_rx)
 
     def ctx_changed(self):
         text = self.ui.cb_available_contexts.currentText()
@@ -256,3 +260,30 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.tb_registers_rx.setItem(2, 1, QtWidgets.QTableWidgetItem("8C"))
         self.ui.tb_registers_rx.setItem(3, 1, QtWidgets.QTableWidgetItem("90"))
         self.ui.tb_registers_rx.setItem(4, 1, QtWidgets.QTableWidgetItem("1F"))
+    def reset_regs_tx(self):
+        btn_option = QtWidgets.QMessageBox.warning(
+            self,
+            "Reset TX registers",
+            "Do you want to reset the registers of TX to their default values?",
+            buttons = QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No,
+            defaultButton = QtWidgets.QMessageBox.No
+        )
+
+        if btn_option == QtWidgets.QMessageBox.Yes:
+            print("YAY!")
+        else:
+            print("NAY!")
+
+    def reset_regs_rx(self):
+        btn_option = QtWidgets.QMessageBox.warning(
+            self,
+            "Reset RX registers",
+            "Do you want to reset the registers of RX to their default values?",
+            buttons = QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No,
+            defaultButton = QtWidgets.QMessageBox.No
+        )
+
+        if btn_option == QtWidgets.QMessageBox.Yes:
+            print("YAY!")
+        else:
+            print("NAY!")
