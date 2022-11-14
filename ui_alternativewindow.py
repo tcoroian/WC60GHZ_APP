@@ -18,8 +18,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QFrame,
     QGroupBox, QHBoxLayout, QHeaderView, QLabel,
     QMainWindow, QMenuBar, QPushButton, QSizePolicy,
-    QSlider, QSpacerItem, QStatusBar, QTabWidget,
-    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
+    QSpacerItem, QStatusBar, QTabWidget, QTableWidget,
+    QTableWidgetItem, QVBoxLayout, QWidget)
 
 class Ui_AlternativeWindow(object):
     def setupUi(self, AlternativeWindow):
@@ -41,7 +41,7 @@ class Ui_AlternativeWindow(object):
         self.transceiver_tab.setObjectName(u"transceiver_tab")
         self.layoutWidget = QWidget(self.transceiver_tab)
         self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(10, 10, 964, 414))
+        self.layoutWidget.setGeometry(QRect(10, 10, 964, 419))
         self.verticalLayout_14 = QVBoxLayout(self.layoutWidget)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
@@ -234,40 +234,10 @@ class Ui_AlternativeWindow(object):
 
         self.horizontalLayout_6.addItem(self.horizontalSpacer_9)
 
-        self.slider_power_tx = QSlider(self.gb_transmitter)
-        self.slider_power_tx.setObjectName(u"slider_power_tx")
-        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.slider_power_tx.sizePolicy().hasHeightForWidth())
-        self.slider_power_tx.setSizePolicy(sizePolicy)
-        self.slider_power_tx.setMinimumSize(QSize(25, 0))
-        self.slider_power_tx.setMaximumSize(QSize(25, 16777215))
-        self.slider_power_tx.setStyleSheet(u" QSlider::groove:horizontal {\n"
-"     background: red;\n"
-"     position: absolute; /* absolutely position 4px from the left and right of the widget. setting margins on the widget should work too... */\n"
-"     left: 4px; right: 4px;\n"
-" }\n"
-"\n"
-" QSlider::handle:horizontal {\n"
-"     height: 10px;\n"
-"	 width: 8px;\n"
-"     background: rgb(200, 200, 200);\n"
-"     margin: 0 -4px; /* expand outside the groove */\n"
-" }\n"
-"\n"
-" QSlider::add-page:horizontal {\n"
-"     background: rgb(60, 60, 60);\n"
-" }\n"
-"\n"
-" QSlider::sub-page:horizontal {\n"
-"     background: green;\n"
-" }")
-        self.slider_power_tx.setMaximum(1)
-        self.slider_power_tx.setPageStep(1)
-        self.slider_power_tx.setOrientation(Qt.Horizontal)
+        self.btn_power_tx = QPushButton(self.gb_transmitter)
+        self.btn_power_tx.setObjectName(u"btn_power_tx")
 
-        self.horizontalLayout_6.addWidget(self.slider_power_tx)
+        self.horizontalLayout_6.addWidget(self.btn_power_tx)
 
 
         self.verticalLayout_4.addLayout(self.horizontalLayout_6)
@@ -636,37 +606,10 @@ class Ui_AlternativeWindow(object):
 
         self.horizontalLayout_28.addItem(self.horizontalSpacer_11)
 
-        self.slider_power_rx = QSlider(self.gb_receiver)
-        self.slider_power_rx.setObjectName(u"slider_power_rx")
-        sizePolicy.setHeightForWidth(self.slider_power_rx.sizePolicy().hasHeightForWidth())
-        self.slider_power_rx.setSizePolicy(sizePolicy)
-        self.slider_power_rx.setMinimumSize(QSize(25, 0))
-        self.slider_power_rx.setMaximumSize(QSize(25, 16777215))
-        self.slider_power_rx.setStyleSheet(u" QSlider::groove:horizontal {\n"
-"     background: red;\n"
-"     position: absolute; /* absolutely position 4px from the left and right of the widget. setting margins on the widget should work too... */\n"
-"     left: 4px; right: 4px;\n"
-" }\n"
-"\n"
-" QSlider::handle:horizontal {\n"
-"     height: 10px;\n"
-"	 width: 8px;\n"
-"     background: rgb(200, 200, 200);\n"
-"     margin: 0 -4px; /* expand outside the groove */\n"
-" }\n"
-"\n"
-" QSlider::add-page:horizontal {\n"
-"     background: rgb(60, 60, 60);\n"
-" }\n"
-"\n"
-" QSlider::sub-page:horizontal {\n"
-"     background: green;\n"
-" }")
-        self.slider_power_rx.setMaximum(1)
-        self.slider_power_rx.setPageStep(1)
-        self.slider_power_rx.setOrientation(Qt.Horizontal)
+        self.btn_power_rx = QPushButton(self.gb_receiver)
+        self.btn_power_rx.setObjectName(u"btn_power_rx")
 
-        self.horizontalLayout_28.addWidget(self.slider_power_rx)
+        self.horizontalLayout_28.addWidget(self.btn_power_rx)
 
 
         self.verticalLayout_9.addLayout(self.horizontalLayout_28)
@@ -1474,6 +1417,7 @@ class Ui_AlternativeWindow(object):
         self.lbl_local_dyn.setText(QCoreApplication.translate("AlternativeWindow", u"No context", None))
         self.gb_transmitter.setTitle(QCoreApplication.translate("AlternativeWindow", u"Transmitter (TX)", None))
         self.lbl_power_tx.setText(QCoreApplication.translate("AlternativeWindow", u"Power", None))
+        self.btn_power_tx.setText(QCoreApplication.translate("AlternativeWindow", u"Turn ON", None))
         self.lbl_lo_frequency_tx.setText(QCoreApplication.translate("AlternativeWindow", u"LO Frequency", None))
         self.cb_lo_frequency_tx.setItemText(0, QCoreApplication.translate("AlternativeWindow", u"value1", None))
         self.cb_lo_frequency_tx.setItemText(1, QCoreApplication.translate("AlternativeWindow", u"value2", None))
@@ -1674,6 +1618,7 @@ class Ui_AlternativeWindow(object):
         self.btn_refresh_regs_tx.setText(QCoreApplication.translate("AlternativeWindow", u"Refresh", None))
         self.gb_receiver.setTitle(QCoreApplication.translate("AlternativeWindow", u"Receiver (RX)", None))
         self.lbl_power_rx.setText(QCoreApplication.translate("AlternativeWindow", u"Power", None))
+        self.btn_power_rx.setText(QCoreApplication.translate("AlternativeWindow", u"Turn ON", None))
         self.lbl_lo_frequency_rx.setText(QCoreApplication.translate("AlternativeWindow", u"LO Frequency", None))
         self.cb_lo_frequency_rx.setItemText(0, QCoreApplication.translate("AlternativeWindow", u"value1", None))
         self.cb_lo_frequency_rx.setItemText(1, QCoreApplication.translate("AlternativeWindow", u"value2", None))

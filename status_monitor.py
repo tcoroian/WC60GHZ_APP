@@ -3,6 +3,7 @@
 import threading
 import time
 import constants
+import iio
 
 class StatusMonitor:
 
@@ -10,6 +11,30 @@ class StatusMonitor:
 
     LOCK_TX_EXIT = threading.Event()
     LOCK_RX_EXIT = threading.Event()
+
+    def __init__(self):
+        pass
+
+    def context_search(self, window):
+        added_contexts = list()
+        while True:
+            contexts = iio.scan_contexts()
+            if contexts != None:
+                # Boards are connected
+                for ctx in contexts.keys():
+                    if ctx.startswith("usb") and ctx not in added_contexts:
+                        window.ui.cb_available_contexts.addItems([ctx])
+                        added_contexts.append(ctx)
+            for old_ctx in added_contexts:
+                if old_ctx not in contexts:
+                    added_contexts.remove(old_ctx)
+                    index = window.ui.cb_available_contexts.findText(old_ctx)
+                    if index > -1:
+                        if window.ui.cb_available_contexts.currentIndex() == index:
+                            window.ui.cb_available_contexts.setCurrentIndex(0)
+                            window.reset_ui()
+                        window.ui.cb_available_contexts.removeItem(index)
+
 
     def monitor_lock_mechanism_tx(self, led):
         while True:
@@ -31,9 +56,6 @@ class StatusMonitor:
                 break
         led.setStyleSheet(constants.style_led_grey)
 
-    def __init__(self):
-        pass
-
     def start_monitoring_lock_tx(self, led_tx):
         self.LOCK_TX_EXIT.clear()
         thread = threading.Thread(target = self.monitor_lock_mechanism_tx, args = (led_tx,), daemon = True)
@@ -51,3 +73,7 @@ class StatusMonitor:
 
     def stop_monitoring_lock_rx(self):
         self.LOCK_RX_EXIT.set()
+    def start_context_search(self, window):
+        thread = threading.Thread(target = self.context_search, args = (window,), daemon = True)
+        self.threads.append(thread)
+        thread.start()

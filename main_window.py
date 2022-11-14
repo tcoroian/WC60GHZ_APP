@@ -9,7 +9,6 @@ import status_monitor
 
 class MainWindow(QtWidgets.QMainWindow):
 
-    iio_ctx = iio.Context()
     monitors = status_monitor.StatusMonitor()
 
     def switch_tuning_options_tx(self, enable = True):
@@ -53,8 +52,8 @@ class MainWindow(QtWidgets.QMainWindow):
     def disable_options(self):
         self.ui.lbl_power_tx.setEnabled(False)
         self.ui.lbl_power_rx.setEnabled(False)
-        self.ui.slider_power_tx.setEnabled(False)
-        self.ui.slider_power_rx.setEnabled(False)
+        self.ui.btn_power_tx.setEnabled(False)
+        self.ui.btn_power_rx.setEnabled(False)
 
         self.switch_device_options_tx(False)
         self.switch_device_options_rx(False)
@@ -69,44 +68,61 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.cw_lock_detect_tx.setStyleSheet(constants.style_led_grey)
         self.ui.cw_lock_detect_rx.setStyleSheet(constants.style_led_grey)
 
+    def reset_ui(self):
+        self.ui.btn_power_tx.setChecked(False)
+        self.ui.btn_power_rx.setChecked(False)
+        self.power_switch_tx(False)
+        self.power_switch_rx(False)
+        self.ui.chk_autotuning_tx.setChecked(False)
+        self.ui.chk_autotuning_rx.setChecked(False)
+        self.disable_options()
+
+        self.ui.lbl_hardware_name_dyn.setText('No context')
+        self.ui.lbl_vendor_dyn.setText('No context')
+        self.ui.lbl_hardware_carrier_dyn.setText('No context')
+        self.ui.lbl_hardware_serial_dyn.setText('No context')
+        self.ui.lbl_local_dyn.setText('No context')
+
     def __init__(self):
         super(MainWindow, self).__init__()
         self.ui = Ui_AlternativeWindow()
         self.ui.setupUi(self)
 
+        # Set push buttons to toggle buttons
+        self.ui.btn_power_tx.setCheckable(True)
+        self.ui.btn_power_rx.setCheckable(True)
+
         # Disable all options in TX and RX group boxes
         self.disable_options()
 
         # Add usb contexts to dropdown menu
-        contexts = iio.scan_contexts()
         self.ui.cb_available_contexts.clear()
         self.ui.cb_available_contexts.addItems(["Select context..."])
-        if contexts != None:
-            # Boards are connected
-            for ctx in contexts.keys():
-                if ctx.startswith("usb"):
-                    self.ui.cb_available_contexts.addItems([ctx])
+        self.monitors.start_context_search(self)
 
         # Connect slot to update context labels
         self.ui.cb_available_contexts.activated.connect(self.ctx_changed)
 
         # Connect slots to enable/disable device configuration and monitoring
-        self.ui.slider_power_tx.valueChanged.connect(self.power_switch_tx)
-        self.ui.slider_power_rx.valueChanged.connect(self.power_switch_rx)
+        self.ui.btn_power_tx.clicked.connect(self.power_switch_tx)
+        self.ui.btn_power_rx.clicked.connect(self.power_switch_rx)
 
         # Connect slots to enable/disable tuning options
-        self.ui.chk_autotuning_tx.stateChanged.connect(self.autotuning_switch_tx)
-        self.ui.chk_autotuning_rx.stateChanged.connect(self.autotuning_switch_rx)
+        self.ui.chk_autotuning_tx.clicked.connect(self.autotuning_switch_tx)
+        self.ui.chk_autotuning_rx.clicked.connect(self.autotuning_switch_rx)
 
     def ctx_changed(self):
         text = self.ui.cb_available_contexts.currentText()
-
         if not text.startswith("usb"):
             return
-
         self.ui.cb_available_contexts.model().item(0).setEnabled(False)
 
-        self.iio_ctx = iio.Context(text)
+        try:
+            self.iio_ctx = iio.Context(text)
+        except:
+            return
+
+        self.reset_ui()
 
         # Check device type (9615 or 9625)
 
@@ -126,26 +142,36 @@ class MainWindow(QtWidgets.QMainWindow):
         # Enable TX and RX power switches
         self.ui.lbl_power_tx.setEnabled(True)
         self.ui.lbl_power_rx.setEnabled(True)
-        self.ui.slider_power_tx.setEnabled(True)
-        self.ui.slider_power_rx.setEnabled(True)
+        self.ui.btn_power_tx.setEnabled(True)
+        self.ui.btn_power_rx.setEnabled(True)
 
     def power_switch_tx(self, value):
         if value == 1:
+            self.ui.btn_power_tx.setStyleSheet(constants.style_btn_on)
+            self.ui.btn_power_tx.setText("Turn OFF")
+
             self.switch_device_options_tx()
             autotuning = self.ui.chk_autotuning_tx.isChecked()
             self.switch_tuning_options_tx(not autotuning)
             self.switch_status_options_tx()
             self.switch_register_map_tx()
+
             self.monitors.start_monitoring_lock_tx(self.ui.cw_lock_detect_tx)
         else:
+            self.ui.btn_power_tx.setStyleSheet(constants.style_btn_off)
+            self.ui.btn_power_tx.setText("Turn ON")
+
             self.switch_device_options_tx(False)
             self.switch_tuning_options_tx(False)
             self.switch_status_options_tx(False)
             self.switch_register_map_tx(False)
+
             self.monitors.stop_monitoring_lock_tx()
 
     def power_switch_rx(self, value):
         if value == 1:
+            self.ui.btn_power_rx.setStyleSheet(constants.style_btn_on)
+            self.ui.btn_power_rx.setText("Turn OFF")
             self.switch_device_options_rx()
             autotuning = self.ui.chk_autotuning_rx.isChecked()
             self.switch_tuning_options_rx(not autotuning)
@@ -153,6 +179,8 @@ class MainWindow(QtWidgets.QMainWindow):
             self.switch_register_map_rx()
             self.monitors.start_monitoring_lock_rx(self.ui.cw_lock_detect_rx)
         else:
+            self.ui.btn_power_rx.setStyleSheet(constants.style_btn_off)
+            self.ui.btn_power_rx.setText("Turn ON")
             self.switch_device_options_rx(False)
             self.switch_tuning_options_rx(False)
             self.switch_status_options_rx(False)
