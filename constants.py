@@ -25,3 +25,5 @@ style_btn_on = """
 style_btn_off = """
     background-color: lightgrey
 """
+
+text_no_context = "No context"

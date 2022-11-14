@@ -11,6 +11,10 @@ class StatusMonitor:
 
     LOCK_TX_EXIT = threading.Event()
     LOCK_RX_EXIT = threading.Event()
+    TEMP_TX_EXIT = threading.Event()
+    TEMP_RX_EXIT = threading.Event()
+    POWR_TX_EXIT = threading.Event()
+    POWR_RX_EXIT = threading.Event()
 
     def __init__(self):
         pass
@@ -35,7 +39,6 @@ class StatusMonitor:
                             window.reset_ui()
                         window.ui.cb_available_contexts.removeItem(index)
 
-
     def monitor_lock_mechanism_tx(self, led):
         while True:
             led.setStyleSheet(constants.style_led_green)
@@ -55,6 +58,46 @@ class StatusMonitor:
             if self.LOCK_RX_EXIT.is_set():
                 break
         led.setStyleSheet(constants.style_led_grey)
+
+    def monitor_temp_tx(self, lbl):
+        while True:
+            lbl.setText("16 °C")
+            time.sleep(1)
+            lbl.setText("18 °C")
+            time.sleep(1)
+            if self.TEMP_TX_EXIT.is_set():
+                break
+        lbl.setText(constants.text_no_context)
+
+    def monitor_temp_rx(self, lbl):
+        while True:
+            lbl.setText("19 °C")
+            time.sleep(1)
+            lbl.setText("20 °C")
+            time.sleep(1)
+            if self.TEMP_RX_EXIT.is_set():
+                break
+        lbl.setText(constants.text_no_context)
+
+    def monitor_power_tx(self, lbl):
+        while True:
+            lbl.setText("221 mV")
+            time.sleep(1)
+            lbl.setText("259 mV")
+            time.sleep(1)
+            if self.POWR_TX_EXIT.is_set():
+                break
+        lbl.setText(constants.text_no_context)
+
+    def monitor_power_rx(self, lbl):
+        while True:
+            lbl.setText("225 mV")
+            time.sleep(1)
+            lbl.setText("263 mV")
+            time.sleep(1)
+            if self.POWR_RX_EXIT.is_set():
+                break
+        lbl.setText(constants.text_no_context)
 
     def start_monitoring_lock_tx(self, led_tx):
         self.LOCK_TX_EXIT.clear()
@@ -77,3 +120,38 @@ class StatusMonitor:
         thread = threading.Thread(target = self.context_search, args = (window,), daemon = True)
         self.threads.append(thread)
         thread.start()
+    def start_monitoring_temp_tx(self, lbl):
+        self.TEMP_TX_EXIT.clear()
+        thread = threading.Thread(target = self.monitor_temp_tx, args = (lbl,), daemon = True)
+        self.threads.append(thread)
+        thread.start()
+
+    def start_monitoring_temp_rx(self, lbl):
+        self.TEMP_RX_EXIT.clear()
+        thread = threading.Thread(target = self.monitor_temp_rx, args = (lbl,), daemon = True)
+        self.threads.append(thread)
+        thread.start()
+
+    def stop_monitoring_temp_tx(self):
+        self.TEMP_TX_EXIT.set()
+
+    def stop_monitoring_temp_rx(self):
+        self.TEMP_RX_EXIT.set()
+
+    def start_monitoring_power_tx(self, lbl):
+        self.POWR_TX_EXIT.clear()
+        thread = threading.Thread(target = self.monitor_power_tx, args = (lbl,), daemon = True)
+        self.threads.append(thread)
+        thread.start()
+
+    def start_monitoring_power_rx(self, lbl):
+        self.POWR_RX_EXIT.clear()
+        thread = threading.Thread(target = self.monitor_power_rx, args = (lbl,), daemon = True)
+        self.threads.append(thread)
+        thread.start()
+
+    def stop_monitoring_power_tx(self):
+        self.POWR_TX_EXIT.set()
+
+    def stop_monitoring_power_rx(self):
+        self.POWR_RX_EXIT.set()

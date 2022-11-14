@@ -1434,9 +1434,9 @@ class Ui_AlternativeWindow(object):
         self.gb_status_tx.setTitle(QCoreApplication.translate("AlternativeWindow", u"Status", None))
         self.lbl_lock_detect_tx.setText(QCoreApplication.translate("AlternativeWindow", u"Lock Detect", None))
         self.lbl_temp_tx.setText(QCoreApplication.translate("AlternativeWindow", u"Temperature:", None))
-        self.lbl_temp_tx_dyn.setText(QCoreApplication.translate("AlternativeWindow", u"15 \u00b0C", None))
+        self.lbl_temp_tx_dyn.setText(QCoreApplication.translate("AlternativeWindow", u"No context", None))
         self.lbl_power_usage_tx.setText(QCoreApplication.translate("AlternativeWindow", u"Power:", None))
-        self.lbl_power_usage_tx_dyn.setText(QCoreApplication.translate("AlternativeWindow", u"200 mV", None))
+        self.lbl_power_usage_tx_dyn.setText(QCoreApplication.translate("AlternativeWindow", u"No context", None))
         ___qtablewidgetitem = self.tb_registers_tx.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("AlternativeWindow", u"Address", None));
         ___qtablewidgetitem1 = self.tb_registers_tx.horizontalHeaderItem(1)
@@ -1502,116 +1502,60 @@ class Ui_AlternativeWindow(object):
         self.tb_registers_tx.setSortingEnabled(False)
         ___qtablewidgetitem30 = self.tb_registers_tx.item(0, 0)
         ___qtablewidgetitem30.setText(QCoreApplication.translate("AlternativeWindow", u"0x00", None));
-        ___qtablewidgetitem31 = self.tb_registers_tx.item(0, 1)
-        ___qtablewidgetitem31.setText(QCoreApplication.translate("AlternativeWindow", u"34", None));
-        ___qtablewidgetitem32 = self.tb_registers_tx.item(1, 0)
-        ___qtablewidgetitem32.setText(QCoreApplication.translate("AlternativeWindow", u"0x01", None));
-        ___qtablewidgetitem33 = self.tb_registers_tx.item(1, 1)
-        ___qtablewidgetitem33.setText(QCoreApplication.translate("AlternativeWindow", u"4A", None));
-        ___qtablewidgetitem34 = self.tb_registers_tx.item(2, 0)
-        ___qtablewidgetitem34.setText(QCoreApplication.translate("AlternativeWindow", u"0x02", None));
-        ___qtablewidgetitem35 = self.tb_registers_tx.item(2, 1)
-        ___qtablewidgetitem35.setText(QCoreApplication.translate("AlternativeWindow", u"32", None));
-        ___qtablewidgetitem36 = self.tb_registers_tx.item(3, 0)
-        ___qtablewidgetitem36.setText(QCoreApplication.translate("AlternativeWindow", u"0x03", None));
-        ___qtablewidgetitem37 = self.tb_registers_tx.item(3, 1)
-        ___qtablewidgetitem37.setText(QCoreApplication.translate("AlternativeWindow", u"43", None));
-        ___qtablewidgetitem38 = self.tb_registers_tx.item(4, 0)
-        ___qtablewidgetitem38.setText(QCoreApplication.translate("AlternativeWindow", u"0x04", None));
-        ___qtablewidgetitem39 = self.tb_registers_tx.item(4, 1)
-        ___qtablewidgetitem39.setText(QCoreApplication.translate("AlternativeWindow", u"9F", None));
-        ___qtablewidgetitem40 = self.tb_registers_tx.item(5, 0)
-        ___qtablewidgetitem40.setText(QCoreApplication.translate("AlternativeWindow", u"0x05", None));
-        ___qtablewidgetitem41 = self.tb_registers_tx.item(5, 1)
-        ___qtablewidgetitem41.setText(QCoreApplication.translate("AlternativeWindow", u"BF", None));
-        ___qtablewidgetitem42 = self.tb_registers_tx.item(6, 0)
-        ___qtablewidgetitem42.setText(QCoreApplication.translate("AlternativeWindow", u"0x06", None));
-        ___qtablewidgetitem43 = self.tb_registers_tx.item(6, 1)
-        ___qtablewidgetitem43.setText(QCoreApplication.translate("AlternativeWindow", u"6D", None));
-        ___qtablewidgetitem44 = self.tb_registers_tx.item(7, 0)
-        ___qtablewidgetitem44.setText(QCoreApplication.translate("AlternativeWindow", u"0x07", None));
-        ___qtablewidgetitem45 = self.tb_registers_tx.item(7, 1)
-        ___qtablewidgetitem45.setText(QCoreApplication.translate("AlternativeWindow", u"90", None));
-        ___qtablewidgetitem46 = self.tb_registers_tx.item(8, 0)
-        ___qtablewidgetitem46.setText(QCoreApplication.translate("AlternativeWindow", u"0x08", None));
-        ___qtablewidgetitem47 = self.tb_registers_tx.item(8, 1)
-        ___qtablewidgetitem47.setText(QCoreApplication.translate("AlternativeWindow", u"40", None));
-        ___qtablewidgetitem48 = self.tb_registers_tx.item(9, 0)
-        ___qtablewidgetitem48.setText(QCoreApplication.translate("AlternativeWindow", u"0x09", None));
-        ___qtablewidgetitem49 = self.tb_registers_tx.item(9, 1)
-        ___qtablewidgetitem49.setText(QCoreApplication.translate("AlternativeWindow", u"36", None));
-        ___qtablewidgetitem50 = self.tb_registers_tx.item(10, 0)
-        ___qtablewidgetitem50.setText(QCoreApplication.translate("AlternativeWindow", u"0x0A", None));
-        ___qtablewidgetitem51 = self.tb_registers_tx.item(10, 1)
-        ___qtablewidgetitem51.setText(QCoreApplication.translate("AlternativeWindow", u"BB", None));
-        ___qtablewidgetitem52 = self.tb_registers_tx.item(11, 0)
-        ___qtablewidgetitem52.setText(QCoreApplication.translate("AlternativeWindow", u"0x0B", None));
-        ___qtablewidgetitem53 = self.tb_registers_tx.item(11, 1)
-        ___qtablewidgetitem53.setText(QCoreApplication.translate("AlternativeWindow", u"46", None));
-        ___qtablewidgetitem54 = self.tb_registers_tx.item(12, 0)
-        ___qtablewidgetitem54.setText(QCoreApplication.translate("AlternativeWindow", u"0x0C", None));
-        ___qtablewidgetitem55 = self.tb_registers_tx.item(12, 1)
-        ___qtablewidgetitem55.setText(QCoreApplication.translate("AlternativeWindow", u"02", None));
-        ___qtablewidgetitem56 = self.tb_registers_tx.item(13, 0)
-        ___qtablewidgetitem56.setText(QCoreApplication.translate("AlternativeWindow", u"0x0D", None));
-        ___qtablewidgetitem57 = self.tb_registers_tx.item(13, 1)
-        ___qtablewidgetitem57.setText(QCoreApplication.translate("AlternativeWindow", u"1D", None));
-        ___qtablewidgetitem58 = self.tb_registers_tx.item(14, 0)
-        ___qtablewidgetitem58.setText(QCoreApplication.translate("AlternativeWindow", u"0x0E", None));
-        ___qtablewidgetitem59 = self.tb_registers_tx.item(14, 1)
-        ___qtablewidgetitem59.setText(QCoreApplication.translate("AlternativeWindow", u"12", None));
-        ___qtablewidgetitem60 = self.tb_registers_tx.item(15, 0)
-        ___qtablewidgetitem60.setText(QCoreApplication.translate("AlternativeWindow", u"0x0F", None));
-        ___qtablewidgetitem61 = self.tb_registers_tx.item(15, 1)
-        ___qtablewidgetitem61.setText(QCoreApplication.translate("AlternativeWindow", u"05", None));
-        ___qtablewidgetitem62 = self.tb_registers_tx.item(16, 0)
-        ___qtablewidgetitem62.setText(QCoreApplication.translate("AlternativeWindow", u"0x10", None));
-        ___qtablewidgetitem63 = self.tb_registers_tx.item(16, 1)
-        ___qtablewidgetitem63.setText(QCoreApplication.translate("AlternativeWindow", u"62", None));
-        ___qtablewidgetitem64 = self.tb_registers_tx.item(17, 0)
-        ___qtablewidgetitem64.setText(QCoreApplication.translate("AlternativeWindow", u"0x11", None));
-        ___qtablewidgetitem65 = self.tb_registers_tx.item(17, 1)
-        ___qtablewidgetitem65.setText(QCoreApplication.translate("AlternativeWindow", u"C1", None));
-        ___qtablewidgetitem66 = self.tb_registers_tx.item(18, 0)
-        ___qtablewidgetitem66.setText(QCoreApplication.translate("AlternativeWindow", u"0x12", None));
-        ___qtablewidgetitem67 = self.tb_registers_tx.item(18, 1)
-        ___qtablewidgetitem67.setText(QCoreApplication.translate("AlternativeWindow", u"1D", None));
-        ___qtablewidgetitem68 = self.tb_registers_tx.item(19, 0)
-        ___qtablewidgetitem68.setText(QCoreApplication.translate("AlternativeWindow", u"0x13", None));
-        ___qtablewidgetitem69 = self.tb_registers_tx.item(19, 1)
-        ___qtablewidgetitem69.setText(QCoreApplication.translate("AlternativeWindow", u"41", None));
-        ___qtablewidgetitem70 = self.tb_registers_tx.item(20, 0)
-        ___qtablewidgetitem70.setText(QCoreApplication.translate("AlternativeWindow", u"0x14", None));
-        ___qtablewidgetitem71 = self.tb_registers_tx.item(20, 1)
-        ___qtablewidgetitem71.setText(QCoreApplication.translate("AlternativeWindow", u"32", None));
-        ___qtablewidgetitem72 = self.tb_registers_tx.item(21, 0)
-        ___qtablewidgetitem72.setText(QCoreApplication.translate("AlternativeWindow", u"0x15", None));
-        ___qtablewidgetitem73 = self.tb_registers_tx.item(21, 1)
-        ___qtablewidgetitem73.setText(QCoreApplication.translate("AlternativeWindow", u"9B", None));
-        ___qtablewidgetitem74 = self.tb_registers_tx.item(22, 0)
-        ___qtablewidgetitem74.setText(QCoreApplication.translate("AlternativeWindow", u"0x16", None));
-        ___qtablewidgetitem75 = self.tb_registers_tx.item(22, 1)
-        ___qtablewidgetitem75.setText(QCoreApplication.translate("AlternativeWindow", u"BF", None));
-        ___qtablewidgetitem76 = self.tb_registers_tx.item(23, 0)
-        ___qtablewidgetitem76.setText(QCoreApplication.translate("AlternativeWindow", u"0x17", None));
-        ___qtablewidgetitem77 = self.tb_registers_tx.item(23, 1)
-        ___qtablewidgetitem77.setText(QCoreApplication.translate("AlternativeWindow", u"51", None));
-        ___qtablewidgetitem78 = self.tb_registers_tx.item(24, 0)
-        ___qtablewidgetitem78.setText(QCoreApplication.translate("AlternativeWindow", u"0x18", None));
-        ___qtablewidgetitem79 = self.tb_registers_tx.item(24, 1)
-        ___qtablewidgetitem79.setText(QCoreApplication.translate("AlternativeWindow", u"24", None));
-        ___qtablewidgetitem80 = self.tb_registers_tx.item(25, 0)
-        ___qtablewidgetitem80.setText(QCoreApplication.translate("AlternativeWindow", u"0x19", None));
-        ___qtablewidgetitem81 = self.tb_registers_tx.item(25, 1)
-        ___qtablewidgetitem81.setText(QCoreApplication.translate("AlternativeWindow", u"71", None));
-        ___qtablewidgetitem82 = self.tb_registers_tx.item(26, 0)
-        ___qtablewidgetitem82.setText(QCoreApplication.translate("AlternativeWindow", u"0x1A", None));
-        ___qtablewidgetitem83 = self.tb_registers_tx.item(26, 1)
-        ___qtablewidgetitem83.setText(QCoreApplication.translate("AlternativeWindow", u"C5", None));
-        ___qtablewidgetitem84 = self.tb_registers_tx.item(27, 0)
-        ___qtablewidgetitem84.setText(QCoreApplication.translate("AlternativeWindow", u"0x1B", None));
-        ___qtablewidgetitem85 = self.tb_registers_tx.item(27, 1)
-        ___qtablewidgetitem85.setText(QCoreApplication.translate("AlternativeWindow", u"23", None));
+        ___qtablewidgetitem31 = self.tb_registers_tx.item(1, 0)
+        ___qtablewidgetitem31.setText(QCoreApplication.translate("AlternativeWindow", u"0x01", None));
+        ___qtablewidgetitem32 = self.tb_registers_tx.item(2, 0)
+        ___qtablewidgetitem32.setText(QCoreApplication.translate("AlternativeWindow", u"0x02", None));
+        ___qtablewidgetitem33 = self.tb_registers_tx.item(3, 0)
+        ___qtablewidgetitem33.setText(QCoreApplication.translate("AlternativeWindow", u"0x03", None));
+        ___qtablewidgetitem34 = self.tb_registers_tx.item(4, 0)
+        ___qtablewidgetitem34.setText(QCoreApplication.translate("AlternativeWindow", u"0x04", None));
+        ___qtablewidgetitem35 = self.tb_registers_tx.item(5, 0)
+        ___qtablewidgetitem35.setText(QCoreApplication.translate("AlternativeWindow", u"0x05", None));
+        ___qtablewidgetitem36 = self.tb_registers_tx.item(6, 0)
+        ___qtablewidgetitem36.setText(QCoreApplication.translate("AlternativeWindow", u"0x06", None));
+        ___qtablewidgetitem37 = self.tb_registers_tx.item(7, 0)
+        ___qtablewidgetitem37.setText(QCoreApplication.translate("AlternativeWindow", u"0x07", None));
+        ___qtablewidgetitem38 = self.tb_registers_tx.item(8, 0)
+        ___qtablewidgetitem38.setText(QCoreApplication.translate("AlternativeWindow", u"0x08", None));
+        ___qtablewidgetitem39 = self.tb_registers_tx.item(9, 0)
+        ___qtablewidgetitem39.setText(QCoreApplication.translate("AlternativeWindow", u"0x09", None));
+        ___qtablewidgetitem40 = self.tb_registers_tx.item(10, 0)
+        ___qtablewidgetitem40.setText(QCoreApplication.translate("AlternativeWindow", u"0x0A", None));
+        ___qtablewidgetitem41 = self.tb_registers_tx.item(11, 0)
+        ___qtablewidgetitem41.setText(QCoreApplication.translate("AlternativeWindow", u"0x0B", None));
+        ___qtablewidgetitem42 = self.tb_registers_tx.item(12, 0)
+        ___qtablewidgetitem42.setText(QCoreApplication.translate("AlternativeWindow", u"0x0C", None));
+        ___qtablewidgetitem43 = self.tb_registers_tx.item(13, 0)
+        ___qtablewidgetitem43.setText(QCoreApplication.translate("AlternativeWindow", u"0x0D", None));
+        ___qtablewidgetitem44 = self.tb_registers_tx.item(14, 0)
+        ___qtablewidgetitem44.setText(QCoreApplication.translate("AlternativeWindow", u"0x0E", None));
+        ___qtablewidgetitem45 = self.tb_registers_tx.item(15, 0)
+        ___qtablewidgetitem45.setText(QCoreApplication.translate("AlternativeWindow", u"0x0F", None));
+        ___qtablewidgetitem46 = self.tb_registers_tx.item(16, 0)
+        ___qtablewidgetitem46.setText(QCoreApplication.translate("AlternativeWindow", u"0x10", None));
+        ___qtablewidgetitem47 = self.tb_registers_tx.item(17, 0)
+        ___qtablewidgetitem47.setText(QCoreApplication.translate("AlternativeWindow", u"0x11", None));
+        ___qtablewidgetitem48 = self.tb_registers_tx.item(18, 0)
+        ___qtablewidgetitem48.setText(QCoreApplication.translate("AlternativeWindow", u"0x12", None));
+        ___qtablewidgetitem49 = self.tb_registers_tx.item(19, 0)
+        ___qtablewidgetitem49.setText(QCoreApplication.translate("AlternativeWindow", u"0x13", None));
+        ___qtablewidgetitem50 = self.tb_registers_tx.item(20, 0)
+        ___qtablewidgetitem50.setText(QCoreApplication.translate("AlternativeWindow", u"0x14", None));
+        ___qtablewidgetitem51 = self.tb_registers_tx.item(21, 0)
+        ___qtablewidgetitem51.setText(QCoreApplication.translate("AlternativeWindow", u"0x15", None));
+        ___qtablewidgetitem52 = self.tb_registers_tx.item(22, 0)
+        ___qtablewidgetitem52.setText(QCoreApplication.translate("AlternativeWindow", u"0x16", None));
+        ___qtablewidgetitem53 = self.tb_registers_tx.item(23, 0)
+        ___qtablewidgetitem53.setText(QCoreApplication.translate("AlternativeWindow", u"0x17", None));
+        ___qtablewidgetitem54 = self.tb_registers_tx.item(24, 0)
+        ___qtablewidgetitem54.setText(QCoreApplication.translate("AlternativeWindow", u"0x18", None));
+        ___qtablewidgetitem55 = self.tb_registers_tx.item(25, 0)
+        ___qtablewidgetitem55.setText(QCoreApplication.translate("AlternativeWindow", u"0x19", None));
+        ___qtablewidgetitem56 = self.tb_registers_tx.item(26, 0)
+        ___qtablewidgetitem56.setText(QCoreApplication.translate("AlternativeWindow", u"0x1A", None));
+        ___qtablewidgetitem57 = self.tb_registers_tx.item(27, 0)
+        ___qtablewidgetitem57.setText(QCoreApplication.translate("AlternativeWindow", u"0x1B", None));
         self.tb_registers_tx.setSortingEnabled(__sortingEnabled)
 
         self.btn_reset_regs_tx.setText(QCoreApplication.translate("AlternativeWindow", u"Reset", None))
@@ -1635,544 +1579,488 @@ class Ui_AlternativeWindow(object):
         self.gb_status_rx.setTitle(QCoreApplication.translate("AlternativeWindow", u"Status", None))
         self.lbl_lock_detect_rx.setText(QCoreApplication.translate("AlternativeWindow", u"Lock Detect", None))
         self.lbl_temp_rx.setText(QCoreApplication.translate("AlternativeWindow", u"Temperature:", None))
-        self.lbl_temp_rx_dyn.setText(QCoreApplication.translate("AlternativeWindow", u"15 \u00b0C", None))
+        self.lbl_temp_rx_dyn.setText(QCoreApplication.translate("AlternativeWindow", u"No context", None))
         self.lbl_power_usage_rx.setText(QCoreApplication.translate("AlternativeWindow", u"Power:", None))
-        self.lbl_power_usage_rx_dyn.setText(QCoreApplication.translate("AlternativeWindow", u"255 mV", None))
-        ___qtablewidgetitem86 = self.tb_registers_rx.horizontalHeaderItem(0)
-        ___qtablewidgetitem86.setText(QCoreApplication.translate("AlternativeWindow", u"Address", None));
-        ___qtablewidgetitem87 = self.tb_registers_rx.horizontalHeaderItem(1)
-        ___qtablewidgetitem87.setText(QCoreApplication.translate("AlternativeWindow", u"Data", None));
-        ___qtablewidgetitem88 = self.tb_registers_rx.verticalHeaderItem(0)
-        ___qtablewidgetitem88.setText(QCoreApplication.translate("AlternativeWindow", u"0", None));
-        ___qtablewidgetitem89 = self.tb_registers_rx.verticalHeaderItem(1)
-        ___qtablewidgetitem89.setText(QCoreApplication.translate("AlternativeWindow", u"1", None));
-        ___qtablewidgetitem90 = self.tb_registers_rx.verticalHeaderItem(2)
-        ___qtablewidgetitem90.setText(QCoreApplication.translate("AlternativeWindow", u"2", None));
-        ___qtablewidgetitem91 = self.tb_registers_rx.verticalHeaderItem(3)
-        ___qtablewidgetitem91.setText(QCoreApplication.translate("AlternativeWindow", u"3", None));
-        ___qtablewidgetitem92 = self.tb_registers_rx.verticalHeaderItem(4)
-        ___qtablewidgetitem92.setText(QCoreApplication.translate("AlternativeWindow", u"4", None));
-        ___qtablewidgetitem93 = self.tb_registers_rx.verticalHeaderItem(5)
-        ___qtablewidgetitem93.setText(QCoreApplication.translate("AlternativeWindow", u"5", None));
-        ___qtablewidgetitem94 = self.tb_registers_rx.verticalHeaderItem(6)
-        ___qtablewidgetitem94.setText(QCoreApplication.translate("AlternativeWindow", u"6", None));
-        ___qtablewidgetitem95 = self.tb_registers_rx.verticalHeaderItem(7)
-        ___qtablewidgetitem95.setText(QCoreApplication.translate("AlternativeWindow", u"7", None));
-        ___qtablewidgetitem96 = self.tb_registers_rx.verticalHeaderItem(8)
-        ___qtablewidgetitem96.setText(QCoreApplication.translate("AlternativeWindow", u"8", None));
-        ___qtablewidgetitem97 = self.tb_registers_rx.verticalHeaderItem(9)
-        ___qtablewidgetitem97.setText(QCoreApplication.translate("AlternativeWindow", u"9", None));
-        ___qtablewidgetitem98 = self.tb_registers_rx.verticalHeaderItem(10)
-        ___qtablewidgetitem98.setText(QCoreApplication.translate("AlternativeWindow", u"10", None));
-        ___qtablewidgetitem99 = self.tb_registers_rx.verticalHeaderItem(11)
-        ___qtablewidgetitem99.setText(QCoreApplication.translate("AlternativeWindow", u"11", None));
-        ___qtablewidgetitem100 = self.tb_registers_rx.verticalHeaderItem(12)
-        ___qtablewidgetitem100.setText(QCoreApplication.translate("AlternativeWindow", u"12", None));
-        ___qtablewidgetitem101 = self.tb_registers_rx.verticalHeaderItem(13)
-        ___qtablewidgetitem101.setText(QCoreApplication.translate("AlternativeWindow", u"13", None));
-        ___qtablewidgetitem102 = self.tb_registers_rx.verticalHeaderItem(14)
-        ___qtablewidgetitem102.setText(QCoreApplication.translate("AlternativeWindow", u"14", None));
-        ___qtablewidgetitem103 = self.tb_registers_rx.verticalHeaderItem(15)
-        ___qtablewidgetitem103.setText(QCoreApplication.translate("AlternativeWindow", u"15", None));
-        ___qtablewidgetitem104 = self.tb_registers_rx.verticalHeaderItem(16)
-        ___qtablewidgetitem104.setText(QCoreApplication.translate("AlternativeWindow", u"16", None));
-        ___qtablewidgetitem105 = self.tb_registers_rx.verticalHeaderItem(17)
-        ___qtablewidgetitem105.setText(QCoreApplication.translate("AlternativeWindow", u"17", None));
-        ___qtablewidgetitem106 = self.tb_registers_rx.verticalHeaderItem(18)
-        ___qtablewidgetitem106.setText(QCoreApplication.translate("AlternativeWindow", u"18", None));
-        ___qtablewidgetitem107 = self.tb_registers_rx.verticalHeaderItem(19)
-        ___qtablewidgetitem107.setText(QCoreApplication.translate("AlternativeWindow", u"19", None));
-        ___qtablewidgetitem108 = self.tb_registers_rx.verticalHeaderItem(20)
-        ___qtablewidgetitem108.setText(QCoreApplication.translate("AlternativeWindow", u"20", None));
-        ___qtablewidgetitem109 = self.tb_registers_rx.verticalHeaderItem(21)
-        ___qtablewidgetitem109.setText(QCoreApplication.translate("AlternativeWindow", u"21", None));
-        ___qtablewidgetitem110 = self.tb_registers_rx.verticalHeaderItem(22)
-        ___qtablewidgetitem110.setText(QCoreApplication.translate("AlternativeWindow", u"22", None));
-        ___qtablewidgetitem111 = self.tb_registers_rx.verticalHeaderItem(23)
-        ___qtablewidgetitem111.setText(QCoreApplication.translate("AlternativeWindow", u"23", None));
-        ___qtablewidgetitem112 = self.tb_registers_rx.verticalHeaderItem(24)
-        ___qtablewidgetitem112.setText(QCoreApplication.translate("AlternativeWindow", u"24", None));
-        ___qtablewidgetitem113 = self.tb_registers_rx.verticalHeaderItem(25)
-        ___qtablewidgetitem113.setText(QCoreApplication.translate("AlternativeWindow", u"25", None));
-        ___qtablewidgetitem114 = self.tb_registers_rx.verticalHeaderItem(26)
-        ___qtablewidgetitem114.setText(QCoreApplication.translate("AlternativeWindow", u"26", None));
-        ___qtablewidgetitem115 = self.tb_registers_rx.verticalHeaderItem(27)
-        ___qtablewidgetitem115.setText(QCoreApplication.translate("AlternativeWindow", u"27", None));
+        self.lbl_power_usage_rx_dyn.setText(QCoreApplication.translate("AlternativeWindow", u"No context", None))
+        ___qtablewidgetitem58 = self.tb_registers_rx.horizontalHeaderItem(0)
+        ___qtablewidgetitem58.setText(QCoreApplication.translate("AlternativeWindow", u"Address", None));
+        ___qtablewidgetitem59 = self.tb_registers_rx.horizontalHeaderItem(1)
+        ___qtablewidgetitem59.setText(QCoreApplication.translate("AlternativeWindow", u"Data", None));
+        ___qtablewidgetitem60 = self.tb_registers_rx.verticalHeaderItem(0)
+        ___qtablewidgetitem60.setText(QCoreApplication.translate("AlternativeWindow", u"0", None));
+        ___qtablewidgetitem61 = self.tb_registers_rx.verticalHeaderItem(1)
+        ___qtablewidgetitem61.setText(QCoreApplication.translate("AlternativeWindow", u"1", None));
+        ___qtablewidgetitem62 = self.tb_registers_rx.verticalHeaderItem(2)
+        ___qtablewidgetitem62.setText(QCoreApplication.translate("AlternativeWindow", u"2", None));
+        ___qtablewidgetitem63 = self.tb_registers_rx.verticalHeaderItem(3)
+        ___qtablewidgetitem63.setText(QCoreApplication.translate("AlternativeWindow", u"3", None));
+        ___qtablewidgetitem64 = self.tb_registers_rx.verticalHeaderItem(4)
+        ___qtablewidgetitem64.setText(QCoreApplication.translate("AlternativeWindow", u"4", None));
+        ___qtablewidgetitem65 = self.tb_registers_rx.verticalHeaderItem(5)
+        ___qtablewidgetitem65.setText(QCoreApplication.translate("AlternativeWindow", u"5", None));
+        ___qtablewidgetitem66 = self.tb_registers_rx.verticalHeaderItem(6)
+        ___qtablewidgetitem66.setText(QCoreApplication.translate("AlternativeWindow", u"6", None));
+        ___qtablewidgetitem67 = self.tb_registers_rx.verticalHeaderItem(7)
+        ___qtablewidgetitem67.setText(QCoreApplication.translate("AlternativeWindow", u"7", None));
+        ___qtablewidgetitem68 = self.tb_registers_rx.verticalHeaderItem(8)
+        ___qtablewidgetitem68.setText(QCoreApplication.translate("AlternativeWindow", u"8", None));
+        ___qtablewidgetitem69 = self.tb_registers_rx.verticalHeaderItem(9)
+        ___qtablewidgetitem69.setText(QCoreApplication.translate("AlternativeWindow", u"9", None));
+        ___qtablewidgetitem70 = self.tb_registers_rx.verticalHeaderItem(10)
+        ___qtablewidgetitem70.setText(QCoreApplication.translate("AlternativeWindow", u"10", None));
+        ___qtablewidgetitem71 = self.tb_registers_rx.verticalHeaderItem(11)
+        ___qtablewidgetitem71.setText(QCoreApplication.translate("AlternativeWindow", u"11", None));
+        ___qtablewidgetitem72 = self.tb_registers_rx.verticalHeaderItem(12)
+        ___qtablewidgetitem72.setText(QCoreApplication.translate("AlternativeWindow", u"12", None));
+        ___qtablewidgetitem73 = self.tb_registers_rx.verticalHeaderItem(13)
+        ___qtablewidgetitem73.setText(QCoreApplication.translate("AlternativeWindow", u"13", None));
+        ___qtablewidgetitem74 = self.tb_registers_rx.verticalHeaderItem(14)
+        ___qtablewidgetitem74.setText(QCoreApplication.translate("AlternativeWindow", u"14", None));
+        ___qtablewidgetitem75 = self.tb_registers_rx.verticalHeaderItem(15)
+        ___qtablewidgetitem75.setText(QCoreApplication.translate("AlternativeWindow", u"15", None));
+        ___qtablewidgetitem76 = self.tb_registers_rx.verticalHeaderItem(16)
+        ___qtablewidgetitem76.setText(QCoreApplication.translate("AlternativeWindow", u"16", None));
+        ___qtablewidgetitem77 = self.tb_registers_rx.verticalHeaderItem(17)
+        ___qtablewidgetitem77.setText(QCoreApplication.translate("AlternativeWindow", u"17", None));
+        ___qtablewidgetitem78 = self.tb_registers_rx.verticalHeaderItem(18)
+        ___qtablewidgetitem78.setText(QCoreApplication.translate("AlternativeWindow", u"18", None));
+        ___qtablewidgetitem79 = self.tb_registers_rx.verticalHeaderItem(19)
+        ___qtablewidgetitem79.setText(QCoreApplication.translate("AlternativeWindow", u"19", None));
+        ___qtablewidgetitem80 = self.tb_registers_rx.verticalHeaderItem(20)
+        ___qtablewidgetitem80.setText(QCoreApplication.translate("AlternativeWindow", u"20", None));
+        ___qtablewidgetitem81 = self.tb_registers_rx.verticalHeaderItem(21)
+        ___qtablewidgetitem81.setText(QCoreApplication.translate("AlternativeWindow", u"21", None));
+        ___qtablewidgetitem82 = self.tb_registers_rx.verticalHeaderItem(22)
+        ___qtablewidgetitem82.setText(QCoreApplication.translate("AlternativeWindow", u"22", None));
+        ___qtablewidgetitem83 = self.tb_registers_rx.verticalHeaderItem(23)
+        ___qtablewidgetitem83.setText(QCoreApplication.translate("AlternativeWindow", u"23", None));
+        ___qtablewidgetitem84 = self.tb_registers_rx.verticalHeaderItem(24)
+        ___qtablewidgetitem84.setText(QCoreApplication.translate("AlternativeWindow", u"24", None));
+        ___qtablewidgetitem85 = self.tb_registers_rx.verticalHeaderItem(25)
+        ___qtablewidgetitem85.setText(QCoreApplication.translate("AlternativeWindow", u"25", None));
+        ___qtablewidgetitem86 = self.tb_registers_rx.verticalHeaderItem(26)
+        ___qtablewidgetitem86.setText(QCoreApplication.translate("AlternativeWindow", u"26", None));
+        ___qtablewidgetitem87 = self.tb_registers_rx.verticalHeaderItem(27)
+        ___qtablewidgetitem87.setText(QCoreApplication.translate("AlternativeWindow", u"27", None));
 
         __sortingEnabled1 = self.tb_registers_rx.isSortingEnabled()
         self.tb_registers_rx.setSortingEnabled(False)
-        ___qtablewidgetitem116 = self.tb_registers_rx.item(0, 0)
-        ___qtablewidgetitem116.setText(QCoreApplication.translate("AlternativeWindow", u"0x00", None));
-        ___qtablewidgetitem117 = self.tb_registers_rx.item(0, 1)
-        ___qtablewidgetitem117.setText(QCoreApplication.translate("AlternativeWindow", u"34", None));
-        ___qtablewidgetitem118 = self.tb_registers_rx.item(1, 0)
-        ___qtablewidgetitem118.setText(QCoreApplication.translate("AlternativeWindow", u"0x01", None));
-        ___qtablewidgetitem119 = self.tb_registers_rx.item(1, 1)
-        ___qtablewidgetitem119.setText(QCoreApplication.translate("AlternativeWindow", u"4A", None));
-        ___qtablewidgetitem120 = self.tb_registers_rx.item(2, 0)
-        ___qtablewidgetitem120.setText(QCoreApplication.translate("AlternativeWindow", u"0x02", None));
-        ___qtablewidgetitem121 = self.tb_registers_rx.item(2, 1)
-        ___qtablewidgetitem121.setText(QCoreApplication.translate("AlternativeWindow", u"32", None));
-        ___qtablewidgetitem122 = self.tb_registers_rx.item(3, 0)
-        ___qtablewidgetitem122.setText(QCoreApplication.translate("AlternativeWindow", u"0x03", None));
-        ___qtablewidgetitem123 = self.tb_registers_rx.item(3, 1)
-        ___qtablewidgetitem123.setText(QCoreApplication.translate("AlternativeWindow", u"43", None));
-        ___qtablewidgetitem124 = self.tb_registers_rx.item(4, 0)
-        ___qtablewidgetitem124.setText(QCoreApplication.translate("AlternativeWindow", u"0x04", None));
-        ___qtablewidgetitem125 = self.tb_registers_rx.item(4, 1)
-        ___qtablewidgetitem125.setText(QCoreApplication.translate("AlternativeWindow", u"9F", None));
-        ___qtablewidgetitem126 = self.tb_registers_rx.item(5, 0)
-        ___qtablewidgetitem126.setText(QCoreApplication.translate("AlternativeWindow", u"0x05", None));
-        ___qtablewidgetitem127 = self.tb_registers_rx.item(5, 1)
-        ___qtablewidgetitem127.setText(QCoreApplication.translate("AlternativeWindow", u"BF", None));
-        ___qtablewidgetitem128 = self.tb_registers_rx.item(6, 0)
-        ___qtablewidgetitem128.setText(QCoreApplication.translate("AlternativeWindow", u"0x06", None));
-        ___qtablewidgetitem129 = self.tb_registers_rx.item(6, 1)
-        ___qtablewidgetitem129.setText(QCoreApplication.translate("AlternativeWindow", u"6D", None));
-        ___qtablewidgetitem130 = self.tb_registers_rx.item(7, 0)
-        ___qtablewidgetitem130.setText(QCoreApplication.translate("AlternativeWindow", u"0x07", None));
-        ___qtablewidgetitem131 = self.tb_registers_rx.item(7, 1)
-        ___qtablewidgetitem131.setText(QCoreApplication.translate("AlternativeWindow", u"90", None));
-        ___qtablewidgetitem132 = self.tb_registers_rx.item(8, 0)
-        ___qtablewidgetitem132.setText(QCoreApplication.translate("AlternativeWindow", u"0x08", None));
-        ___qtablewidgetitem133 = self.tb_registers_rx.item(8, 1)
-        ___qtablewidgetitem133.setText(QCoreApplication.translate("AlternativeWindow", u"40", None));
-        ___qtablewidgetitem134 = self.tb_registers_rx.item(9, 0)
-        ___qtablewidgetitem134.setText(QCoreApplication.translate("AlternativeWindow", u"0x09", None));
-        ___qtablewidgetitem135 = self.tb_registers_rx.item(9, 1)
-        ___qtablewidgetitem135.setText(QCoreApplication.translate("AlternativeWindow", u"36", None));
-        ___qtablewidgetitem136 = self.tb_registers_rx.item(10, 0)
-        ___qtablewidgetitem136.setText(QCoreApplication.translate("AlternativeWindow", u"0x0A", None));
-        ___qtablewidgetitem137 = self.tb_registers_rx.item(10, 1)
-        ___qtablewidgetitem137.setText(QCoreApplication.translate("AlternativeWindow", u"BB", None));
-        ___qtablewidgetitem138 = self.tb_registers_rx.item(11, 0)
-        ___qtablewidgetitem138.setText(QCoreApplication.translate("AlternativeWindow", u"0x0B", None));
-        ___qtablewidgetitem139 = self.tb_registers_rx.item(11, 1)
-        ___qtablewidgetitem139.setText(QCoreApplication.translate("AlternativeWindow", u"46", None));
-        ___qtablewidgetitem140 = self.tb_registers_rx.item(12, 0)
-        ___qtablewidgetitem140.setText(QCoreApplication.translate("AlternativeWindow", u"0x0C", None));
-        ___qtablewidgetitem141 = self.tb_registers_rx.item(12, 1)
-        ___qtablewidgetitem141.setText(QCoreApplication.translate("AlternativeWindow", u"02", None));
-        ___qtablewidgetitem142 = self.tb_registers_rx.item(13, 0)
-        ___qtablewidgetitem142.setText(QCoreApplication.translate("AlternativeWindow", u"0x0D", None));
-        ___qtablewidgetitem143 = self.tb_registers_rx.item(13, 1)
-        ___qtablewidgetitem143.setText(QCoreApplication.translate("AlternativeWindow", u"1D", None));
-        ___qtablewidgetitem144 = self.tb_registers_rx.item(14, 0)
-        ___qtablewidgetitem144.setText(QCoreApplication.translate("AlternativeWindow", u"0x0E", None));
-        ___qtablewidgetitem145 = self.tb_registers_rx.item(14, 1)
-        ___qtablewidgetitem145.setText(QCoreApplication.translate("AlternativeWindow", u"12", None));
-        ___qtablewidgetitem146 = self.tb_registers_rx.item(15, 0)
-        ___qtablewidgetitem146.setText(QCoreApplication.translate("AlternativeWindow", u"0x0F", None));
-        ___qtablewidgetitem147 = self.tb_registers_rx.item(15, 1)
-        ___qtablewidgetitem147.setText(QCoreApplication.translate("AlternativeWindow", u"05", None));
-        ___qtablewidgetitem148 = self.tb_registers_rx.item(16, 0)
-        ___qtablewidgetitem148.setText(QCoreApplication.translate("AlternativeWindow", u"0x10", None));
-        ___qtablewidgetitem149 = self.tb_registers_rx.item(16, 1)
-        ___qtablewidgetitem149.setText(QCoreApplication.translate("AlternativeWindow", u"62", None));
-        ___qtablewidgetitem150 = self.tb_registers_rx.item(17, 0)
-        ___qtablewidgetitem150.setText(QCoreApplication.translate("AlternativeWindow", u"0x11", None));
-        ___qtablewidgetitem151 = self.tb_registers_rx.item(17, 1)
-        ___qtablewidgetitem151.setText(QCoreApplication.translate("AlternativeWindow", u"C1", None));
-        ___qtablewidgetitem152 = self.tb_registers_rx.item(18, 0)
-        ___qtablewidgetitem152.setText(QCoreApplication.translate("AlternativeWindow", u"0x12", None));
-        ___qtablewidgetitem153 = self.tb_registers_rx.item(18, 1)
-        ___qtablewidgetitem153.setText(QCoreApplication.translate("AlternativeWindow", u"1D", None));
-        ___qtablewidgetitem154 = self.tb_registers_rx.item(19, 0)
-        ___qtablewidgetitem154.setText(QCoreApplication.translate("AlternativeWindow", u"0x13", None));
-        ___qtablewidgetitem155 = self.tb_registers_rx.item(19, 1)
-        ___qtablewidgetitem155.setText(QCoreApplication.translate("AlternativeWindow", u"41", None));
-        ___qtablewidgetitem156 = self.tb_registers_rx.item(20, 0)
-        ___qtablewidgetitem156.setText(QCoreApplication.translate("AlternativeWindow", u"0x14", None));
-        ___qtablewidgetitem157 = self.tb_registers_rx.item(20, 1)
-        ___qtablewidgetitem157.setText(QCoreApplication.translate("AlternativeWindow", u"32", None));
-        ___qtablewidgetitem158 = self.tb_registers_rx.item(21, 0)
-        ___qtablewidgetitem158.setText(QCoreApplication.translate("AlternativeWindow", u"0x15", None));
-        ___qtablewidgetitem159 = self.tb_registers_rx.item(21, 1)
-        ___qtablewidgetitem159.setText(QCoreApplication.translate("AlternativeWindow", u"9B", None));
-        ___qtablewidgetitem160 = self.tb_registers_rx.item(22, 0)
-        ___qtablewidgetitem160.setText(QCoreApplication.translate("AlternativeWindow", u"0x16", None));
-        ___qtablewidgetitem161 = self.tb_registers_rx.item(22, 1)
-        ___qtablewidgetitem161.setText(QCoreApplication.translate("AlternativeWindow", u"BF", None));
-        ___qtablewidgetitem162 = self.tb_registers_rx.item(23, 0)
-        ___qtablewidgetitem162.setText(QCoreApplication.translate("AlternativeWindow", u"0x17", None));
-        ___qtablewidgetitem163 = self.tb_registers_rx.item(23, 1)
-        ___qtablewidgetitem163.setText(QCoreApplication.translate("AlternativeWindow", u"51", None));
-        ___qtablewidgetitem164 = self.tb_registers_rx.item(24, 0)
-        ___qtablewidgetitem164.setText(QCoreApplication.translate("AlternativeWindow", u"0x18", None));
-        ___qtablewidgetitem165 = self.tb_registers_rx.item(24, 1)
-        ___qtablewidgetitem165.setText(QCoreApplication.translate("AlternativeWindow", u"24", None));
-        ___qtablewidgetitem166 = self.tb_registers_rx.item(25, 0)
-        ___qtablewidgetitem166.setText(QCoreApplication.translate("AlternativeWindow", u"0x19", None));
-        ___qtablewidgetitem167 = self.tb_registers_rx.item(25, 1)
-        ___qtablewidgetitem167.setText(QCoreApplication.translate("AlternativeWindow", u"71", None));
-        ___qtablewidgetitem168 = self.tb_registers_rx.item(26, 0)
-        ___qtablewidgetitem168.setText(QCoreApplication.translate("AlternativeWindow", u"0x1A", None));
-        ___qtablewidgetitem169 = self.tb_registers_rx.item(26, 1)
-        ___qtablewidgetitem169.setText(QCoreApplication.translate("AlternativeWindow", u"C5", None));
-        ___qtablewidgetitem170 = self.tb_registers_rx.item(27, 0)
-        ___qtablewidgetitem170.setText(QCoreApplication.translate("AlternativeWindow", u"0x1B", None));
-        ___qtablewidgetitem171 = self.tb_registers_rx.item(27, 1)
-        ___qtablewidgetitem171.setText(QCoreApplication.translate("AlternativeWindow", u"23", None));
+        ___qtablewidgetitem88 = self.tb_registers_rx.item(0, 0)
+        ___qtablewidgetitem88.setText(QCoreApplication.translate("AlternativeWindow", u"0x00", None));
+        ___qtablewidgetitem89 = self.tb_registers_rx.item(1, 0)
+        ___qtablewidgetitem89.setText(QCoreApplication.translate("AlternativeWindow", u"0x01", None));
+        ___qtablewidgetitem90 = self.tb_registers_rx.item(2, 0)
+        ___qtablewidgetitem90.setText(QCoreApplication.translate("AlternativeWindow", u"0x02", None));
+        ___qtablewidgetitem91 = self.tb_registers_rx.item(3, 0)
+        ___qtablewidgetitem91.setText(QCoreApplication.translate("AlternativeWindow", u"0x03", None));
+        ___qtablewidgetitem92 = self.tb_registers_rx.item(4, 0)
+        ___qtablewidgetitem92.setText(QCoreApplication.translate("AlternativeWindow", u"0x04", None));
+        ___qtablewidgetitem93 = self.tb_registers_rx.item(5, 0)
+        ___qtablewidgetitem93.setText(QCoreApplication.translate("AlternativeWindow", u"0x05", None));
+        ___qtablewidgetitem94 = self.tb_registers_rx.item(6, 0)
+        ___qtablewidgetitem94.setText(QCoreApplication.translate("AlternativeWindow", u"0x06", None));
+        ___qtablewidgetitem95 = self.tb_registers_rx.item(7, 0)
+        ___qtablewidgetitem95.setText(QCoreApplication.translate("AlternativeWindow", u"0x07", None));
+        ___qtablewidgetitem96 = self.tb_registers_rx.item(8, 0)
+        ___qtablewidgetitem96.setText(QCoreApplication.translate("AlternativeWindow", u"0x08", None));
+        ___qtablewidgetitem97 = self.tb_registers_rx.item(9, 0)
+        ___qtablewidgetitem97.setText(QCoreApplication.translate("AlternativeWindow", u"0x09", None));
+        ___qtablewidgetitem98 = self.tb_registers_rx.item(10, 0)
+        ___qtablewidgetitem98.setText(QCoreApplication.translate("AlternativeWindow", u"0x0A", None));
+        ___qtablewidgetitem99 = self.tb_registers_rx.item(11, 0)
+        ___qtablewidgetitem99.setText(QCoreApplication.translate("AlternativeWindow", u"0x0B", None));
+        ___qtablewidgetitem100 = self.tb_registers_rx.item(12, 0)
+        ___qtablewidgetitem100.setText(QCoreApplication.translate("AlternativeWindow", u"0x0C", None));
+        ___qtablewidgetitem101 = self.tb_registers_rx.item(13, 0)
+        ___qtablewidgetitem101.setText(QCoreApplication.translate("AlternativeWindow", u"0x0D", None));
+        ___qtablewidgetitem102 = self.tb_registers_rx.item(14, 0)
+        ___qtablewidgetitem102.setText(QCoreApplication.translate("AlternativeWindow", u"0x0E", None));
+        ___qtablewidgetitem103 = self.tb_registers_rx.item(15, 0)
+        ___qtablewidgetitem103.setText(QCoreApplication.translate("AlternativeWindow", u"0x0F", None));
+        ___qtablewidgetitem104 = self.tb_registers_rx.item(16, 0)
+        ___qtablewidgetitem104.setText(QCoreApplication.translate("AlternativeWindow", u"0x10", None));
+        ___qtablewidgetitem105 = self.tb_registers_rx.item(17, 0)
+        ___qtablewidgetitem105.setText(QCoreApplication.translate("AlternativeWindow", u"0x11", None));
+        ___qtablewidgetitem106 = self.tb_registers_rx.item(18, 0)
+        ___qtablewidgetitem106.setText(QCoreApplication.translate("AlternativeWindow", u"0x12", None));
+        ___qtablewidgetitem107 = self.tb_registers_rx.item(19, 0)
+        ___qtablewidgetitem107.setText(QCoreApplication.translate("AlternativeWindow", u"0x13", None));
+        ___qtablewidgetitem108 = self.tb_registers_rx.item(20, 0)
+        ___qtablewidgetitem108.setText(QCoreApplication.translate("AlternativeWindow", u"0x14", None));
+        ___qtablewidgetitem109 = self.tb_registers_rx.item(21, 0)
+        ___qtablewidgetitem109.setText(QCoreApplication.translate("AlternativeWindow", u"0x15", None));
+        ___qtablewidgetitem110 = self.tb_registers_rx.item(22, 0)
+        ___qtablewidgetitem110.setText(QCoreApplication.translate("AlternativeWindow", u"0x16", None));
+        ___qtablewidgetitem111 = self.tb_registers_rx.item(23, 0)
+        ___qtablewidgetitem111.setText(QCoreApplication.translate("AlternativeWindow", u"0x17", None));
+        ___qtablewidgetitem112 = self.tb_registers_rx.item(24, 0)
+        ___qtablewidgetitem112.setText(QCoreApplication.translate("AlternativeWindow", u"0x18", None));
+        ___qtablewidgetitem113 = self.tb_registers_rx.item(25, 0)
+        ___qtablewidgetitem113.setText(QCoreApplication.translate("AlternativeWindow", u"0x19", None));
+        ___qtablewidgetitem114 = self.tb_registers_rx.item(26, 0)
+        ___qtablewidgetitem114.setText(QCoreApplication.translate("AlternativeWindow", u"0x1A", None));
+        ___qtablewidgetitem115 = self.tb_registers_rx.item(27, 0)
+        ___qtablewidgetitem115.setText(QCoreApplication.translate("AlternativeWindow", u"0x1B", None));
         self.tb_registers_rx.setSortingEnabled(__sortingEnabled1)
 
         self.btn_reset_regs_rx.setText(QCoreApplication.translate("AlternativeWindow", u"Reset", None))
         self.btn_refresh_regs_rx.setText(QCoreApplication.translate("AlternativeWindow", u"Refresh", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.transceiver_tab), QCoreApplication.translate("AlternativeWindow", u"Transceiver", None))
-        ___qtablewidgetitem172 = self.tableWidget_3.horizontalHeaderItem(0)
-        ___qtablewidgetitem172.setText(QCoreApplication.translate("AlternativeWindow", u"Address", None));
-        ___qtablewidgetitem173 = self.tableWidget_3.horizontalHeaderItem(1)
-        ___qtablewidgetitem173.setText(QCoreApplication.translate("AlternativeWindow", u"Data", None));
-        ___qtablewidgetitem174 = self.tableWidget_3.verticalHeaderItem(0)
-        ___qtablewidgetitem174.setText(QCoreApplication.translate("AlternativeWindow", u"0", None));
-        ___qtablewidgetitem175 = self.tableWidget_3.verticalHeaderItem(1)
-        ___qtablewidgetitem175.setText(QCoreApplication.translate("AlternativeWindow", u"1", None));
-        ___qtablewidgetitem176 = self.tableWidget_3.verticalHeaderItem(2)
-        ___qtablewidgetitem176.setText(QCoreApplication.translate("AlternativeWindow", u"2", None));
-        ___qtablewidgetitem177 = self.tableWidget_3.verticalHeaderItem(3)
-        ___qtablewidgetitem177.setText(QCoreApplication.translate("AlternativeWindow", u"3", None));
-        ___qtablewidgetitem178 = self.tableWidget_3.verticalHeaderItem(4)
-        ___qtablewidgetitem178.setText(QCoreApplication.translate("AlternativeWindow", u"4", None));
-        ___qtablewidgetitem179 = self.tableWidget_3.verticalHeaderItem(5)
-        ___qtablewidgetitem179.setText(QCoreApplication.translate("AlternativeWindow", u"5", None));
-        ___qtablewidgetitem180 = self.tableWidget_3.verticalHeaderItem(6)
-        ___qtablewidgetitem180.setText(QCoreApplication.translate("AlternativeWindow", u"6", None));
-        ___qtablewidgetitem181 = self.tableWidget_3.verticalHeaderItem(7)
-        ___qtablewidgetitem181.setText(QCoreApplication.translate("AlternativeWindow", u"7", None));
-        ___qtablewidgetitem182 = self.tableWidget_3.verticalHeaderItem(8)
-        ___qtablewidgetitem182.setText(QCoreApplication.translate("AlternativeWindow", u"8", None));
-        ___qtablewidgetitem183 = self.tableWidget_3.verticalHeaderItem(9)
-        ___qtablewidgetitem183.setText(QCoreApplication.translate("AlternativeWindow", u"9", None));
-        ___qtablewidgetitem184 = self.tableWidget_3.verticalHeaderItem(10)
-        ___qtablewidgetitem184.setText(QCoreApplication.translate("AlternativeWindow", u"10", None));
-        ___qtablewidgetitem185 = self.tableWidget_3.verticalHeaderItem(11)
-        ___qtablewidgetitem185.setText(QCoreApplication.translate("AlternativeWindow", u"11", None));
-        ___qtablewidgetitem186 = self.tableWidget_3.verticalHeaderItem(12)
-        ___qtablewidgetitem186.setText(QCoreApplication.translate("AlternativeWindow", u"12", None));
-        ___qtablewidgetitem187 = self.tableWidget_3.verticalHeaderItem(13)
-        ___qtablewidgetitem187.setText(QCoreApplication.translate("AlternativeWindow", u"13", None));
-        ___qtablewidgetitem188 = self.tableWidget_3.verticalHeaderItem(14)
-        ___qtablewidgetitem188.setText(QCoreApplication.translate("AlternativeWindow", u"14", None));
-        ___qtablewidgetitem189 = self.tableWidget_3.verticalHeaderItem(15)
-        ___qtablewidgetitem189.setText(QCoreApplication.translate("AlternativeWindow", u"15", None));
-        ___qtablewidgetitem190 = self.tableWidget_3.verticalHeaderItem(16)
-        ___qtablewidgetitem190.setText(QCoreApplication.translate("AlternativeWindow", u"16", None));
-        ___qtablewidgetitem191 = self.tableWidget_3.verticalHeaderItem(17)
-        ___qtablewidgetitem191.setText(QCoreApplication.translate("AlternativeWindow", u"17", None));
-        ___qtablewidgetitem192 = self.tableWidget_3.verticalHeaderItem(18)
-        ___qtablewidgetitem192.setText(QCoreApplication.translate("AlternativeWindow", u"18", None));
-        ___qtablewidgetitem193 = self.tableWidget_3.verticalHeaderItem(19)
-        ___qtablewidgetitem193.setText(QCoreApplication.translate("AlternativeWindow", u"19", None));
-        ___qtablewidgetitem194 = self.tableWidget_3.verticalHeaderItem(20)
-        ___qtablewidgetitem194.setText(QCoreApplication.translate("AlternativeWindow", u"20", None));
-        ___qtablewidgetitem195 = self.tableWidget_3.verticalHeaderItem(21)
-        ___qtablewidgetitem195.setText(QCoreApplication.translate("AlternativeWindow", u"21", None));
-        ___qtablewidgetitem196 = self.tableWidget_3.verticalHeaderItem(22)
-        ___qtablewidgetitem196.setText(QCoreApplication.translate("AlternativeWindow", u"22", None));
-        ___qtablewidgetitem197 = self.tableWidget_3.verticalHeaderItem(23)
-        ___qtablewidgetitem197.setText(QCoreApplication.translate("AlternativeWindow", u"23", None));
-        ___qtablewidgetitem198 = self.tableWidget_3.verticalHeaderItem(24)
-        ___qtablewidgetitem198.setText(QCoreApplication.translate("AlternativeWindow", u"24", None));
-        ___qtablewidgetitem199 = self.tableWidget_3.verticalHeaderItem(25)
-        ___qtablewidgetitem199.setText(QCoreApplication.translate("AlternativeWindow", u"25", None));
-        ___qtablewidgetitem200 = self.tableWidget_3.verticalHeaderItem(26)
-        ___qtablewidgetitem200.setText(QCoreApplication.translate("AlternativeWindow", u"26", None));
-        ___qtablewidgetitem201 = self.tableWidget_3.verticalHeaderItem(27)
-        ___qtablewidgetitem201.setText(QCoreApplication.translate("AlternativeWindow", u"27", None));
+        ___qtablewidgetitem116 = self.tableWidget_3.horizontalHeaderItem(0)
+        ___qtablewidgetitem116.setText(QCoreApplication.translate("AlternativeWindow", u"Address", None));
+        ___qtablewidgetitem117 = self.tableWidget_3.horizontalHeaderItem(1)
+        ___qtablewidgetitem117.setText(QCoreApplication.translate("AlternativeWindow", u"Data", None));
+        ___qtablewidgetitem118 = self.tableWidget_3.verticalHeaderItem(0)
+        ___qtablewidgetitem118.setText(QCoreApplication.translate("AlternativeWindow", u"0", None));
+        ___qtablewidgetitem119 = self.tableWidget_3.verticalHeaderItem(1)
+        ___qtablewidgetitem119.setText(QCoreApplication.translate("AlternativeWindow", u"1", None));
+        ___qtablewidgetitem120 = self.tableWidget_3.verticalHeaderItem(2)
+        ___qtablewidgetitem120.setText(QCoreApplication.translate("AlternativeWindow", u"2", None));
+        ___qtablewidgetitem121 = self.tableWidget_3.verticalHeaderItem(3)
+        ___qtablewidgetitem121.setText(QCoreApplication.translate("AlternativeWindow", u"3", None));
+        ___qtablewidgetitem122 = self.tableWidget_3.verticalHeaderItem(4)
+        ___qtablewidgetitem122.setText(QCoreApplication.translate("AlternativeWindow", u"4", None));
+        ___qtablewidgetitem123 = self.tableWidget_3.verticalHeaderItem(5)
+        ___qtablewidgetitem123.setText(QCoreApplication.translate("AlternativeWindow", u"5", None));
+        ___qtablewidgetitem124 = self.tableWidget_3.verticalHeaderItem(6)
+        ___qtablewidgetitem124.setText(QCoreApplication.translate("AlternativeWindow", u"6", None));
+        ___qtablewidgetitem125 = self.tableWidget_3.verticalHeaderItem(7)
+        ___qtablewidgetitem125.setText(QCoreApplication.translate("AlternativeWindow", u"7", None));
+        ___qtablewidgetitem126 = self.tableWidget_3.verticalHeaderItem(8)
+        ___qtablewidgetitem126.setText(QCoreApplication.translate("AlternativeWindow", u"8", None));
+        ___qtablewidgetitem127 = self.tableWidget_3.verticalHeaderItem(9)
+        ___qtablewidgetitem127.setText(QCoreApplication.translate("AlternativeWindow", u"9", None));
+        ___qtablewidgetitem128 = self.tableWidget_3.verticalHeaderItem(10)
+        ___qtablewidgetitem128.setText(QCoreApplication.translate("AlternativeWindow", u"10", None));
+        ___qtablewidgetitem129 = self.tableWidget_3.verticalHeaderItem(11)
+        ___qtablewidgetitem129.setText(QCoreApplication.translate("AlternativeWindow", u"11", None));
+        ___qtablewidgetitem130 = self.tableWidget_3.verticalHeaderItem(12)
+        ___qtablewidgetitem130.setText(QCoreApplication.translate("AlternativeWindow", u"12", None));
+        ___qtablewidgetitem131 = self.tableWidget_3.verticalHeaderItem(13)
+        ___qtablewidgetitem131.setText(QCoreApplication.translate("AlternativeWindow", u"13", None));
+        ___qtablewidgetitem132 = self.tableWidget_3.verticalHeaderItem(14)
+        ___qtablewidgetitem132.setText(QCoreApplication.translate("AlternativeWindow", u"14", None));
+        ___qtablewidgetitem133 = self.tableWidget_3.verticalHeaderItem(15)
+        ___qtablewidgetitem133.setText(QCoreApplication.translate("AlternativeWindow", u"15", None));
+        ___qtablewidgetitem134 = self.tableWidget_3.verticalHeaderItem(16)
+        ___qtablewidgetitem134.setText(QCoreApplication.translate("AlternativeWindow", u"16", None));
+        ___qtablewidgetitem135 = self.tableWidget_3.verticalHeaderItem(17)
+        ___qtablewidgetitem135.setText(QCoreApplication.translate("AlternativeWindow", u"17", None));
+        ___qtablewidgetitem136 = self.tableWidget_3.verticalHeaderItem(18)
+        ___qtablewidgetitem136.setText(QCoreApplication.translate("AlternativeWindow", u"18", None));
+        ___qtablewidgetitem137 = self.tableWidget_3.verticalHeaderItem(19)
+        ___qtablewidgetitem137.setText(QCoreApplication.translate("AlternativeWindow", u"19", None));
+        ___qtablewidgetitem138 = self.tableWidget_3.verticalHeaderItem(20)
+        ___qtablewidgetitem138.setText(QCoreApplication.translate("AlternativeWindow", u"20", None));
+        ___qtablewidgetitem139 = self.tableWidget_3.verticalHeaderItem(21)
+        ___qtablewidgetitem139.setText(QCoreApplication.translate("AlternativeWindow", u"21", None));
+        ___qtablewidgetitem140 = self.tableWidget_3.verticalHeaderItem(22)
+        ___qtablewidgetitem140.setText(QCoreApplication.translate("AlternativeWindow", u"22", None));
+        ___qtablewidgetitem141 = self.tableWidget_3.verticalHeaderItem(23)
+        ___qtablewidgetitem141.setText(QCoreApplication.translate("AlternativeWindow", u"23", None));
+        ___qtablewidgetitem142 = self.tableWidget_3.verticalHeaderItem(24)
+        ___qtablewidgetitem142.setText(QCoreApplication.translate("AlternativeWindow", u"24", None));
+        ___qtablewidgetitem143 = self.tableWidget_3.verticalHeaderItem(25)
+        ___qtablewidgetitem143.setText(QCoreApplication.translate("AlternativeWindow", u"25", None));
+        ___qtablewidgetitem144 = self.tableWidget_3.verticalHeaderItem(26)
+        ___qtablewidgetitem144.setText(QCoreApplication.translate("AlternativeWindow", u"26", None));
+        ___qtablewidgetitem145 = self.tableWidget_3.verticalHeaderItem(27)
+        ___qtablewidgetitem145.setText(QCoreApplication.translate("AlternativeWindow", u"27", None));
 
         __sortingEnabled2 = self.tableWidget_3.isSortingEnabled()
         self.tableWidget_3.setSortingEnabled(False)
-        ___qtablewidgetitem202 = self.tableWidget_3.item(0, 0)
-        ___qtablewidgetitem202.setText(QCoreApplication.translate("AlternativeWindow", u"0x00", None));
-        ___qtablewidgetitem203 = self.tableWidget_3.item(0, 1)
-        ___qtablewidgetitem203.setText(QCoreApplication.translate("AlternativeWindow", u"34", None));
-        ___qtablewidgetitem204 = self.tableWidget_3.item(1, 0)
-        ___qtablewidgetitem204.setText(QCoreApplication.translate("AlternativeWindow", u"0x01", None));
-        ___qtablewidgetitem205 = self.tableWidget_3.item(1, 1)
-        ___qtablewidgetitem205.setText(QCoreApplication.translate("AlternativeWindow", u"4A", None));
-        ___qtablewidgetitem206 = self.tableWidget_3.item(2, 0)
-        ___qtablewidgetitem206.setText(QCoreApplication.translate("AlternativeWindow", u"0x02", None));
-        ___qtablewidgetitem207 = self.tableWidget_3.item(2, 1)
-        ___qtablewidgetitem207.setText(QCoreApplication.translate("AlternativeWindow", u"32", None));
-        ___qtablewidgetitem208 = self.tableWidget_3.item(3, 0)
-        ___qtablewidgetitem208.setText(QCoreApplication.translate("AlternativeWindow", u"0x03", None));
-        ___qtablewidgetitem209 = self.tableWidget_3.item(3, 1)
-        ___qtablewidgetitem209.setText(QCoreApplication.translate("AlternativeWindow", u"43", None));
-        ___qtablewidgetitem210 = self.tableWidget_3.item(4, 0)
-        ___qtablewidgetitem210.setText(QCoreApplication.translate("AlternativeWindow", u"0x04", None));
-        ___qtablewidgetitem211 = self.tableWidget_3.item(4, 1)
-        ___qtablewidgetitem211.setText(QCoreApplication.translate("AlternativeWindow", u"9F", None));
-        ___qtablewidgetitem212 = self.tableWidget_3.item(5, 0)
-        ___qtablewidgetitem212.setText(QCoreApplication.translate("AlternativeWindow", u"0x05", None));
-        ___qtablewidgetitem213 = self.tableWidget_3.item(5, 1)
-        ___qtablewidgetitem213.setText(QCoreApplication.translate("AlternativeWindow", u"BF", None));
-        ___qtablewidgetitem214 = self.tableWidget_3.item(6, 0)
-        ___qtablewidgetitem214.setText(QCoreApplication.translate("AlternativeWindow", u"0x06", None));
-        ___qtablewidgetitem215 = self.tableWidget_3.item(6, 1)
-        ___qtablewidgetitem215.setText(QCoreApplication.translate("AlternativeWindow", u"6D", None));
-        ___qtablewidgetitem216 = self.tableWidget_3.item(7, 0)
-        ___qtablewidgetitem216.setText(QCoreApplication.translate("AlternativeWindow", u"0x07", None));
-        ___qtablewidgetitem217 = self.tableWidget_3.item(7, 1)
-        ___qtablewidgetitem217.setText(QCoreApplication.translate("AlternativeWindow", u"90", None));
-        ___qtablewidgetitem218 = self.tableWidget_3.item(8, 0)
-        ___qtablewidgetitem218.setText(QCoreApplication.translate("AlternativeWindow", u"0x08", None));
-        ___qtablewidgetitem219 = self.tableWidget_3.item(8, 1)
-        ___qtablewidgetitem219.setText(QCoreApplication.translate("AlternativeWindow", u"40", None));
-        ___qtablewidgetitem220 = self.tableWidget_3.item(9, 0)
-        ___qtablewidgetitem220.setText(QCoreApplication.translate("AlternativeWindow", u"0x09", None));
-        ___qtablewidgetitem221 = self.tableWidget_3.item(9, 1)
-        ___qtablewidgetitem221.setText(QCoreApplication.translate("AlternativeWindow", u"36", None));
-        ___qtablewidgetitem222 = self.tableWidget_3.item(10, 0)
-        ___qtablewidgetitem222.setText(QCoreApplication.translate("AlternativeWindow", u"0x0A", None));
-        ___qtablewidgetitem223 = self.tableWidget_3.item(10, 1)
-        ___qtablewidgetitem223.setText(QCoreApplication.translate("AlternativeWindow", u"BB", None));
-        ___qtablewidgetitem224 = self.tableWidget_3.item(11, 0)
-        ___qtablewidgetitem224.setText(QCoreApplication.translate("AlternativeWindow", u"0x0B", None));
-        ___qtablewidgetitem225 = self.tableWidget_3.item(11, 1)
-        ___qtablewidgetitem225.setText(QCoreApplication.translate("AlternativeWindow", u"46", None));
-        ___qtablewidgetitem226 = self.tableWidget_3.item(12, 0)
-        ___qtablewidgetitem226.setText(QCoreApplication.translate("AlternativeWindow", u"0x0C", None));
-        ___qtablewidgetitem227 = self.tableWidget_3.item(12, 1)
-        ___qtablewidgetitem227.setText(QCoreApplication.translate("AlternativeWindow", u"02", None));
-        ___qtablewidgetitem228 = self.tableWidget_3.item(13, 0)
-        ___qtablewidgetitem228.setText(QCoreApplication.translate("AlternativeWindow", u"0x0D", None));
-        ___qtablewidgetitem229 = self.tableWidget_3.item(13, 1)
-        ___qtablewidgetitem229.setText(QCoreApplication.translate("AlternativeWindow", u"1D", None));
-        ___qtablewidgetitem230 = self.tableWidget_3.item(14, 0)
-        ___qtablewidgetitem230.setText(QCoreApplication.translate("AlternativeWindow", u"0x0E", None));
-        ___qtablewidgetitem231 = self.tableWidget_3.item(14, 1)
-        ___qtablewidgetitem231.setText(QCoreApplication.translate("AlternativeWindow", u"12", None));
-        ___qtablewidgetitem232 = self.tableWidget_3.item(15, 0)
-        ___qtablewidgetitem232.setText(QCoreApplication.translate("AlternativeWindow", u"0x0F", None));
-        ___qtablewidgetitem233 = self.tableWidget_3.item(15, 1)
-        ___qtablewidgetitem233.setText(QCoreApplication.translate("AlternativeWindow", u"05", None));
-        ___qtablewidgetitem234 = self.tableWidget_3.item(16, 0)
-        ___qtablewidgetitem234.setText(QCoreApplication.translate("AlternativeWindow", u"0x10", None));
-        ___qtablewidgetitem235 = self.tableWidget_3.item(16, 1)
-        ___qtablewidgetitem235.setText(QCoreApplication.translate("AlternativeWindow", u"62", None));
-        ___qtablewidgetitem236 = self.tableWidget_3.item(17, 0)
-        ___qtablewidgetitem236.setText(QCoreApplication.translate("AlternativeWindow", u"0x11", None));
-        ___qtablewidgetitem237 = self.tableWidget_3.item(17, 1)
-        ___qtablewidgetitem237.setText(QCoreApplication.translate("AlternativeWindow", u"C1", None));
-        ___qtablewidgetitem238 = self.tableWidget_3.item(18, 0)
-        ___qtablewidgetitem238.setText(QCoreApplication.translate("AlternativeWindow", u"0x12", None));
-        ___qtablewidgetitem239 = self.tableWidget_3.item(18, 1)
-        ___qtablewidgetitem239.setText(QCoreApplication.translate("AlternativeWindow", u"1D", None));
-        ___qtablewidgetitem240 = self.tableWidget_3.item(19, 0)
-        ___qtablewidgetitem240.setText(QCoreApplication.translate("AlternativeWindow", u"0x13", None));
-        ___qtablewidgetitem241 = self.tableWidget_3.item(19, 1)
-        ___qtablewidgetitem241.setText(QCoreApplication.translate("AlternativeWindow", u"41", None));
-        ___qtablewidgetitem242 = self.tableWidget_3.item(20, 0)
-        ___qtablewidgetitem242.setText(QCoreApplication.translate("AlternativeWindow", u"0x14", None));
-        ___qtablewidgetitem243 = self.tableWidget_3.item(20, 1)
-        ___qtablewidgetitem243.setText(QCoreApplication.translate("AlternativeWindow", u"32", None));
-        ___qtablewidgetitem244 = self.tableWidget_3.item(21, 0)
-        ___qtablewidgetitem244.setText(QCoreApplication.translate("AlternativeWindow", u"0x15", None));
-        ___qtablewidgetitem245 = self.tableWidget_3.item(21, 1)
-        ___qtablewidgetitem245.setText(QCoreApplication.translate("AlternativeWindow", u"9B", None));
-        ___qtablewidgetitem246 = self.tableWidget_3.item(22, 0)
-        ___qtablewidgetitem246.setText(QCoreApplication.translate("AlternativeWindow", u"0x16", None));
-        ___qtablewidgetitem247 = self.tableWidget_3.item(22, 1)
-        ___qtablewidgetitem247.setText(QCoreApplication.translate("AlternativeWindow", u"BF", None));
-        ___qtablewidgetitem248 = self.tableWidget_3.item(23, 0)
-        ___qtablewidgetitem248.setText(QCoreApplication.translate("AlternativeWindow", u"0x17", None));
-        ___qtablewidgetitem249 = self.tableWidget_3.item(23, 1)
-        ___qtablewidgetitem249.setText(QCoreApplication.translate("AlternativeWindow", u"51", None));
-        ___qtablewidgetitem250 = self.tableWidget_3.item(24, 0)
-        ___qtablewidgetitem250.setText(QCoreApplication.translate("AlternativeWindow", u"0x18", None));
-        ___qtablewidgetitem251 = self.tableWidget_3.item(24, 1)
-        ___qtablewidgetitem251.setText(QCoreApplication.translate("AlternativeWindow", u"24", None));
-        ___qtablewidgetitem252 = self.tableWidget_3.item(25, 0)
-        ___qtablewidgetitem252.setText(QCoreApplication.translate("AlternativeWindow", u"0x19", None));
-        ___qtablewidgetitem253 = self.tableWidget_3.item(25, 1)
-        ___qtablewidgetitem253.setText(QCoreApplication.translate("AlternativeWindow", u"71", None));
-        ___qtablewidgetitem254 = self.tableWidget_3.item(26, 0)
-        ___qtablewidgetitem254.setText(QCoreApplication.translate("AlternativeWindow", u"0x1A", None));
-        ___qtablewidgetitem255 = self.tableWidget_3.item(26, 1)
-        ___qtablewidgetitem255.setText(QCoreApplication.translate("AlternativeWindow", u"C5", None));
-        ___qtablewidgetitem256 = self.tableWidget_3.item(27, 0)
-        ___qtablewidgetitem256.setText(QCoreApplication.translate("AlternativeWindow", u"0x1B", None));
-        ___qtablewidgetitem257 = self.tableWidget_3.item(27, 1)
-        ___qtablewidgetitem257.setText(QCoreApplication.translate("AlternativeWindow", u"23", None));
+        ___qtablewidgetitem146 = self.tableWidget_3.item(0, 0)
+        ___qtablewidgetitem146.setText(QCoreApplication.translate("AlternativeWindow", u"0x00", None));
+        ___qtablewidgetitem147 = self.tableWidget_3.item(0, 1)
+        ___qtablewidgetitem147.setText(QCoreApplication.translate("AlternativeWindow", u"34", None));
+        ___qtablewidgetitem148 = self.tableWidget_3.item(1, 0)
+        ___qtablewidgetitem148.setText(QCoreApplication.translate("AlternativeWindow", u"0x01", None));
+        ___qtablewidgetitem149 = self.tableWidget_3.item(1, 1)
+        ___qtablewidgetitem149.setText(QCoreApplication.translate("AlternativeWindow", u"4A", None));
+        ___qtablewidgetitem150 = self.tableWidget_3.item(2, 0)
+        ___qtablewidgetitem150.setText(QCoreApplication.translate("AlternativeWindow", u"0x02", None));
+        ___qtablewidgetitem151 = self.tableWidget_3.item(2, 1)
+        ___qtablewidgetitem151.setText(QCoreApplication.translate("AlternativeWindow", u"32", None));
+        ___qtablewidgetitem152 = self.tableWidget_3.item(3, 0)
+        ___qtablewidgetitem152.setText(QCoreApplication.translate("AlternativeWindow", u"0x03", None));
+        ___qtablewidgetitem153 = self.tableWidget_3.item(3, 1)
+        ___qtablewidgetitem153.setText(QCoreApplication.translate("AlternativeWindow", u"43", None));
+        ___qtablewidgetitem154 = self.tableWidget_3.item(4, 0)
+        ___qtablewidgetitem154.setText(QCoreApplication.translate("AlternativeWindow", u"0x04", None));
+        ___qtablewidgetitem155 = self.tableWidget_3.item(4, 1)
+        ___qtablewidgetitem155.setText(QCoreApplication.translate("AlternativeWindow", u"9F", None));
+        ___qtablewidgetitem156 = self.tableWidget_3.item(5, 0)
+        ___qtablewidgetitem156.setText(QCoreApplication.translate("AlternativeWindow", u"0x05", None));
+        ___qtablewidgetitem157 = self.tableWidget_3.item(5, 1)
+        ___qtablewidgetitem157.setText(QCoreApplication.translate("AlternativeWindow", u"BF", None));
+        ___qtablewidgetitem158 = self.tableWidget_3.item(6, 0)
+        ___qtablewidgetitem158.setText(QCoreApplication.translate("AlternativeWindow", u"0x06", None));
+        ___qtablewidgetitem159 = self.tableWidget_3.item(6, 1)
+        ___qtablewidgetitem159.setText(QCoreApplication.translate("AlternativeWindow", u"6D", None));
+        ___qtablewidgetitem160 = self.tableWidget_3.item(7, 0)
+        ___qtablewidgetitem160.setText(QCoreApplication.translate("AlternativeWindow", u"0x07", None));
+        ___qtablewidgetitem161 = self.tableWidget_3.item(7, 1)
+        ___qtablewidgetitem161.setText(QCoreApplication.translate("AlternativeWindow", u"90", None));
+        ___qtablewidgetitem162 = self.tableWidget_3.item(8, 0)
+        ___qtablewidgetitem162.setText(QCoreApplication.translate("AlternativeWindow", u"0x08", None));
+        ___qtablewidgetitem163 = self.tableWidget_3.item(8, 1)
+        ___qtablewidgetitem163.setText(QCoreApplication.translate("AlternativeWindow", u"40", None));
+        ___qtablewidgetitem164 = self.tableWidget_3.item(9, 0)
+        ___qtablewidgetitem164.setText(QCoreApplication.translate("AlternativeWindow", u"0x09", None));
+        ___qtablewidgetitem165 = self.tableWidget_3.item(9, 1)
+        ___qtablewidgetitem165.setText(QCoreApplication.translate("AlternativeWindow", u"36", None));
+        ___qtablewidgetitem166 = self.tableWidget_3.item(10, 0)
+        ___qtablewidgetitem166.setText(QCoreApplication.translate("AlternativeWindow", u"0x0A", None));
+        ___qtablewidgetitem167 = self.tableWidget_3.item(10, 1)
+        ___qtablewidgetitem167.setText(QCoreApplication.translate("AlternativeWindow", u"BB", None));
+        ___qtablewidgetitem168 = self.tableWidget_3.item(11, 0)
+        ___qtablewidgetitem168.setText(QCoreApplication.translate("AlternativeWindow", u"0x0B", None));
+        ___qtablewidgetitem169 = self.tableWidget_3.item(11, 1)
+        ___qtablewidgetitem169.setText(QCoreApplication.translate("AlternativeWindow", u"46", None));
+        ___qtablewidgetitem170 = self.tableWidget_3.item(12, 0)
+        ___qtablewidgetitem170.setText(QCoreApplication.translate("AlternativeWindow", u"0x0C", None));
+        ___qtablewidgetitem171 = self.tableWidget_3.item(12, 1)
+        ___qtablewidgetitem171.setText(QCoreApplication.translate("AlternativeWindow", u"02", None));
+        ___qtablewidgetitem172 = self.tableWidget_3.item(13, 0)
+        ___qtablewidgetitem172.setText(QCoreApplication.translate("AlternativeWindow", u"0x0D", None));
+        ___qtablewidgetitem173 = self.tableWidget_3.item(13, 1)
+        ___qtablewidgetitem173.setText(QCoreApplication.translate("AlternativeWindow", u"1D", None));
+        ___qtablewidgetitem174 = self.tableWidget_3.item(14, 0)
+        ___qtablewidgetitem174.setText(QCoreApplication.translate("AlternativeWindow", u"0x0E", None));
+        ___qtablewidgetitem175 = self.tableWidget_3.item(14, 1)
+        ___qtablewidgetitem175.setText(QCoreApplication.translate("AlternativeWindow", u"12", None));
+        ___qtablewidgetitem176 = self.tableWidget_3.item(15, 0)
+        ___qtablewidgetitem176.setText(QCoreApplication.translate("AlternativeWindow", u"0x0F", None));
+        ___qtablewidgetitem177 = self.tableWidget_3.item(15, 1)
+        ___qtablewidgetitem177.setText(QCoreApplication.translate("AlternativeWindow", u"05", None));
+        ___qtablewidgetitem178 = self.tableWidget_3.item(16, 0)
+        ___qtablewidgetitem178.setText(QCoreApplication.translate("AlternativeWindow", u"0x10", None));
+        ___qtablewidgetitem179 = self.tableWidget_3.item(16, 1)
+        ___qtablewidgetitem179.setText(QCoreApplication.translate("AlternativeWindow", u"62", None));
+        ___qtablewidgetitem180 = self.tableWidget_3.item(17, 0)
+        ___qtablewidgetitem180.setText(QCoreApplication.translate("AlternativeWindow", u"0x11", None));
+        ___qtablewidgetitem181 = self.tableWidget_3.item(17, 1)
+        ___qtablewidgetitem181.setText(QCoreApplication.translate("AlternativeWindow", u"C1", None));
+        ___qtablewidgetitem182 = self.tableWidget_3.item(18, 0)
+        ___qtablewidgetitem182.setText(QCoreApplication.translate("AlternativeWindow", u"0x12", None));
+        ___qtablewidgetitem183 = self.tableWidget_3.item(18, 1)
+        ___qtablewidgetitem183.setText(QCoreApplication.translate("AlternativeWindow", u"1D", None));
+        ___qtablewidgetitem184 = self.tableWidget_3.item(19, 0)
+        ___qtablewidgetitem184.setText(QCoreApplication.translate("AlternativeWindow", u"0x13", None));
+        ___qtablewidgetitem185 = self.tableWidget_3.item(19, 1)
+        ___qtablewidgetitem185.setText(QCoreApplication.translate("AlternativeWindow", u"41", None));
+        ___qtablewidgetitem186 = self.tableWidget_3.item(20, 0)
+        ___qtablewidgetitem186.setText(QCoreApplication.translate("AlternativeWindow", u"0x14", None));
+        ___qtablewidgetitem187 = self.tableWidget_3.item(20, 1)
+        ___qtablewidgetitem187.setText(QCoreApplication.translate("AlternativeWindow", u"32", None));
+        ___qtablewidgetitem188 = self.tableWidget_3.item(21, 0)
+        ___qtablewidgetitem188.setText(QCoreApplication.translate("AlternativeWindow", u"0x15", None));
+        ___qtablewidgetitem189 = self.tableWidget_3.item(21, 1)
+        ___qtablewidgetitem189.setText(QCoreApplication.translate("AlternativeWindow", u"9B", None));
+        ___qtablewidgetitem190 = self.tableWidget_3.item(22, 0)
+        ___qtablewidgetitem190.setText(QCoreApplication.translate("AlternativeWindow", u"0x16", None));
+        ___qtablewidgetitem191 = self.tableWidget_3.item(22, 1)
+        ___qtablewidgetitem191.setText(QCoreApplication.translate("AlternativeWindow", u"BF", None));
+        ___qtablewidgetitem192 = self.tableWidget_3.item(23, 0)
+        ___qtablewidgetitem192.setText(QCoreApplication.translate("AlternativeWindow", u"0x17", None));
+        ___qtablewidgetitem193 = self.tableWidget_3.item(23, 1)
+        ___qtablewidgetitem193.setText(QCoreApplication.translate("AlternativeWindow", u"51", None));
+        ___qtablewidgetitem194 = self.tableWidget_3.item(24, 0)
+        ___qtablewidgetitem194.setText(QCoreApplication.translate("AlternativeWindow", u"0x18", None));
+        ___qtablewidgetitem195 = self.tableWidget_3.item(24, 1)
+        ___qtablewidgetitem195.setText(QCoreApplication.translate("AlternativeWindow", u"24", None));
+        ___qtablewidgetitem196 = self.tableWidget_3.item(25, 0)
+        ___qtablewidgetitem196.setText(QCoreApplication.translate("AlternativeWindow", u"0x19", None));
+        ___qtablewidgetitem197 = self.tableWidget_3.item(25, 1)
+        ___qtablewidgetitem197.setText(QCoreApplication.translate("AlternativeWindow", u"71", None));
+        ___qtablewidgetitem198 = self.tableWidget_3.item(26, 0)
+        ___qtablewidgetitem198.setText(QCoreApplication.translate("AlternativeWindow", u"0x1A", None));
+        ___qtablewidgetitem199 = self.tableWidget_3.item(26, 1)
+        ___qtablewidgetitem199.setText(QCoreApplication.translate("AlternativeWindow", u"C5", None));
+        ___qtablewidgetitem200 = self.tableWidget_3.item(27, 0)
+        ___qtablewidgetitem200.setText(QCoreApplication.translate("AlternativeWindow", u"0x1B", None));
+        ___qtablewidgetitem201 = self.tableWidget_3.item(27, 1)
+        ___qtablewidgetitem201.setText(QCoreApplication.translate("AlternativeWindow", u"23", None));
         self.tableWidget_3.setSortingEnabled(__sortingEnabled2)
 
         self.pushButton_8.setText(QCoreApplication.translate("AlternativeWindow", u"Reset", None))
         self.pushButton_13.setText(QCoreApplication.translate("AlternativeWindow", u"Refresh", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("AlternativeWindow", u"PHY", None))
-        ___qtablewidgetitem258 = self.tableWidget_4.horizontalHeaderItem(0)
-        ___qtablewidgetitem258.setText(QCoreApplication.translate("AlternativeWindow", u"Address", None));
-        ___qtablewidgetitem259 = self.tableWidget_4.horizontalHeaderItem(1)
-        ___qtablewidgetitem259.setText(QCoreApplication.translate("AlternativeWindow", u"Data", None));
-        ___qtablewidgetitem260 = self.tableWidget_4.verticalHeaderItem(0)
-        ___qtablewidgetitem260.setText(QCoreApplication.translate("AlternativeWindow", u"0", None));
-        ___qtablewidgetitem261 = self.tableWidget_4.verticalHeaderItem(1)
-        ___qtablewidgetitem261.setText(QCoreApplication.translate("AlternativeWindow", u"1", None));
-        ___qtablewidgetitem262 = self.tableWidget_4.verticalHeaderItem(2)
-        ___qtablewidgetitem262.setText(QCoreApplication.translate("AlternativeWindow", u"2", None));
-        ___qtablewidgetitem263 = self.tableWidget_4.verticalHeaderItem(3)
-        ___qtablewidgetitem263.setText(QCoreApplication.translate("AlternativeWindow", u"3", None));
-        ___qtablewidgetitem264 = self.tableWidget_4.verticalHeaderItem(4)
-        ___qtablewidgetitem264.setText(QCoreApplication.translate("AlternativeWindow", u"4", None));
-        ___qtablewidgetitem265 = self.tableWidget_4.verticalHeaderItem(5)
-        ___qtablewidgetitem265.setText(QCoreApplication.translate("AlternativeWindow", u"5", None));
-        ___qtablewidgetitem266 = self.tableWidget_4.verticalHeaderItem(6)
-        ___qtablewidgetitem266.setText(QCoreApplication.translate("AlternativeWindow", u"6", None));
-        ___qtablewidgetitem267 = self.tableWidget_4.verticalHeaderItem(7)
-        ___qtablewidgetitem267.setText(QCoreApplication.translate("AlternativeWindow", u"7", None));
-        ___qtablewidgetitem268 = self.tableWidget_4.verticalHeaderItem(8)
-        ___qtablewidgetitem268.setText(QCoreApplication.translate("AlternativeWindow", u"8", None));
-        ___qtablewidgetitem269 = self.tableWidget_4.verticalHeaderItem(9)
-        ___qtablewidgetitem269.setText(QCoreApplication.translate("AlternativeWindow", u"9", None));
-        ___qtablewidgetitem270 = self.tableWidget_4.verticalHeaderItem(10)
-        ___qtablewidgetitem270.setText(QCoreApplication.translate("AlternativeWindow", u"10", None));
-        ___qtablewidgetitem271 = self.tableWidget_4.verticalHeaderItem(11)
-        ___qtablewidgetitem271.setText(QCoreApplication.translate("AlternativeWindow", u"11", None));
-        ___qtablewidgetitem272 = self.tableWidget_4.verticalHeaderItem(12)
-        ___qtablewidgetitem272.setText(QCoreApplication.translate("AlternativeWindow", u"12", None));
-        ___qtablewidgetitem273 = self.tableWidget_4.verticalHeaderItem(13)
-        ___qtablewidgetitem273.setText(QCoreApplication.translate("AlternativeWindow", u"13", None));
-        ___qtablewidgetitem274 = self.tableWidget_4.verticalHeaderItem(14)
-        ___qtablewidgetitem274.setText(QCoreApplication.translate("AlternativeWindow", u"14", None));
-        ___qtablewidgetitem275 = self.tableWidget_4.verticalHeaderItem(15)
-        ___qtablewidgetitem275.setText(QCoreApplication.translate("AlternativeWindow", u"15", None));
-        ___qtablewidgetitem276 = self.tableWidget_4.verticalHeaderItem(16)
-        ___qtablewidgetitem276.setText(QCoreApplication.translate("AlternativeWindow", u"16", None));
-        ___qtablewidgetitem277 = self.tableWidget_4.verticalHeaderItem(17)
-        ___qtablewidgetitem277.setText(QCoreApplication.translate("AlternativeWindow", u"17", None));
-        ___qtablewidgetitem278 = self.tableWidget_4.verticalHeaderItem(18)
-        ___qtablewidgetitem278.setText(QCoreApplication.translate("AlternativeWindow", u"18", None));
-        ___qtablewidgetitem279 = self.tableWidget_4.verticalHeaderItem(19)
-        ___qtablewidgetitem279.setText(QCoreApplication.translate("AlternativeWindow", u"19", None));
-        ___qtablewidgetitem280 = self.tableWidget_4.verticalHeaderItem(20)
-        ___qtablewidgetitem280.setText(QCoreApplication.translate("AlternativeWindow", u"20", None));
-        ___qtablewidgetitem281 = self.tableWidget_4.verticalHeaderItem(21)
-        ___qtablewidgetitem281.setText(QCoreApplication.translate("AlternativeWindow", u"21", None));
-        ___qtablewidgetitem282 = self.tableWidget_4.verticalHeaderItem(22)
-        ___qtablewidgetitem282.setText(QCoreApplication.translate("AlternativeWindow", u"22", None));
-        ___qtablewidgetitem283 = self.tableWidget_4.verticalHeaderItem(23)
-        ___qtablewidgetitem283.setText(QCoreApplication.translate("AlternativeWindow", u"23", None));
-        ___qtablewidgetitem284 = self.tableWidget_4.verticalHeaderItem(24)
-        ___qtablewidgetitem284.setText(QCoreApplication.translate("AlternativeWindow", u"24", None));
-        ___qtablewidgetitem285 = self.tableWidget_4.verticalHeaderItem(25)
-        ___qtablewidgetitem285.setText(QCoreApplication.translate("AlternativeWindow", u"25", None));
-        ___qtablewidgetitem286 = self.tableWidget_4.verticalHeaderItem(26)
-        ___qtablewidgetitem286.setText(QCoreApplication.translate("AlternativeWindow", u"26", None));
-        ___qtablewidgetitem287 = self.tableWidget_4.verticalHeaderItem(27)
-        ___qtablewidgetitem287.setText(QCoreApplication.translate("AlternativeWindow", u"27", None));
+        ___qtablewidgetitem202 = self.tableWidget_4.horizontalHeaderItem(0)
+        ___qtablewidgetitem202.setText(QCoreApplication.translate("AlternativeWindow", u"Address", None));
+        ___qtablewidgetitem203 = self.tableWidget_4.horizontalHeaderItem(1)
+        ___qtablewidgetitem203.setText(QCoreApplication.translate("AlternativeWindow", u"Data", None));
+        ___qtablewidgetitem204 = self.tableWidget_4.verticalHeaderItem(0)
+        ___qtablewidgetitem204.setText(QCoreApplication.translate("AlternativeWindow", u"0", None));
+        ___qtablewidgetitem205 = self.tableWidget_4.verticalHeaderItem(1)
+        ___qtablewidgetitem205.setText(QCoreApplication.translate("AlternativeWindow", u"1", None));
+        ___qtablewidgetitem206 = self.tableWidget_4.verticalHeaderItem(2)
+        ___qtablewidgetitem206.setText(QCoreApplication.translate("AlternativeWindow", u"2", None));
+        ___qtablewidgetitem207 = self.tableWidget_4.verticalHeaderItem(3)
+        ___qtablewidgetitem207.setText(QCoreApplication.translate("AlternativeWindow", u"3", None));
+        ___qtablewidgetitem208 = self.tableWidget_4.verticalHeaderItem(4)
+        ___qtablewidgetitem208.setText(QCoreApplication.translate("AlternativeWindow", u"4", None));
+        ___qtablewidgetitem209 = self.tableWidget_4.verticalHeaderItem(5)
+        ___qtablewidgetitem209.setText(QCoreApplication.translate("AlternativeWindow", u"5", None));
+        ___qtablewidgetitem210 = self.tableWidget_4.verticalHeaderItem(6)
+        ___qtablewidgetitem210.setText(QCoreApplication.translate("AlternativeWindow", u"6", None));
+        ___qtablewidgetitem211 = self.tableWidget_4.verticalHeaderItem(7)
+        ___qtablewidgetitem211.setText(QCoreApplication.translate("AlternativeWindow", u"7", None));
+        ___qtablewidgetitem212 = self.tableWidget_4.verticalHeaderItem(8)
+        ___qtablewidgetitem212.setText(QCoreApplication.translate("AlternativeWindow", u"8", None));
+        ___qtablewidgetitem213 = self.tableWidget_4.verticalHeaderItem(9)
+        ___qtablewidgetitem213.setText(QCoreApplication.translate("AlternativeWindow", u"9", None));
+        ___qtablewidgetitem214 = self.tableWidget_4.verticalHeaderItem(10)
+        ___qtablewidgetitem214.setText(QCoreApplication.translate("AlternativeWindow", u"10", None));
+        ___qtablewidgetitem215 = self.tableWidget_4.verticalHeaderItem(11)
+        ___qtablewidgetitem215.setText(QCoreApplication.translate("AlternativeWindow", u"11", None));
+        ___qtablewidgetitem216 = self.tableWidget_4.verticalHeaderItem(12)
+        ___qtablewidgetitem216.setText(QCoreApplication.translate("AlternativeWindow", u"12", None));
+        ___qtablewidgetitem217 = self.tableWidget_4.verticalHeaderItem(13)
+        ___qtablewidgetitem217.setText(QCoreApplication.translate("AlternativeWindow", u"13", None));
+        ___qtablewidgetitem218 = self.tableWidget_4.verticalHeaderItem(14)
+        ___qtablewidgetitem218.setText(QCoreApplication.translate("AlternativeWindow", u"14", None));
+        ___qtablewidgetitem219 = self.tableWidget_4.verticalHeaderItem(15)
+        ___qtablewidgetitem219.setText(QCoreApplication.translate("AlternativeWindow", u"15", None));
+        ___qtablewidgetitem220 = self.tableWidget_4.verticalHeaderItem(16)
+        ___qtablewidgetitem220.setText(QCoreApplication.translate("AlternativeWindow", u"16", None));
+        ___qtablewidgetitem221 = self.tableWidget_4.verticalHeaderItem(17)
+        ___qtablewidgetitem221.setText(QCoreApplication.translate("AlternativeWindow", u"17", None));
+        ___qtablewidgetitem222 = self.tableWidget_4.verticalHeaderItem(18)
+        ___qtablewidgetitem222.setText(QCoreApplication.translate("AlternativeWindow", u"18", None));
+        ___qtablewidgetitem223 = self.tableWidget_4.verticalHeaderItem(19)
+        ___qtablewidgetitem223.setText(QCoreApplication.translate("AlternativeWindow", u"19", None));
+        ___qtablewidgetitem224 = self.tableWidget_4.verticalHeaderItem(20)
+        ___qtablewidgetitem224.setText(QCoreApplication.translate("AlternativeWindow", u"20", None));
+        ___qtablewidgetitem225 = self.tableWidget_4.verticalHeaderItem(21)
+        ___qtablewidgetitem225.setText(QCoreApplication.translate("AlternativeWindow", u"21", None));
+        ___qtablewidgetitem226 = self.tableWidget_4.verticalHeaderItem(22)
+        ___qtablewidgetitem226.setText(QCoreApplication.translate("AlternativeWindow", u"22", None));
+        ___qtablewidgetitem227 = self.tableWidget_4.verticalHeaderItem(23)
+        ___qtablewidgetitem227.setText(QCoreApplication.translate("AlternativeWindow", u"23", None));
+        ___qtablewidgetitem228 = self.tableWidget_4.verticalHeaderItem(24)
+        ___qtablewidgetitem228.setText(QCoreApplication.translate("AlternativeWindow", u"24", None));
+        ___qtablewidgetitem229 = self.tableWidget_4.verticalHeaderItem(25)
+        ___qtablewidgetitem229.setText(QCoreApplication.translate("AlternativeWindow", u"25", None));
+        ___qtablewidgetitem230 = self.tableWidget_4.verticalHeaderItem(26)
+        ___qtablewidgetitem230.setText(QCoreApplication.translate("AlternativeWindow", u"26", None));
+        ___qtablewidgetitem231 = self.tableWidget_4.verticalHeaderItem(27)
+        ___qtablewidgetitem231.setText(QCoreApplication.translate("AlternativeWindow", u"27", None));
 
         __sortingEnabled3 = self.tableWidget_4.isSortingEnabled()
         self.tableWidget_4.setSortingEnabled(False)
-        ___qtablewidgetitem288 = self.tableWidget_4.item(0, 0)
-        ___qtablewidgetitem288.setText(QCoreApplication.translate("AlternativeWindow", u"0x00", None));
-        ___qtablewidgetitem289 = self.tableWidget_4.item(0, 1)
-        ___qtablewidgetitem289.setText(QCoreApplication.translate("AlternativeWindow", u"34", None));
-        ___qtablewidgetitem290 = self.tableWidget_4.item(1, 0)
-        ___qtablewidgetitem290.setText(QCoreApplication.translate("AlternativeWindow", u"0x01", None));
-        ___qtablewidgetitem291 = self.tableWidget_4.item(1, 1)
-        ___qtablewidgetitem291.setText(QCoreApplication.translate("AlternativeWindow", u"4A", None));
-        ___qtablewidgetitem292 = self.tableWidget_4.item(2, 0)
-        ___qtablewidgetitem292.setText(QCoreApplication.translate("AlternativeWindow", u"0x02", None));
-        ___qtablewidgetitem293 = self.tableWidget_4.item(2, 1)
-        ___qtablewidgetitem293.setText(QCoreApplication.translate("AlternativeWindow", u"32", None));
-        ___qtablewidgetitem294 = self.tableWidget_4.item(3, 0)
-        ___qtablewidgetitem294.setText(QCoreApplication.translate("AlternativeWindow", u"0x03", None));
-        ___qtablewidgetitem295 = self.tableWidget_4.item(3, 1)
-        ___qtablewidgetitem295.setText(QCoreApplication.translate("AlternativeWindow", u"43", None));
-        ___qtablewidgetitem296 = self.tableWidget_4.item(4, 0)
-        ___qtablewidgetitem296.setText(QCoreApplication.translate("AlternativeWindow", u"0x04", None));
-        ___qtablewidgetitem297 = self.tableWidget_4.item(4, 1)
-        ___qtablewidgetitem297.setText(QCoreApplication.translate("AlternativeWindow", u"9F", None));
-        ___qtablewidgetitem298 = self.tableWidget_4.item(5, 0)
-        ___qtablewidgetitem298.setText(QCoreApplication.translate("AlternativeWindow", u"0x05", None));
-        ___qtablewidgetitem299 = self.tableWidget_4.item(5, 1)
-        ___qtablewidgetitem299.setText(QCoreApplication.translate("AlternativeWindow", u"BF", None));
-        ___qtablewidgetitem300 = self.tableWidget_4.item(6, 0)
-        ___qtablewidgetitem300.setText(QCoreApplication.translate("AlternativeWindow", u"0x06", None));
-        ___qtablewidgetitem301 = self.tableWidget_4.item(6, 1)
-        ___qtablewidgetitem301.setText(QCoreApplication.translate("AlternativeWindow", u"6D", None));
-        ___qtablewidgetitem302 = self.tableWidget_4.item(7, 0)
-        ___qtablewidgetitem302.setText(QCoreApplication.translate("AlternativeWindow", u"0x07", None));
-        ___qtablewidgetitem303 = self.tableWidget_4.item(7, 1)
-        ___qtablewidgetitem303.setText(QCoreApplication.translate("AlternativeWindow", u"90", None));
-        ___qtablewidgetitem304 = self.tableWidget_4.item(8, 0)
-        ___qtablewidgetitem304.setText(QCoreApplication.translate("AlternativeWindow", u"0x08", None));
-        ___qtablewidgetitem305 = self.tableWidget_4.item(8, 1)
-        ___qtablewidgetitem305.setText(QCoreApplication.translate("AlternativeWindow", u"40", None));
-        ___qtablewidgetitem306 = self.tableWidget_4.item(9, 0)
-        ___qtablewidgetitem306.setText(QCoreApplication.translate("AlternativeWindow", u"0x09", None));
-        ___qtablewidgetitem307 = self.tableWidget_4.item(9, 1)
-        ___qtablewidgetitem307.setText(QCoreApplication.translate("AlternativeWindow", u"36", None));
-        ___qtablewidgetitem308 = self.tableWidget_4.item(10, 0)
-        ___qtablewidgetitem308.setText(QCoreApplication.translate("AlternativeWindow", u"0x0A", None));
-        ___qtablewidgetitem309 = self.tableWidget_4.item(10, 1)
-        ___qtablewidgetitem309.setText(QCoreApplication.translate("AlternativeWindow", u"BB", None));
-        ___qtablewidgetitem310 = self.tableWidget_4.item(11, 0)
-        ___qtablewidgetitem310.setText(QCoreApplication.translate("AlternativeWindow", u"0x0B", None));
-        ___qtablewidgetitem311 = self.tableWidget_4.item(11, 1)
-        ___qtablewidgetitem311.setText(QCoreApplication.translate("AlternativeWindow", u"46", None));
-        ___qtablewidgetitem312 = self.tableWidget_4.item(12, 0)
-        ___qtablewidgetitem312.setText(QCoreApplication.translate("AlternativeWindow", u"0x0C", None));
-        ___qtablewidgetitem313 = self.tableWidget_4.item(12, 1)
-        ___qtablewidgetitem313.setText(QCoreApplication.translate("AlternativeWindow", u"02", None));
-        ___qtablewidgetitem314 = self.tableWidget_4.item(13, 0)
-        ___qtablewidgetitem314.setText(QCoreApplication.translate("AlternativeWindow", u"0x0D", None));
-        ___qtablewidgetitem315 = self.tableWidget_4.item(13, 1)
-        ___qtablewidgetitem315.setText(QCoreApplication.translate("AlternativeWindow", u"1D", None));
-        ___qtablewidgetitem316 = self.tableWidget_4.item(14, 0)
-        ___qtablewidgetitem316.setText(QCoreApplication.translate("AlternativeWindow", u"0x0E", None));
-        ___qtablewidgetitem317 = self.tableWidget_4.item(14, 1)
-        ___qtablewidgetitem317.setText(QCoreApplication.translate("AlternativeWindow", u"12", None));
-        ___qtablewidgetitem318 = self.tableWidget_4.item(15, 0)
-        ___qtablewidgetitem318.setText(QCoreApplication.translate("AlternativeWindow", u"0x0F", None));
-        ___qtablewidgetitem319 = self.tableWidget_4.item(15, 1)
-        ___qtablewidgetitem319.setText(QCoreApplication.translate("AlternativeWindow", u"05", None));
-        ___qtablewidgetitem320 = self.tableWidget_4.item(16, 0)
-        ___qtablewidgetitem320.setText(QCoreApplication.translate("AlternativeWindow", u"0x10", None));
-        ___qtablewidgetitem321 = self.tableWidget_4.item(16, 1)
-        ___qtablewidgetitem321.setText(QCoreApplication.translate("AlternativeWindow", u"62", None));
-        ___qtablewidgetitem322 = self.tableWidget_4.item(17, 0)
-        ___qtablewidgetitem322.setText(QCoreApplication.translate("AlternativeWindow", u"0x11", None));
-        ___qtablewidgetitem323 = self.tableWidget_4.item(17, 1)
-        ___qtablewidgetitem323.setText(QCoreApplication.translate("AlternativeWindow", u"C1", None));
-        ___qtablewidgetitem324 = self.tableWidget_4.item(18, 0)
-        ___qtablewidgetitem324.setText(QCoreApplication.translate("AlternativeWindow", u"0x12", None));
-        ___qtablewidgetitem325 = self.tableWidget_4.item(18, 1)
-        ___qtablewidgetitem325.setText(QCoreApplication.translate("AlternativeWindow", u"1D", None));
-        ___qtablewidgetitem326 = self.tableWidget_4.item(19, 0)
-        ___qtablewidgetitem326.setText(QCoreApplication.translate("AlternativeWindow", u"0x13", None));
-        ___qtablewidgetitem327 = self.tableWidget_4.item(19, 1)
-        ___qtablewidgetitem327.setText(QCoreApplication.translate("AlternativeWindow", u"41", None));
-        ___qtablewidgetitem328 = self.tableWidget_4.item(20, 0)
-        ___qtablewidgetitem328.setText(QCoreApplication.translate("AlternativeWindow", u"0x14", None));
-        ___qtablewidgetitem329 = self.tableWidget_4.item(20, 1)
-        ___qtablewidgetitem329.setText(QCoreApplication.translate("AlternativeWindow", u"32", None));
-        ___qtablewidgetitem330 = self.tableWidget_4.item(21, 0)
-        ___qtablewidgetitem330.setText(QCoreApplication.translate("AlternativeWindow", u"0x15", None));
-        ___qtablewidgetitem331 = self.tableWidget_4.item(21, 1)
-        ___qtablewidgetitem331.setText(QCoreApplication.translate("AlternativeWindow", u"9B", None));
-        ___qtablewidgetitem332 = self.tableWidget_4.item(22, 0)
-        ___qtablewidgetitem332.setText(QCoreApplication.translate("AlternativeWindow", u"0x16", None));
-        ___qtablewidgetitem333 = self.tableWidget_4.item(22, 1)
-        ___qtablewidgetitem333.setText(QCoreApplication.translate("AlternativeWindow", u"BF", None));
-        ___qtablewidgetitem334 = self.tableWidget_4.item(23, 0)
-        ___qtablewidgetitem334.setText(QCoreApplication.translate("AlternativeWindow", u"0x17", None));
-        ___qtablewidgetitem335 = self.tableWidget_4.item(23, 1)
-        ___qtablewidgetitem335.setText(QCoreApplication.translate("AlternativeWindow", u"51", None));
-        ___qtablewidgetitem336 = self.tableWidget_4.item(24, 0)
-        ___qtablewidgetitem336.setText(QCoreApplication.translate("AlternativeWindow", u"0x18", None));
-        ___qtablewidgetitem337 = self.tableWidget_4.item(24, 1)
-        ___qtablewidgetitem337.setText(QCoreApplication.translate("AlternativeWindow", u"24", None));
-        ___qtablewidgetitem338 = self.tableWidget_4.item(25, 0)
-        ___qtablewidgetitem338.setText(QCoreApplication.translate("AlternativeWindow", u"0x19", None));
-        ___qtablewidgetitem339 = self.tableWidget_4.item(25, 1)
-        ___qtablewidgetitem339.setText(QCoreApplication.translate("AlternativeWindow", u"71", None));
-        ___qtablewidgetitem340 = self.tableWidget_4.item(26, 0)
-        ___qtablewidgetitem340.setText(QCoreApplication.translate("AlternativeWindow", u"0x1A", None));
-        ___qtablewidgetitem341 = self.tableWidget_4.item(26, 1)
-        ___qtablewidgetitem341.setText(QCoreApplication.translate("AlternativeWindow", u"C5", None));
-        ___qtablewidgetitem342 = self.tableWidget_4.item(27, 0)
-        ___qtablewidgetitem342.setText(QCoreApplication.translate("AlternativeWindow", u"0x1B", None));
-        ___qtablewidgetitem343 = self.tableWidget_4.item(27, 1)
-        ___qtablewidgetitem343.setText(QCoreApplication.translate("AlternativeWindow", u"23", None));
+        ___qtablewidgetitem232 = self.tableWidget_4.item(0, 0)
+        ___qtablewidgetitem232.setText(QCoreApplication.translate("AlternativeWindow", u"0x00", None));
+        ___qtablewidgetitem233 = self.tableWidget_4.item(0, 1)
+        ___qtablewidgetitem233.setText(QCoreApplication.translate("AlternativeWindow", u"34", None));
+        ___qtablewidgetitem234 = self.tableWidget_4.item(1, 0)
+        ___qtablewidgetitem234.setText(QCoreApplication.translate("AlternativeWindow", u"0x01", None));
+        ___qtablewidgetitem235 = self.tableWidget_4.item(1, 1)
+        ___qtablewidgetitem235.setText(QCoreApplication.translate("AlternativeWindow", u"4A", None));
+        ___qtablewidgetitem236 = self.tableWidget_4.item(2, 0)
+        ___qtablewidgetitem236.setText(QCoreApplication.translate("AlternativeWindow", u"0x02", None));
+        ___qtablewidgetitem237 = self.tableWidget_4.item(2, 1)
+        ___qtablewidgetitem237.setText(QCoreApplication.translate("AlternativeWindow", u"32", None));
+        ___qtablewidgetitem238 = self.tableWidget_4.item(3, 0)
+        ___qtablewidgetitem238.setText(QCoreApplication.translate("AlternativeWindow", u"0x03", None));
+        ___qtablewidgetitem239 = self.tableWidget_4.item(3, 1)
+        ___qtablewidgetitem239.setText(QCoreApplication.translate("AlternativeWindow", u"43", None));
+        ___qtablewidgetitem240 = self.tableWidget_4.item(4, 0)
+        ___qtablewidgetitem240.setText(QCoreApplication.translate("AlternativeWindow", u"0x04", None));
+        ___qtablewidgetitem241 = self.tableWidget_4.item(4, 1)
+        ___qtablewidgetitem241.setText(QCoreApplication.translate("AlternativeWindow", u"9F", None));
+        ___qtablewidgetitem242 = self.tableWidget_4.item(5, 0)
+        ___qtablewidgetitem242.setText(QCoreApplication.translate("AlternativeWindow", u"0x05", None));
+        ___qtablewidgetitem243 = self.tableWidget_4.item(5, 1)
+        ___qtablewidgetitem243.setText(QCoreApplication.translate("AlternativeWindow", u"BF", None));
+        ___qtablewidgetitem244 = self.tableWidget_4.item(6, 0)
+        ___qtablewidgetitem244.setText(QCoreApplication.translate("AlternativeWindow", u"0x06", None));
+        ___qtablewidgetitem245 = self.tableWidget_4.item(6, 1)
+        ___qtablewidgetitem245.setText(QCoreApplication.translate("AlternativeWindow", u"6D", None));
+        ___qtablewidgetitem246 = self.tableWidget_4.item(7, 0)
+        ___qtablewidgetitem246.setText(QCoreApplication.translate("AlternativeWindow", u"0x07", None));
+        ___qtablewidgetitem247 = self.tableWidget_4.item(7, 1)
+        ___qtablewidgetitem247.setText(QCoreApplication.translate("AlternativeWindow", u"90", None));
+        ___qtablewidgetitem248 = self.tableWidget_4.item(8, 0)
+        ___qtablewidgetitem248.setText(QCoreApplication.translate("AlternativeWindow", u"0x08", None));
+        ___qtablewidgetitem249 = self.tableWidget_4.item(8, 1)
+        ___qtablewidgetitem249.setText(QCoreApplication.translate("AlternativeWindow", u"40", None));
+        ___qtablewidgetitem250 = self.tableWidget_4.item(9, 0)
+        ___qtablewidgetitem250.setText(QCoreApplication.translate("AlternativeWindow", u"0x09", None));
+        ___qtablewidgetitem251 = self.tableWidget_4.item(9, 1)
+        ___qtablewidgetitem251.setText(QCoreApplication.translate("AlternativeWindow", u"36", None));
+        ___qtablewidgetitem252 = self.tableWidget_4.item(10, 0)
+        ___qtablewidgetitem252.setText(QCoreApplication.translate("AlternativeWindow", u"0x0A", None));
+        ___qtablewidgetitem253 = self.tableWidget_4.item(10, 1)
+        ___qtablewidgetitem253.setText(QCoreApplication.translate("AlternativeWindow", u"BB", None));
+        ___qtablewidgetitem254 = self.tableWidget_4.item(11, 0)
+        ___qtablewidgetitem254.setText(QCoreApplication.translate("AlternativeWindow", u"0x0B", None));
+        ___qtablewidgetitem255 = self.tableWidget_4.item(11, 1)
+        ___qtablewidgetitem255.setText(QCoreApplication.translate("AlternativeWindow", u"46", None));
+        ___qtablewidgetitem256 = self.tableWidget_4.item(12, 0)
+        ___qtablewidgetitem256.setText(QCoreApplication.translate("AlternativeWindow", u"0x0C", None));
+        ___qtablewidgetitem257 = self.tableWidget_4.item(12, 1)
+        ___qtablewidgetitem257.setText(QCoreApplication.translate("AlternativeWindow", u"02", None));
+        ___qtablewidgetitem258 = self.tableWidget_4.item(13, 0)
+        ___qtablewidgetitem258.setText(QCoreApplication.translate("AlternativeWindow", u"0x0D", None));
+        ___qtablewidgetitem259 = self.tableWidget_4.item(13, 1)
+        ___qtablewidgetitem259.setText(QCoreApplication.translate("AlternativeWindow", u"1D", None));
+        ___qtablewidgetitem260 = self.tableWidget_4.item(14, 0)
+        ___qtablewidgetitem260.setText(QCoreApplication.translate("AlternativeWindow", u"0x0E", None));
+        ___qtablewidgetitem261 = self.tableWidget_4.item(14, 1)
+        ___qtablewidgetitem261.setText(QCoreApplication.translate("AlternativeWindow", u"12", None));
+        ___qtablewidgetitem262 = self.tableWidget_4.item(15, 0)
+        ___qtablewidgetitem262.setText(QCoreApplication.translate("AlternativeWindow", u"0x0F", None));
+        ___qtablewidgetitem263 = self.tableWidget_4.item(15, 1)
+        ___qtablewidgetitem263.setText(QCoreApplication.translate("AlternativeWindow", u"05", None));
+        ___qtablewidgetitem264 = self.tableWidget_4.item(16, 0)
+        ___qtablewidgetitem264.setText(QCoreApplication.translate("AlternativeWindow", u"0x10", None));
+        ___qtablewidgetitem265 = self.tableWidget_4.item(16, 1)
+        ___qtablewidgetitem265.setText(QCoreApplication.translate("AlternativeWindow", u"62", None));
+        ___qtablewidgetitem266 = self.tableWidget_4.item(17, 0)
+        ___qtablewidgetitem266.setText(QCoreApplication.translate("AlternativeWindow", u"0x11", None));
+        ___qtablewidgetitem267 = self.tableWidget_4.item(17, 1)
+        ___qtablewidgetitem267.setText(QCoreApplication.translate("AlternativeWindow", u"C1", None));
+        ___qtablewidgetitem268 = self.tableWidget_4.item(18, 0)
+        ___qtablewidgetitem268.setText(QCoreApplication.translate("AlternativeWindow", u"0x12", None));
+        ___qtablewidgetitem269 = self.tableWidget_4.item(18, 1)
+        ___qtablewidgetitem269.setText(QCoreApplication.translate("AlternativeWindow", u"1D", None));
+        ___qtablewidgetitem270 = self.tableWidget_4.item(19, 0)
+        ___qtablewidgetitem270.setText(QCoreApplication.translate("AlternativeWindow", u"0x13", None));
+        ___qtablewidgetitem271 = self.tableWidget_4.item(19, 1)
+        ___qtablewidgetitem271.setText(QCoreApplication.translate("AlternativeWindow", u"41", None));
+        ___qtablewidgetitem272 = self.tableWidget_4.item(20, 0)
+        ___qtablewidgetitem272.setText(QCoreApplication.translate("AlternativeWindow", u"0x14", None));
+        ___qtablewidgetitem273 = self.tableWidget_4.item(20, 1)
+        ___qtablewidgetitem273.setText(QCoreApplication.translate("AlternativeWindow", u"32", None));
+        ___qtablewidgetitem274 = self.tableWidget_4.item(21, 0)
+        ___qtablewidgetitem274.setText(QCoreApplication.translate("AlternativeWindow", u"0x15", None));
+        ___qtablewidgetitem275 = self.tableWidget_4.item(21, 1)
+        ___qtablewidgetitem275.setText(QCoreApplication.translate("AlternativeWindow", u"9B", None));
+        ___qtablewidgetitem276 = self.tableWidget_4.item(22, 0)
+        ___qtablewidgetitem276.setText(QCoreApplication.translate("AlternativeWindow", u"0x16", None));
+        ___qtablewidgetitem277 = self.tableWidget_4.item(22, 1)
+        ___qtablewidgetitem277.setText(QCoreApplication.translate("AlternativeWindow", u"BF", None));
+        ___qtablewidgetitem278 = self.tableWidget_4.item(23, 0)
+        ___qtablewidgetitem278.setText(QCoreApplication.translate("AlternativeWindow", u"0x17", None));
+        ___qtablewidgetitem279 = self.tableWidget_4.item(23, 1)
+        ___qtablewidgetitem279.setText(QCoreApplication.translate("AlternativeWindow", u"51", None));
+        ___qtablewidgetitem280 = self.tableWidget_4.item(24, 0)
+        ___qtablewidgetitem280.setText(QCoreApplication.translate("AlternativeWindow", u"0x18", None));
+        ___qtablewidgetitem281 = self.tableWidget_4.item(24, 1)
+        ___qtablewidgetitem281.setText(QCoreApplication.translate("AlternativeWindow", u"24", None));
+        ___qtablewidgetitem282 = self.tableWidget_4.item(25, 0)
+        ___qtablewidgetitem282.setText(QCoreApplication.translate("AlternativeWindow", u"0x19", None));
+        ___qtablewidgetitem283 = self.tableWidget_4.item(25, 1)
+        ___qtablewidgetitem283.setText(QCoreApplication.translate("AlternativeWindow", u"71", None));
+        ___qtablewidgetitem284 = self.tableWidget_4.item(26, 0)
+        ___qtablewidgetitem284.setText(QCoreApplication.translate("AlternativeWindow", u"0x1A", None));
+        ___qtablewidgetitem285 = self.tableWidget_4.item(26, 1)
+        ___qtablewidgetitem285.setText(QCoreApplication.translate("AlternativeWindow", u"C5", None));
+        ___qtablewidgetitem286 = self.tableWidget_4.item(27, 0)
+        ___qtablewidgetitem286.setText(QCoreApplication.translate("AlternativeWindow", u"0x1B", None));
+        ___qtablewidgetitem287 = self.tableWidget_4.item(27, 1)
+        ___qtablewidgetitem287.setText(QCoreApplication.translate("AlternativeWindow", u"23", None));
         self.tableWidget_4.setSortingEnabled(__sortingEnabled3)
 
         self.pushButton_14.setText(QCoreApplication.translate("AlternativeWindow", u"Reset", None))

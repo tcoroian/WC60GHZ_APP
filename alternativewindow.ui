@@ -503,7 +503,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                           <item>
                            <widget class="QLabel" name="lbl_temp_tx_dyn">
                             <property name="text">
-                             <string>15 °C</string>
+                             <string>No context</string>
                             </property>
                            </widget>
                           </item>
@@ -534,7 +534,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                           <item>
                            <widget class="QLabel" name="lbl_power_usage_tx_dyn">
                             <property name="text">
-                             <string>200 mV</string>
+                             <string>No context</string>
                             </property>
                            </widget>
                           </item>
@@ -717,7 +717,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="0" column="1">
                       <property name="text">
-                       <string>34</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="1" column="0">
@@ -727,7 +727,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="1" column="1">
                       <property name="text">
-                       <string>4A</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="2" column="0">
@@ -737,7 +737,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="2" column="1">
                       <property name="text">
-                       <string>32</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="3" column="0">
@@ -747,7 +747,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="3" column="1">
                       <property name="text">
-                       <string>43</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="4" column="0">
@@ -757,7 +757,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="4" column="1">
                       <property name="text">
-                       <string>9F</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="5" column="0">
@@ -767,7 +767,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="5" column="1">
                       <property name="text">
-                       <string>BF</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="6" column="0">
@@ -777,7 +777,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="6" column="1">
                       <property name="text">
-                       <string>6D</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="7" column="0">
@@ -787,7 +787,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="7" column="1">
                       <property name="text">
-                       <string>90</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="8" column="0">
@@ -797,7 +797,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="8" column="1">
                       <property name="text">
-                       <string>40</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="9" column="0">
@@ -807,7 +807,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="9" column="1">
                       <property name="text">
-                       <string>36</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="10" column="0">
@@ -817,7 +817,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="10" column="1">
                       <property name="text">
-                       <string>BB</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="11" column="0">
@@ -827,7 +827,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="11" column="1">
                       <property name="text">
-                       <string>46</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="12" column="0">
@@ -837,7 +837,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="12" column="1">
                       <property name="text">
-                       <string>02</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="13" column="0">
@@ -847,7 +847,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="13" column="1">
                       <property name="text">
-                       <string>1D</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="14" column="0">
@@ -857,7 +857,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="14" column="1">
                       <property name="text">
-                       <string>12</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="15" column="0">
@@ -867,7 +867,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="15" column="1">
                       <property name="text">
-                       <string>05</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="16" column="0">
@@ -877,7 +877,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="16" column="1">
                       <property name="text">
-                       <string>62</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="17" column="0">
@@ -887,7 +887,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="17" column="1">
                       <property name="text">
-                       <string>C1</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="18" column="0">
@@ -897,7 +897,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="18" column="1">
                       <property name="text">
-                       <string>1D</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="19" column="0">
@@ -907,7 +907,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="19" column="1">
                       <property name="text">
-                       <string>41</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="20" column="0">
@@ -917,7 +917,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="20" column="1">
                       <property name="text">
-                       <string>32</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="21" column="0">
@@ -927,7 +927,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="21" column="1">
                       <property name="text">
-                       <string>9B</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="22" column="0">
@@ -937,7 +937,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="22" column="1">
                       <property name="text">
-                       <string>BF</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="23" column="0">
@@ -947,7 +947,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="23" column="1">
                       <property name="text">
-                       <string>51</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="24" column="0">
@@ -957,7 +957,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="24" column="1">
                       <property name="text">
-                       <string>24</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="25" column="0">
@@ -967,7 +967,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="25" column="1">
                       <property name="text">
-                       <string>71</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="26" column="0">
@@ -977,7 +977,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="26" column="1">
                       <property name="text">
-                       <string>C5</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="27" column="0">
@@ -987,7 +987,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="27" column="1">
                       <property name="text">
-                       <string>23</string>
+                       <string/>
                       </property>
                      </item>
                     </widget>
@@ -1218,7 +1218,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                           <item>
                            <widget class="QLabel" name="lbl_temp_rx_dyn">
                             <property name="text">
-                             <string>15 °C</string>
+                             <string>No context</string>
                             </property>
                            </widget>
                           </item>
@@ -1249,7 +1249,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                           <item>
                            <widget class="QLabel" name="lbl_power_usage_rx_dyn">
                             <property name="text">
-                             <string>255 mV</string>
+                             <string>No context</string>
                             </property>
                            </widget>
                           </item>
@@ -1432,7 +1432,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="0" column="1">
                       <property name="text">
-                       <string>34</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="1" column="0">
@@ -1442,7 +1442,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="1" column="1">
                       <property name="text">
-                       <string>4A</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="2" column="0">
@@ -1452,7 +1452,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="2" column="1">
                       <property name="text">
-                       <string>32</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="3" column="0">
@@ -1462,7 +1462,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="3" column="1">
                       <property name="text">
-                       <string>43</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="4" column="0">
@@ -1472,7 +1472,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="4" column="1">
                       <property name="text">
-                       <string>9F</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="5" column="0">
@@ -1482,7 +1482,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="5" column="1">
                       <property name="text">
-                       <string>BF</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="6" column="0">
@@ -1492,7 +1492,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="6" column="1">
                       <property name="text">
-                       <string>6D</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="7" column="0">
@@ -1502,7 +1502,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="7" column="1">
                       <property name="text">
-                       <string>90</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="8" column="0">
@@ -1512,7 +1512,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="8" column="1">
                       <property name="text">
-                       <string>40</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="9" column="0">
@@ -1522,7 +1522,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="9" column="1">
                       <property name="text">
-                       <string>36</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="10" column="0">
@@ -1532,7 +1532,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="10" column="1">
                       <property name="text">
-                       <string>BB</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="11" column="0">
@@ -1542,7 +1542,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="11" column="1">
                       <property name="text">
-                       <string>46</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="12" column="0">
@@ -1552,7 +1552,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="12" column="1">
                       <property name="text">
-                       <string>02</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="13" column="0">
@@ -1562,7 +1562,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="13" column="1">
                       <property name="text">
-                       <string>1D</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="14" column="0">
@@ -1572,7 +1572,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="14" column="1">
                       <property name="text">
-                       <string>12</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="15" column="0">
@@ -1582,7 +1582,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="15" column="1">
                       <property name="text">
-                       <string>05</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="16" column="0">
@@ -1592,7 +1592,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="16" column="1">
                       <property name="text">
-                       <string>62</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="17" column="0">
@@ -1602,7 +1602,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="17" column="1">
                       <property name="text">
-                       <string>C1</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="18" column="0">
@@ -1612,7 +1612,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="18" column="1">
                       <property name="text">
-                       <string>1D</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="19" column="0">
@@ -1622,7 +1622,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="19" column="1">
                       <property name="text">
-                       <string>41</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="20" column="0">
@@ -1632,7 +1632,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="20" column="1">
                       <property name="text">
-                       <string>32</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="21" column="0">
@@ -1642,7 +1642,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="21" column="1">
                       <property name="text">
-                       <string>9B</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="22" column="0">
@@ -1652,7 +1652,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="22" column="1">
                       <property name="text">
-                       <string>BF</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="23" column="0">
@@ -1662,7 +1662,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="23" column="1">
                       <property name="text">
-                       <string>51</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="24" column="0">
@@ -1672,7 +1672,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="24" column="1">
                       <property name="text">
-                       <string>24</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="25" column="0">
@@ -1682,7 +1682,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="25" column="1">
                       <property name="text">
-                       <string>71</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="26" column="0">
@@ -1692,7 +1692,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="26" column="1">
                       <property name="text">
-                       <string>C5</string>
+                       <string/>
                       </property>
                      </item>
                      <item row="27" column="0">
@@ -1702,7 +1702,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="27" column="1">
                       <property name="text">
-                       <string>23</string>
+                       <string/>
                       </property>
                      </item>
                     </widget>

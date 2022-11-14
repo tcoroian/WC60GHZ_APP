@@ -49,6 +49,14 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.btn_refresh_regs_rx.setEnabled(enable)
         self.ui.btn_reset_regs_rx.setEnabled(enable)
 
+    def clear_table_tx(self):
+        for i in range(self.ui.tb_registers_tx.rowCount()):
+            self.ui.tb_registers_tx.setItem(i, 1, QtWidgets.QTableWidgetItem(''))
+
+    def clear_table_rx(self):
+        for i in range(self.ui.tb_registers_rx.rowCount()):
+            self.ui.tb_registers_rx.setItem(i, 1, QtWidgets.QTableWidgetItem(''))
+
     def disable_options(self):
         self.ui.lbl_power_tx.setEnabled(False)
         self.ui.lbl_power_rx.setEnabled(False)
@@ -77,11 +85,19 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.chk_autotuning_rx.setChecked(False)
         self.disable_options()
 
-        self.ui.lbl_hardware_name_dyn.setText('No context')
-        self.ui.lbl_vendor_dyn.setText('No context')
-        self.ui.lbl_hardware_carrier_dyn.setText('No context')
-        self.ui.lbl_hardware_serial_dyn.setText('No context')
-        self.ui.lbl_local_dyn.setText('No context')
+        self.ui.lbl_hardware_name_dyn.setText(constants.text_no_context)
+        self.ui.lbl_vendor_dyn.setText(constants.text_no_context)
+        self.ui.lbl_hardware_carrier_dyn.setText(constants.text_no_context)
+        self.ui.lbl_hardware_serial_dyn.setText(constants.text_no_context)
+        self.ui.lbl_local_dyn.setText(constants.text_no_context)
+
+        self.ui.lbl_temp_tx_dyn.setText(constants.text_no_context)
+        self.ui.lbl_temp_rx_dyn.setText(constants.text_no_context)
+        self.ui.lbl_power_usage_tx_dyn.setText(constants.text_no_context)
+        self.ui.lbl_power_usage_rx_dyn.setText(constants.text_no_context)
+
+        self.clear_table_tx()
+        self.clear_table_rx()
 
     def __init__(self):
         super(MainWindow, self).__init__()
@@ -111,10 +127,16 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.chk_autotuning_tx.clicked.connect(self.autotuning_switch_tx)
         self.ui.chk_autotuning_rx.clicked.connect(self.autotuning_switch_rx)
 
+        # Connect slots to refresh registers button
+        self.ui.btn_refresh_regs_tx.clicked.connect(self.read_regs_tx)
+        self.ui.btn_refresh_regs_rx.clicked.connect(self.read_regs_rx)
+
     def ctx_changed(self):
         text = self.ui.cb_available_contexts.currentText()
         if not text.startswith("usb"):
             return
+
+        # Disable "Select context..." option
         self.ui.cb_available_contexts.model().item(0).setEnabled(False)
 
         try:
@@ -122,6 +144,7 @@ class MainWindow(QtWidgets.QMainWindow):
         except:
             return
 
+        # Reset user interface after changing context
         self.reset_ui()
 
         # Check device type (9615 or 9625)
@@ -147,48 +170,89 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def power_switch_tx(self, value):
         if value == 1:
+            # Change appearance of power switch
             self.ui.btn_power_tx.setStyleSheet(constants.style_btn_on)
             self.ui.btn_power_tx.setText("Turn OFF")
 
+            # Enable status and monitoring options
             self.switch_device_options_tx()
             autotuning = self.ui.chk_autotuning_tx.isChecked()
             self.switch_tuning_options_tx(not autotuning)
             self.switch_status_options_tx()
             self.switch_register_map_tx()
+            self.read_regs_tx()
 
+            # Start all monitoring threads
             self.monitors.start_monitoring_lock_tx(self.ui.cw_lock_detect_tx)
+            self.monitors.start_monitoring_temp_tx(self.ui.lbl_temp_tx_dyn)
+            self.monitors.start_monitoring_power_tx(self.ui.lbl_power_usage_tx_dyn)
         else:
+            # Change appearance of power switch
             self.ui.btn_power_tx.setStyleSheet(constants.style_btn_off)
             self.ui.btn_power_tx.setText("Turn ON")
 
+            # Disable status and monitoring options
             self.switch_device_options_tx(False)
             self.switch_tuning_options_tx(False)
             self.switch_status_options_tx(False)
             self.switch_register_map_tx(False)
+            self.clear_table_tx()
 
+            # Stop all monitoring threads
             self.monitors.stop_monitoring_lock_tx()
+            self.monitors.stop_monitoring_temp_tx()
+            self.monitors.stop_monitoring_power_tx()
 
     def power_switch_rx(self, value):
         if value == 1:
+            # Change appearance of power switch
             self.ui.btn_power_rx.setStyleSheet(constants.style_btn_on)
             self.ui.btn_power_rx.setText("Turn OFF")
+
+            # Enable status and monitoring options
             self.switch_device_options_rx()
             autotuning = self.ui.chk_autotuning_rx.isChecked()
             self.switch_tuning_options_rx(not autotuning)
             self.switch_status_options_rx()
             self.switch_register_map_rx()
+            self.read_regs_rx()
+
+            # Start all monitoring threads
             self.monitors.start_monitoring_lock_rx(self.ui.cw_lock_detect_rx)
+            self.monitors.start_monitoring_temp_rx(self.ui.lbl_temp_rx_dyn)
+            self.monitors.start_monitoring_power_rx(self.ui.lbl_power_usage_rx_dyn)
         else:
+            # Change appearance of power switch
             self.ui.btn_power_rx.setStyleSheet(constants.style_btn_off)
             self.ui.btn_power_rx.setText("Turn ON")
+
+            # Disable status and monitoring options
             self.switch_device_options_rx(False)
             self.switch_tuning_options_rx(False)
             self.switch_status_options_rx(False)
             self.switch_register_map_rx(False)
+            self.clear_table_rx()
+
+            # Stop all monitoring threads
             self.monitors.stop_monitoring_lock_rx()
+            self.monitors.stop_monitoring_temp_rx()
+            self.monitors.stop_monitoring_power_rx()
 
     def autotuning_switch_tx(self, state):
         self.switch_tuning_options_tx(not state)
 
     def autotuning_switch_rx(self, state):
         self.switch_tuning_options_rx(not state)
+    def read_regs_tx(self):
+        self.ui.tb_registers_tx.setItem(0, 1, QtWidgets.QTableWidgetItem("34"))
+        self.ui.tb_registers_tx.setItem(1, 1, QtWidgets.QTableWidgetItem("A2"))
+        self.ui.tb_registers_tx.setItem(2, 1, QtWidgets.QTableWidgetItem("8C"))
+        self.ui.tb_registers_tx.setItem(3, 1, QtWidgets.QTableWidgetItem("90"))
+        self.ui.tb_registers_tx.setItem(4, 1, QtWidgets.QTableWidgetItem("1F"))
+
+    def read_regs_rx(self):
+        self.ui.tb_registers_rx.setItem(0, 1, QtWidgets.QTableWidgetItem("34"))
+        self.ui.tb_registers_rx.setItem(1, 1, QtWidgets.QTableWidgetItem("A2"))
+        self.ui.tb_registers_rx.setItem(2, 1, QtWidgets.QTableWidgetItem("8C"))
+        self.ui.tb_registers_rx.setItem(3, 1, QtWidgets.QTableWidgetItem("90"))
+        self.ui.tb_registers_rx.setItem(4, 1, QtWidgets.QTableWidgetItem("1F"))
