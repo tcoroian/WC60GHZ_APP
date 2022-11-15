@@ -18,12 +18,7 @@ style_led_grey = """
     background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, stop:0 rgba(200, 200, 200, 255), stop:1 rgba(134, 134, 134, 255))
 """
 
-style_btn_on = """
-    background-color: lightgreen
-"""
-
-style_btn_off = """
-    background-color: lightgrey
-"""
+style_btn_on = "background-color: lightgreen"
+style_btn_off = "background-color: lightgrey"
 
 text_no_context = "No context"

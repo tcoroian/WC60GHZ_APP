@@ -1,5 +1,6 @@
 # This Python file uses the following encoding: utf-8
 from PySide6 import QtWidgets
+from PySide6.QtCore import Qt
 from ui_alternativewindow import Ui_AlternativeWindow
 
 import iio
@@ -99,6 +100,49 @@ class MainWindow(QtWidgets.QMainWindow):
         self.clear_table_tx()
         self.clear_table_rx()
 
+        self.populate_lo_frequency_tx()
+        self.populate_lo_frequency_rx()
+        self.populate_gain_tx()
+        self.populate_gain_rx()
+        self.populate_rf_index()
+        self.populate_bb_index()
+
+    def populate_lo_frequency_tx(self):
+        self.ui.cb_lo_frequency_tx.clear()
+        self.ui.cb_lo_frequency_tx.addItems(["Select frequency..."])
+        frequencies = ["56.2", "57.0", "59.2", "60.0", "61.2", "63.0"]
+        self.ui.cb_lo_frequency_tx.addItems(frequencies)
+
+    def populate_lo_frequency_rx(self):
+        self.ui.cb_lo_frequency_rx.clear()
+        self.ui.cb_lo_frequency_rx.addItems(["Select frequency..."])
+        frequencies = ["56.2", "57.0", "59.2", "60.0", "61.2", "63.0"]
+        self.ui.cb_lo_frequency_rx.addItems(frequencies)
+
+    def populate_gain_tx(self):
+        self.ui.cb_gain_tx.clear()
+        self.ui.cb_gain_tx.addItems(["Select gain..."])
+        gains = ["5", "7", "12", "13", "19", "21"]
+        self.ui.cb_gain_tx.addItems(gains)
+
+    def populate_gain_rx(self):
+        self.ui.cb_gain_rx.clear()
+        self.ui.cb_gain_rx.addItems(["Select gain..."])
+        gains = ["5", "7", "12", "13", "19", "21"]
+        self.ui.cb_gain_rx.addItems(gains)
+
+    def populate_rf_index(self):
+        self.ui.cb_rf_attn_index.clear()
+        self.ui.cb_rf_attn_index.addItems(["Select index..."])
+        attn_indexes = ["1", "3", "7", "9", "11", "13"]
+        self.ui.cb_rf_attn_index.addItems(attn_indexes)
+
+    def populate_bb_index(self):
+        self.ui.cb_bb_attn_index.clear()
+        self.ui.cb_bb_attn_index.addItems(["Select index..."])
+        attn_indexes = ["1", "3", "7", "9", "11", "13"]
+        self.ui.cb_bb_attn_index.addItems(attn_indexes)
+
     def __init__(self):
         super(MainWindow, self).__init__()
         self.ui = Ui_AlternativeWindow()
@@ -111,10 +155,22 @@ class MainWindow(QtWidgets.QMainWindow):
         # Disable all options in TX and RX group boxes
         self.disable_options()
 
-        # Add usb contexts to dropdown menu
+        # Add usb contexts to combo box
         self.ui.cb_available_contexts.clear()
         self.ui.cb_available_contexts.addItems(["Select context..."])
         self.monitors.start_context_search(self)
+
+        # Add LO frequencies to combo boxes
+        self.populate_lo_frequency_tx()
+        self.populate_lo_frequency_rx()
+
+        # Add gain values to combo boxes
+        self.populate_gain_tx()
+        self.populate_gain_rx()
+
+        # Add attenuation indexes to combo boxes
+        self.populate_rf_index()
+        self.populate_bb_index()
 
         # Connect slot to update context labels
         self.ui.cb_available_contexts.activated.connect(self.ctx_changed)
@@ -134,6 +190,18 @@ class MainWindow(QtWidgets.QMainWindow):
         # Connect slots to reset registers buttons
         self.ui.btn_reset_regs_tx.clicked.connect(self.reset_regs_tx)
         self.ui.btn_reset_regs_rx.clicked.connect(self.reset_regs_rx)
+
+        # Connect slots to LO frequency combo boxes
+        self.ui.cb_lo_frequency_tx.activated.connect(self.lo_changed_tx)
+        self.ui.cb_lo_frequency_rx.activated.connect(self.lo_changed_rx)
+
+        # Connect slots to gain combo boxes
+        self.ui.cb_gain_tx.activated.connect(self.gain_changed_tx)
+        self.ui.cb_gain_rx.activated.connect(self.gain_changed_rx)
+
+        # Connect slots to attenuation index combo boxes
+        self.ui.cb_rf_attn_index.activated.connect(self.rf_index_changed_tx)
+        self.ui.cb_bb_attn_index.activated.connect(self.bb_index_changed_tx)
 
     def ctx_changed(self):
         text = self.ui.cb_available_contexts.currentText()
@@ -287,3 +355,44 @@ class MainWindow(QtWidgets.QMainWindow):
             print("YAY!")
         else:
             print("NAY!")
+    def lo_changed_tx(self):
+        text = self.ui.cb_lo_frequency_tx.currentText()
+        self.ui.cb_lo_frequency_tx.model().item(0).setEnabled(False)
+
+        # Set new LO frequency
+        print(text)
+
+    def lo_changed_rx(self):
+        text = self.ui.cb_lo_frequency_rx.currentText()
+        self.ui.cb_lo_frequency_rx.model().item(0).setEnabled(False)
+
+        # Set new LO frequency
+        print(text)
+
+    def gain_changed_tx(self):
+        text = self.ui.cb_gain_tx.currentText()
+        self.ui.cb_gain_tx.model().item(0).setEnabled(False)
+
+        # Set new gain frequency
+        print(text)
+
+    def gain_changed_rx(self):
+        text = self.ui.cb_gain_rx.currentText()
+        self.ui.cb_gain_rx.model().item(0).setEnabled(False)
+
+        # Set new gain frequency
+        print(text)
+
+    def rf_index_changed_tx(self):
+        text = self.ui.cb_rf_attn_index.currentText()
+        self.ui.cb_rf_attn_index.model().item(0).setEnabled(False)
+
+        # Set new RF attenuation index frequency
+        print(text)
+
+    def bb_index_changed_tx(self):
+        text = self.ui.cb_bb_attn_index.currentText()
+        self.ui.cb_bb_attn_index.model().item(0).setEnabled(False)
+
+        # Set new BB attenuation index frequency
+        print(text)
