@@ -44,7 +44,7 @@ class StatusMonitor:
         while True:
             cb = window.ui.cb_available_contexts
             available_ports = QSerialPortInfo.availablePorts()
-            ports = ["/dev/" + port.portName() for port in available_ports]
+            ports = [port.portName() for port in available_ports]
             options_in_cb = [cb.itemText(i) for i in range(1, cb.count())]
             # print(ports)
             for port in ports:

@@ -231,6 +231,9 @@ class MainWindow(QtWidgets.QMainWindow):
         
         if text == "Select context...":
             return
+        
+        if sys.platform.startswith("linux"):
+            text = "/dev/"  + text
 
         # Disable "Select context..." option
         self.ui.cb_available_contexts.model().item(0).setEnabled(False)
