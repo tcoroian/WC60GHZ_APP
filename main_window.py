@@ -6,6 +6,9 @@ from ui_alternativewindow import Ui_AlternativeWindow
 import iio
 import constants
 import status_monitor
+import sys
+import glob
+import serial
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -142,6 +145,25 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.cb_bb_attn_index.addItems(["Select index..."])
         attn_indexes = ["1", "3", "7", "9", "11", "13"]
         self.ui.cb_bb_attn_index.addItems(attn_indexes)
+        
+    def get_serial_ports(self):
+        platform = sys.platform
+        if platform.startswith("win"):
+            ports = ['COM%s' % (i+1) for i in range (256)]
+        elif platform.startswith("linux"):
+            ports = glob.glob("/dev/tty[A-Za-z]*")
+        else:
+            raise EnvironmentError("Unsuported platform")
+        
+        result = []
+        for port in ports:
+            try: 
+                s = serial.Serial(port)
+                s.close()
+                result.append(port)
+            except (OSError, serial.SerialException):
+                pass
+        return result
 
     def __init__(self):
         super(MainWindow, self).__init__()
@@ -173,7 +195,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.populate_bb_index()
 
         # Connect slot to update context labels
-        self.ui.cb_available_contexts.activated.connect(self.ctx_changed)
+        self.ui.cb_available_contexts.currentIndexChanged.connect(self.ctx_changed)
 
         # Connect slots to enable/disable device configuration and monitoring
         self.ui.btn_power_tx.clicked.connect(self.power_switch_tx)
@@ -205,15 +227,32 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def ctx_changed(self):
         text = self.ui.cb_available_contexts.currentText()
-        if not text.startswith("usb"):
+        index = self.ui.cb_available_contexts.findText(text)
+        
+        if text == "Select context...":
             return
 
         # Disable "Select context..." option
         self.ui.cb_available_contexts.model().item(0).setEnabled(False)
 
         try:
-            self.iio_ctx = iio.Context(text)
-        except:
+            self.iio_ctx = iio.Context("serial:" + text + ",57600,8n1n")
+            print(self.iio_ctx.description)
+        except Exception as e:
+            if str(e).__contains__("Errno 5"):
+                # Context already created
+                pass
+            elif str(e).__contains__("Errno 2"):
+                # Device not connected
+                # Used when disconnecting a device
+                self.iio_ctx = None
+                self.ui.cb_available_contexts.removeItem(index)
+                self.ui.cb_available_contexts.setCurrentIndex(0)
+                self.reset_ui()
+            elif str(e).__contains__("Errno 1460"):
+                # Not an IIO device
+                self.iio_ctx = None
+                self.reset_ui()
             return
 
         # Reset user interface after changing context

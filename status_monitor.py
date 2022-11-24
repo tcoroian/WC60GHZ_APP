@@ -1,4 +1,5 @@
 # This Python file uses the following encoding: utf-8
+from PySide6.QtSerialPort import QSerialPortInfo
 
 import threading
 import time
@@ -19,25 +20,57 @@ class StatusMonitor:
     def __init__(self):
         pass
 
+    # def context_search(self, window):
+    #     added_contexts = list()
+    #     while True:
+    #         contexts = iio.scan_contexts()
+    #         if contexts != None:
+    #             # Boards are connected
+    #             for ctx in contexts.keys():
+    #                 if ctx.startswith("usb") and ctx not in added_contexts:
+    #                     window.ui.cb_available_contexts.addItems([ctx])
+    #                     added_contexts.append(ctx)
+    #         for old_ctx in added_contexts:
+    #             if old_ctx not in contexts:
+    #                 added_contexts.remove(old_ctx)
+    #                 index = window.ui.cb_available_contexts.findText(old_ctx)
+    #                 if index > -1:
+    #                     if window.ui.cb_available_contexts.currentIndex() == index:
+    #                         window.ui.cb_available_contexts.setCurrentIndex(0)
+    #                         window.reset_ui()
+    #                     window.ui.cb_available_contexts.removeItem(index)
+    
     def context_search(self, window):
-        added_contexts = list()
         while True:
-            contexts = iio.scan_contexts()
-            if contexts != None:
-                # Boards are connected
-                for ctx in contexts.keys():
-                    if ctx.startswith("usb") and ctx not in added_contexts:
-                        window.ui.cb_available_contexts.addItems([ctx])
-                        added_contexts.append(ctx)
-            for old_ctx in added_contexts:
-                if old_ctx not in contexts:
-                    added_contexts.remove(old_ctx)
-                    index = window.ui.cb_available_contexts.findText(old_ctx)
-                    if index > -1:
-                        if window.ui.cb_available_contexts.currentIndex() == index:
-                            window.ui.cb_available_contexts.setCurrentIndex(0)
-                            window.reset_ui()
-                        window.ui.cb_available_contexts.removeItem(index)
+            cb = window.ui.cb_available_contexts
+            available_ports = QSerialPortInfo.availablePorts()
+            ports = [port.portName() for port in available_ports]
+            options_in_cb = [cb.itemText(i) for i in range(1, cb.count())]
+            # print(ports)
+            for port in ports:
+                index = cb.findText(port)
+                if index <= 0:
+                    cb.addItems([port])
+                    
+            # Check if the selected device is still connected
+            if (cb.currentIndex() > 0):
+                try:
+                    ctx = iio.Context("serial:" + cb.currentText() + ",57600,8n1n")
+                    ctx = None
+                except Exception as e:
+                    if str(e).__contains__("Errno 2"):
+                        print("THR:\t" + str(e))
+                        cb.setItemText(cb.currentIndex(), "Device disconected")
+                        cb.currentIndexChanged.emit(cb.currentIndex())
+                    else:
+                        pass
+                    
+            for port in options_in_cb:
+                if port not in ports:
+                    index = cb.findText(port)
+                    cb.removeItem(index)
+            
+            time.sleep(5)
 
     def monitor_lock_mechanism_tx(self, led):
         while True:

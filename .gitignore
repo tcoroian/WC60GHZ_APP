@@ -1,5 +1,7 @@
 __pycache__/
 build/
 dist/
+
 WC60GHz.pyproject.user
 main.spec
+test_serial_connection.py
