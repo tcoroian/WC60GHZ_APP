@@ -237,9 +237,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
         try:
             self.iio_ctx = iio.Context("serial:" + text + ",57600,8n1n")
-            print(self.iio_ctx.description)
+            # print(self.iio_ctx.description)
         except Exception as e:
-            if str(e).__contains__("Errno 5"):
+            if str(e).__contains__("Errno 5") or str(e).__contains__("Errno 16"):
                 # Context already created
                 pass
             elif str(e).__contains__("Errno 2"):
@@ -249,7 +249,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 self.ui.cb_available_contexts.removeItem(index)
                 self.ui.cb_available_contexts.setCurrentIndex(0)
                 self.reset_ui()
-            elif str(e).__contains__("Errno 1460"):
+            elif str(e).__contains__("Errno 1460") or str(e).__contains__("Errno 110"):
                 # Not an IIO device
                 self.iio_ctx = None
                 self.reset_ui()

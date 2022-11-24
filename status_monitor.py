@@ -44,7 +44,7 @@ class StatusMonitor:
         while True:
             cb = window.ui.cb_available_contexts
             available_ports = QSerialPortInfo.availablePorts()
-            ports = [port.portName() for port in available_ports]
+            ports = ["/dev/" + port.portName() for port in available_ports]
             options_in_cb = [cb.itemText(i) for i in range(1, cb.count())]
             # print(ports)
             for port in ports:
@@ -59,8 +59,7 @@ class StatusMonitor:
                     ctx = None
                 except Exception as e:
                     if str(e).__contains__("Errno 2"):
-                        print("THR:\t" + str(e))
-                        cb.setItemText(cb.currentIndex(), "Device disconected")
+                        # cb.setItemText(cb.currentIndex(), "Device disconected")
                         cb.currentIndexChanged.emit(cb.currentIndex())
                     else:
                         pass
