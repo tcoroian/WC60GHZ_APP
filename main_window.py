@@ -54,12 +54,16 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.btn_reset_regs_rx.setEnabled(enable)
 
     def clear_table_tx(self):
+        self.ui.tb_registers_tx.blockSignals(True)
         for i in range(self.ui.tb_registers_tx.rowCount()):
             self.ui.tb_registers_tx.setItem(i, 1, QtWidgets.QTableWidgetItem(''))
+        self.ui.tb_registers_tx.blockSignals(False)
 
     def clear_table_rx(self):
+        self.ui.tb_registers_rx.blockSignals(True)
         for i in range(self.ui.tb_registers_rx.rowCount()):
             self.ui.tb_registers_rx.setItem(i, 1, QtWidgets.QTableWidgetItem(''))
+        self.ui.tb_registers_rx.blockSignals(False)
 
     def disable_options(self):
         self.ui.lbl_power_tx.setEnabled(False)
@@ -89,7 +93,6 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.btn_power_tx.setText("Turn ON")
         self.ui.btn_power_rx.setStyleSheet(constants.style_btn_off)
         self.ui.btn_power_rx.setText("Turn ON")
-
 
         # Disable status and monitoring options
         self.switch_device_options_tx(False)
@@ -250,6 +253,63 @@ class MainWindow(QtWidgets.QMainWindow):
         # Connect slots to attenuation index combo boxes
         self.ui.cb_rf_attn_index.activated.connect(self.rf_index_changed_tx)
         self.ui.cb_bb_attn_index.activated.connect(self.bb_index_changed_tx)
+
+        # Connect slots to register maps
+        self.ui.tb_registers_tx.cellChanged.connect(self.update_cell_tx)
+        self.ui.tb_registers_rx.cellChanged.connect(self.update_cell_rx)
+
+    def update_cell_tx(self, row, column):
+        # Get reg address and value to write
+        reg = int(self.ui.tb_registers_tx.item(row, 0).text().split("x")[1], 16)
+        value = self.ui.tb_registers_tx.item(row, 1).text()
+
+        value = int(value.split("x")[1], 16) if value.__contains__("0x") else int(value, 16)
+        if value > 0xff:
+            # Abort if value is greater than 0xFF
+            QtWidgets.QMessageBox.critical(
+                self,
+                "Value outside of range",
+                "Value " + hex(value) + " is greater than 0xFF.",
+                buttons = QtWidgets.QMessageBox.Ok,
+                defaultButton = QtWidgets.QMessageBox.Ok
+            )
+            from_reg = self.iio_ctx.find_device("adc_demo").reg_read(reg)
+            self.ui.tb_registers_tx.blockSignals(True)
+            self.ui.tb_registers_tx.setItem(row, column, QtWidgets.QTableWidgetItem(hex(from_reg)))
+            self.ui.tb_registers_tx.blockSignals(False)
+            return
+
+        self.iio_ctx.find_device("adc_demo").reg_write(reg, value)
+
+        self.ui.tb_registers_tx.blockSignals(True)
+        self.ui.tb_registers_tx.setItem(row, column, QtWidgets.QTableWidgetItem(hex(value)))
+        self.ui.tb_registers_tx.blockSignals(False)
+
+    def update_cell_rx(self, row, column):
+        reg = int(self.ui.tb_registers_rx.item(row, 0).text().split("x")[1], 16)
+        value = self.ui.tb_registers_rx.item(row, 1).text()
+
+        value = int(value.split("x")[1], 16) if value.__contains__("0x") else int(value, 16)
+        if value > 0xff:
+            # Abort if value is greater than 0xFF
+            QtWidgets.QMessageBox.critical(
+                self,
+                "Value outside of range",
+                "Value " + hex(value) + " is greater than 0xFF.",
+                buttons = QtWidgets.QMessageBox.Ok,
+                defaultButton = QtWidgets.QMessageBox.Ok
+            )
+            from_reg = self.iio_ctx.find_device("dac_demo").reg_read(reg)
+            self.ui.tb_registers_rx.blockSignals(True)
+            self.ui.tb_registers_rx.setItem(row, column, QtWidgets.QTableWidgetItem(hex(from_reg)))
+            self.ui.tb_registers_rx.blockSignals(False)
+            return
+
+        self.iio_ctx.find_device("dac_demo").reg_write(reg, value)
+
+        self.ui.tb_registers_rx.blockSignals(True)
+        self.ui.tb_registers_rx.setItem(row, column, QtWidgets.QTableWidgetItem(hex(value)))
+        self.ui.tb_registers_rx.blockSignals(False)
 
     def ctx_changed(self):
         text = self.ui.cb_available_contexts.currentText()
@@ -414,19 +474,20 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def autotuning_switch_rx(self, state):
         self.switch_tuning_options_rx(not state)
+
     def read_regs_tx(self):
-        self.ui.tb_registers_tx.setItem(0, 1, QtWidgets.QTableWidgetItem("34"))
-        self.ui.tb_registers_tx.setItem(1, 1, QtWidgets.QTableWidgetItem("A2"))
-        self.ui.tb_registers_tx.setItem(2, 1, QtWidgets.QTableWidgetItem("8C"))
-        self.ui.tb_registers_tx.setItem(3, 1, QtWidgets.QTableWidgetItem("90"))
-        self.ui.tb_registers_tx.setItem(4, 1, QtWidgets.QTableWidgetItem("1F"))
+        self.ui.tb_registers_tx.blockSignals(True)
+        for i in range(16):
+            reg_value = hex(self.iio_ctx.find_device("adc_demo").reg_read(i))
+            self.ui.tb_registers_tx.setItem(i, 1, QtWidgets.QTableWidgetItem(str(reg_value)))
+        self.ui.tb_registers_tx.blockSignals(False)
 
     def read_regs_rx(self):
-        self.ui.tb_registers_rx.setItem(0, 1, QtWidgets.QTableWidgetItem("34"))
-        self.ui.tb_registers_rx.setItem(1, 1, QtWidgets.QTableWidgetItem("A2"))
-        self.ui.tb_registers_rx.setItem(2, 1, QtWidgets.QTableWidgetItem("8C"))
-        self.ui.tb_registers_rx.setItem(3, 1, QtWidgets.QTableWidgetItem("90"))
-        self.ui.tb_registers_rx.setItem(4, 1, QtWidgets.QTableWidgetItem("1F"))
+        self.ui.tb_registers_rx.blockSignals(True)
+        for i in range(16):
+            reg_value = hex(self.iio_ctx.find_device("dac_demo").reg_read(i))
+            self.ui.tb_registers_rx.setItem(i, 1, QtWidgets.QTableWidgetItem(str(reg_value)))
+        self.ui.tb_registers_rx.blockSignals(False)
     def reset_regs_tx(self):
         btn_option = QtWidgets.QMessageBox.warning(
             self,
@@ -437,9 +498,11 @@ class MainWindow(QtWidgets.QMainWindow):
         )
 
         if btn_option == QtWidgets.QMessageBox.Yes:
-            print("YAY!")
+            for i in range(16):
+                self.iio_ctx.find_device("adc_demo").reg_write(i, 0)
+            self.read_regs_tx()
         else:
-            print("NAY!")
+            return
 
     def reset_regs_rx(self):
         btn_option = QtWidgets.QMessageBox.warning(
@@ -451,9 +514,12 @@ class MainWindow(QtWidgets.QMainWindow):
         )
 
         if btn_option == QtWidgets.QMessageBox.Yes:
-            print("YAY!")
+            for i in range(16):
+                self.iio_ctx.find_device("dac_demo").reg_write(i, 0)
+            self.read_regs_rx()
         else:
-            print("NAY!")
+            return
+
     def lo_changed_tx(self):
         text = self.ui.cb_lo_frequency_tx.currentText()
         self.ui.cb_lo_frequency_tx.model().item(0).setEnabled(False)

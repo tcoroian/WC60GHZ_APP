@@ -444,114 +444,142 @@ class Ui_AlternativeWindow(object):
         __qtablewidgetitem29 = QTableWidgetItem()
         self.tb_registers_tx.setVerticalHeaderItem(27, __qtablewidgetitem29)
         __qtablewidgetitem30 = QTableWidgetItem()
+        __qtablewidgetitem30.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(0, 0, __qtablewidgetitem30)
         __qtablewidgetitem31 = QTableWidgetItem()
         self.tb_registers_tx.setItem(0, 1, __qtablewidgetitem31)
         __qtablewidgetitem32 = QTableWidgetItem()
+        __qtablewidgetitem32.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(1, 0, __qtablewidgetitem32)
         __qtablewidgetitem33 = QTableWidgetItem()
         self.tb_registers_tx.setItem(1, 1, __qtablewidgetitem33)
         __qtablewidgetitem34 = QTableWidgetItem()
+        __qtablewidgetitem34.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(2, 0, __qtablewidgetitem34)
         __qtablewidgetitem35 = QTableWidgetItem()
         self.tb_registers_tx.setItem(2, 1, __qtablewidgetitem35)
         __qtablewidgetitem36 = QTableWidgetItem()
+        __qtablewidgetitem36.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(3, 0, __qtablewidgetitem36)
         __qtablewidgetitem37 = QTableWidgetItem()
         self.tb_registers_tx.setItem(3, 1, __qtablewidgetitem37)
         __qtablewidgetitem38 = QTableWidgetItem()
+        __qtablewidgetitem38.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(4, 0, __qtablewidgetitem38)
         __qtablewidgetitem39 = QTableWidgetItem()
         self.tb_registers_tx.setItem(4, 1, __qtablewidgetitem39)
         __qtablewidgetitem40 = QTableWidgetItem()
+        __qtablewidgetitem40.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(5, 0, __qtablewidgetitem40)
         __qtablewidgetitem41 = QTableWidgetItem()
         self.tb_registers_tx.setItem(5, 1, __qtablewidgetitem41)
         __qtablewidgetitem42 = QTableWidgetItem()
+        __qtablewidgetitem42.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(6, 0, __qtablewidgetitem42)
         __qtablewidgetitem43 = QTableWidgetItem()
         self.tb_registers_tx.setItem(6, 1, __qtablewidgetitem43)
         __qtablewidgetitem44 = QTableWidgetItem()
+        __qtablewidgetitem44.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(7, 0, __qtablewidgetitem44)
         __qtablewidgetitem45 = QTableWidgetItem()
         self.tb_registers_tx.setItem(7, 1, __qtablewidgetitem45)
         __qtablewidgetitem46 = QTableWidgetItem()
+        __qtablewidgetitem46.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(8, 0, __qtablewidgetitem46)
         __qtablewidgetitem47 = QTableWidgetItem()
         self.tb_registers_tx.setItem(8, 1, __qtablewidgetitem47)
         __qtablewidgetitem48 = QTableWidgetItem()
+        __qtablewidgetitem48.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(9, 0, __qtablewidgetitem48)
         __qtablewidgetitem49 = QTableWidgetItem()
         self.tb_registers_tx.setItem(9, 1, __qtablewidgetitem49)
         __qtablewidgetitem50 = QTableWidgetItem()
+        __qtablewidgetitem50.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(10, 0, __qtablewidgetitem50)
         __qtablewidgetitem51 = QTableWidgetItem()
         self.tb_registers_tx.setItem(10, 1, __qtablewidgetitem51)
         __qtablewidgetitem52 = QTableWidgetItem()
+        __qtablewidgetitem52.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(11, 0, __qtablewidgetitem52)
         __qtablewidgetitem53 = QTableWidgetItem()
         self.tb_registers_tx.setItem(11, 1, __qtablewidgetitem53)
         __qtablewidgetitem54 = QTableWidgetItem()
+        __qtablewidgetitem54.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(12, 0, __qtablewidgetitem54)
         __qtablewidgetitem55 = QTableWidgetItem()
         self.tb_registers_tx.setItem(12, 1, __qtablewidgetitem55)
         __qtablewidgetitem56 = QTableWidgetItem()
+        __qtablewidgetitem56.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(13, 0, __qtablewidgetitem56)
         __qtablewidgetitem57 = QTableWidgetItem()
         self.tb_registers_tx.setItem(13, 1, __qtablewidgetitem57)
         __qtablewidgetitem58 = QTableWidgetItem()
+        __qtablewidgetitem58.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(14, 0, __qtablewidgetitem58)
         __qtablewidgetitem59 = QTableWidgetItem()
         self.tb_registers_tx.setItem(14, 1, __qtablewidgetitem59)
         __qtablewidgetitem60 = QTableWidgetItem()
+        __qtablewidgetitem60.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(15, 0, __qtablewidgetitem60)
         __qtablewidgetitem61 = QTableWidgetItem()
         self.tb_registers_tx.setItem(15, 1, __qtablewidgetitem61)
         __qtablewidgetitem62 = QTableWidgetItem()
+        __qtablewidgetitem62.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(16, 0, __qtablewidgetitem62)
         __qtablewidgetitem63 = QTableWidgetItem()
         self.tb_registers_tx.setItem(16, 1, __qtablewidgetitem63)
         __qtablewidgetitem64 = QTableWidgetItem()
+        __qtablewidgetitem64.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(17, 0, __qtablewidgetitem64)
         __qtablewidgetitem65 = QTableWidgetItem()
         self.tb_registers_tx.setItem(17, 1, __qtablewidgetitem65)
         __qtablewidgetitem66 = QTableWidgetItem()
+        __qtablewidgetitem66.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(18, 0, __qtablewidgetitem66)
         __qtablewidgetitem67 = QTableWidgetItem()
         self.tb_registers_tx.setItem(18, 1, __qtablewidgetitem67)
         __qtablewidgetitem68 = QTableWidgetItem()
+        __qtablewidgetitem68.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(19, 0, __qtablewidgetitem68)
         __qtablewidgetitem69 = QTableWidgetItem()
         self.tb_registers_tx.setItem(19, 1, __qtablewidgetitem69)
         __qtablewidgetitem70 = QTableWidgetItem()
+        __qtablewidgetitem70.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(20, 0, __qtablewidgetitem70)
         __qtablewidgetitem71 = QTableWidgetItem()
         self.tb_registers_tx.setItem(20, 1, __qtablewidgetitem71)
         __qtablewidgetitem72 = QTableWidgetItem()
+        __qtablewidgetitem72.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(21, 0, __qtablewidgetitem72)
         __qtablewidgetitem73 = QTableWidgetItem()
         self.tb_registers_tx.setItem(21, 1, __qtablewidgetitem73)
         __qtablewidgetitem74 = QTableWidgetItem()
+        __qtablewidgetitem74.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(22, 0, __qtablewidgetitem74)
         __qtablewidgetitem75 = QTableWidgetItem()
         self.tb_registers_tx.setItem(22, 1, __qtablewidgetitem75)
         __qtablewidgetitem76 = QTableWidgetItem()
+        __qtablewidgetitem76.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(23, 0, __qtablewidgetitem76)
         __qtablewidgetitem77 = QTableWidgetItem()
         self.tb_registers_tx.setItem(23, 1, __qtablewidgetitem77)
         __qtablewidgetitem78 = QTableWidgetItem()
+        __qtablewidgetitem78.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(24, 0, __qtablewidgetitem78)
         __qtablewidgetitem79 = QTableWidgetItem()
         self.tb_registers_tx.setItem(24, 1, __qtablewidgetitem79)
         __qtablewidgetitem80 = QTableWidgetItem()
+        __qtablewidgetitem80.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(25, 0, __qtablewidgetitem80)
         __qtablewidgetitem81 = QTableWidgetItem()
         self.tb_registers_tx.setItem(25, 1, __qtablewidgetitem81)
         __qtablewidgetitem82 = QTableWidgetItem()
+        __qtablewidgetitem82.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(26, 0, __qtablewidgetitem82)
         __qtablewidgetitem83 = QTableWidgetItem()
         self.tb_registers_tx.setItem(26, 1, __qtablewidgetitem83)
         __qtablewidgetitem84 = QTableWidgetItem()
+        __qtablewidgetitem84.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_tx.setItem(27, 0, __qtablewidgetitem84)
         __qtablewidgetitem85 = QTableWidgetItem()
         self.tb_registers_tx.setItem(27, 1, __qtablewidgetitem85)
@@ -817,114 +845,142 @@ class Ui_AlternativeWindow(object):
         __qtablewidgetitem115 = QTableWidgetItem()
         self.tb_registers_rx.setVerticalHeaderItem(27, __qtablewidgetitem115)
         __qtablewidgetitem116 = QTableWidgetItem()
+        __qtablewidgetitem116.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(0, 0, __qtablewidgetitem116)
         __qtablewidgetitem117 = QTableWidgetItem()
         self.tb_registers_rx.setItem(0, 1, __qtablewidgetitem117)
         __qtablewidgetitem118 = QTableWidgetItem()
+        __qtablewidgetitem118.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(1, 0, __qtablewidgetitem118)
         __qtablewidgetitem119 = QTableWidgetItem()
         self.tb_registers_rx.setItem(1, 1, __qtablewidgetitem119)
         __qtablewidgetitem120 = QTableWidgetItem()
+        __qtablewidgetitem120.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(2, 0, __qtablewidgetitem120)
         __qtablewidgetitem121 = QTableWidgetItem()
         self.tb_registers_rx.setItem(2, 1, __qtablewidgetitem121)
         __qtablewidgetitem122 = QTableWidgetItem()
+        __qtablewidgetitem122.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(3, 0, __qtablewidgetitem122)
         __qtablewidgetitem123 = QTableWidgetItem()
         self.tb_registers_rx.setItem(3, 1, __qtablewidgetitem123)
         __qtablewidgetitem124 = QTableWidgetItem()
+        __qtablewidgetitem124.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(4, 0, __qtablewidgetitem124)
         __qtablewidgetitem125 = QTableWidgetItem()
         self.tb_registers_rx.setItem(4, 1, __qtablewidgetitem125)
         __qtablewidgetitem126 = QTableWidgetItem()
+        __qtablewidgetitem126.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(5, 0, __qtablewidgetitem126)
         __qtablewidgetitem127 = QTableWidgetItem()
         self.tb_registers_rx.setItem(5, 1, __qtablewidgetitem127)
         __qtablewidgetitem128 = QTableWidgetItem()
+        __qtablewidgetitem128.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(6, 0, __qtablewidgetitem128)
         __qtablewidgetitem129 = QTableWidgetItem()
         self.tb_registers_rx.setItem(6, 1, __qtablewidgetitem129)
         __qtablewidgetitem130 = QTableWidgetItem()
+        __qtablewidgetitem130.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(7, 0, __qtablewidgetitem130)
         __qtablewidgetitem131 = QTableWidgetItem()
         self.tb_registers_rx.setItem(7, 1, __qtablewidgetitem131)
         __qtablewidgetitem132 = QTableWidgetItem()
+        __qtablewidgetitem132.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(8, 0, __qtablewidgetitem132)
         __qtablewidgetitem133 = QTableWidgetItem()
         self.tb_registers_rx.setItem(8, 1, __qtablewidgetitem133)
         __qtablewidgetitem134 = QTableWidgetItem()
+        __qtablewidgetitem134.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(9, 0, __qtablewidgetitem134)
         __qtablewidgetitem135 = QTableWidgetItem()
         self.tb_registers_rx.setItem(9, 1, __qtablewidgetitem135)
         __qtablewidgetitem136 = QTableWidgetItem()
+        __qtablewidgetitem136.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(10, 0, __qtablewidgetitem136)
         __qtablewidgetitem137 = QTableWidgetItem()
         self.tb_registers_rx.setItem(10, 1, __qtablewidgetitem137)
         __qtablewidgetitem138 = QTableWidgetItem()
+        __qtablewidgetitem138.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(11, 0, __qtablewidgetitem138)
         __qtablewidgetitem139 = QTableWidgetItem()
         self.tb_registers_rx.setItem(11, 1, __qtablewidgetitem139)
         __qtablewidgetitem140 = QTableWidgetItem()
+        __qtablewidgetitem140.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(12, 0, __qtablewidgetitem140)
         __qtablewidgetitem141 = QTableWidgetItem()
         self.tb_registers_rx.setItem(12, 1, __qtablewidgetitem141)
         __qtablewidgetitem142 = QTableWidgetItem()
+        __qtablewidgetitem142.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(13, 0, __qtablewidgetitem142)
         __qtablewidgetitem143 = QTableWidgetItem()
         self.tb_registers_rx.setItem(13, 1, __qtablewidgetitem143)
         __qtablewidgetitem144 = QTableWidgetItem()
+        __qtablewidgetitem144.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(14, 0, __qtablewidgetitem144)
         __qtablewidgetitem145 = QTableWidgetItem()
         self.tb_registers_rx.setItem(14, 1, __qtablewidgetitem145)
         __qtablewidgetitem146 = QTableWidgetItem()
+        __qtablewidgetitem146.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(15, 0, __qtablewidgetitem146)
         __qtablewidgetitem147 = QTableWidgetItem()
         self.tb_registers_rx.setItem(15, 1, __qtablewidgetitem147)
         __qtablewidgetitem148 = QTableWidgetItem()
+        __qtablewidgetitem148.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(16, 0, __qtablewidgetitem148)
         __qtablewidgetitem149 = QTableWidgetItem()
         self.tb_registers_rx.setItem(16, 1, __qtablewidgetitem149)
         __qtablewidgetitem150 = QTableWidgetItem()
+        __qtablewidgetitem150.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(17, 0, __qtablewidgetitem150)
         __qtablewidgetitem151 = QTableWidgetItem()
         self.tb_registers_rx.setItem(17, 1, __qtablewidgetitem151)
         __qtablewidgetitem152 = QTableWidgetItem()
+        __qtablewidgetitem152.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(18, 0, __qtablewidgetitem152)
         __qtablewidgetitem153 = QTableWidgetItem()
         self.tb_registers_rx.setItem(18, 1, __qtablewidgetitem153)
         __qtablewidgetitem154 = QTableWidgetItem()
+        __qtablewidgetitem154.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(19, 0, __qtablewidgetitem154)
         __qtablewidgetitem155 = QTableWidgetItem()
         self.tb_registers_rx.setItem(19, 1, __qtablewidgetitem155)
         __qtablewidgetitem156 = QTableWidgetItem()
+        __qtablewidgetitem156.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(20, 0, __qtablewidgetitem156)
         __qtablewidgetitem157 = QTableWidgetItem()
         self.tb_registers_rx.setItem(20, 1, __qtablewidgetitem157)
         __qtablewidgetitem158 = QTableWidgetItem()
+        __qtablewidgetitem158.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(21, 0, __qtablewidgetitem158)
         __qtablewidgetitem159 = QTableWidgetItem()
         self.tb_registers_rx.setItem(21, 1, __qtablewidgetitem159)
         __qtablewidgetitem160 = QTableWidgetItem()
+        __qtablewidgetitem160.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(22, 0, __qtablewidgetitem160)
         __qtablewidgetitem161 = QTableWidgetItem()
         self.tb_registers_rx.setItem(22, 1, __qtablewidgetitem161)
         __qtablewidgetitem162 = QTableWidgetItem()
+        __qtablewidgetitem162.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(23, 0, __qtablewidgetitem162)
         __qtablewidgetitem163 = QTableWidgetItem()
         self.tb_registers_rx.setItem(23, 1, __qtablewidgetitem163)
         __qtablewidgetitem164 = QTableWidgetItem()
+        __qtablewidgetitem164.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(24, 0, __qtablewidgetitem164)
         __qtablewidgetitem165 = QTableWidgetItem()
         self.tb_registers_rx.setItem(24, 1, __qtablewidgetitem165)
         __qtablewidgetitem166 = QTableWidgetItem()
+        __qtablewidgetitem166.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(25, 0, __qtablewidgetitem166)
         __qtablewidgetitem167 = QTableWidgetItem()
         self.tb_registers_rx.setItem(25, 1, __qtablewidgetitem167)
         __qtablewidgetitem168 = QTableWidgetItem()
+        __qtablewidgetitem168.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(26, 0, __qtablewidgetitem168)
         __qtablewidgetitem169 = QTableWidgetItem()
         self.tb_registers_rx.setItem(26, 1, __qtablewidgetitem169)
         __qtablewidgetitem170 = QTableWidgetItem()
+        __qtablewidgetitem170.setFlags(Qt.ItemIsEnabled);
         self.tb_registers_rx.setItem(27, 0, __qtablewidgetitem170)
         __qtablewidgetitem171 = QTableWidgetItem()
         self.tb_registers_rx.setItem(27, 1, __qtablewidgetitem171)
