@@ -83,8 +83,34 @@ class MainWindow(QtWidgets.QMainWindow):
     def reset_ui(self):
         self.ui.btn_power_tx.setChecked(False)
         self.ui.btn_power_rx.setChecked(False)
-        self.power_switch_tx(False)
-        self.power_switch_rx(False)
+
+        # Change appearance of power switches
+        self.ui.btn_power_tx.setStyleSheet(constants.style_btn_off)
+        self.ui.btn_power_tx.setText("Turn ON")
+        self.ui.btn_power_rx.setStyleSheet(constants.style_btn_off)
+        self.ui.btn_power_rx.setText("Turn ON")
+
+
+        # Disable status and monitoring options
+        self.switch_device_options_tx(False)
+        self.switch_tuning_options_tx(False)
+        self.switch_status_options_tx(False)
+        self.switch_register_map_tx(False)
+        self.clear_table_tx()
+        self.switch_device_options_rx(False)
+        self.switch_tuning_options_rx(False)
+        self.switch_status_options_rx(False)
+        self.switch_register_map_rx(False)
+        self.clear_table_rx()
+
+        # Stop all monitoring threads
+        self.monitors.stop_monitoring_lock_tx()
+        self.monitors.stop_monitoring_temp_tx()
+        self.monitors.stop_monitoring_power_tx()
+        self.monitors.stop_monitoring_lock_rx()
+        self.monitors.stop_monitoring_temp_rx()
+        self.monitors.stop_monitoring_power_rx()
+
         self.ui.chk_autotuning_tx.setChecked(False)
         self.ui.chk_autotuning_rx.setChecked(False)
         self.disable_options()
@@ -233,7 +259,7 @@ class MainWindow(QtWidgets.QMainWindow):
             return
         
         if sys.platform.startswith("linux"):
-            text = "/dev/"  + text
+            text = "/dev/" + text
 
         # Disable "Select context..." option
         self.ui.cb_available_contexts.model().item(0).setEnabled(False)
@@ -256,10 +282,23 @@ class MainWindow(QtWidgets.QMainWindow):
                 # Not an IIO device
                 self.iio_ctx = None
                 self.reset_ui()
+                self.ui.lbl_hardware_name_dyn.setText(constants.text_not_iio)
+                self.ui.lbl_hardware_name_dyn.setStyleSheet(constants.style_error_label)
             return
 
         # Reset user interface after changing context
         self.reset_ui()
+
+        adc_attr_value = list(self.iio_ctx.find_device("adc_demo").attrs.values())[0]._read()
+        dac_attr_value = list(self.iio_ctx.find_device("dac_demo").attrs.values())[0]._read()
+        print(adc_attr_value)
+        print(dac_attr_value)
+        state_tx = True if adc_attr_value == "1000" else False
+        state_rx = True if dac_attr_value == "1000" else False
+        self.ui.btn_power_tx.setChecked(state_tx)
+        self.ui.btn_power_rx.setChecked(state_rx)
+        self.power_switch_tx(state_tx)
+        self.power_switch_rx(state_rx)
 
         # Check device type (9615 or 9625)
 
@@ -269,6 +308,8 @@ class MainWindow(QtWidgets.QMainWindow):
         hardware_carrier = "ETHERNET-MICROWAVE-EVAL Rev1.0"
         hardware_serial = "0ad9040001fbff16004f8ba6adf7"
         local = "no-OS 1.1.0-ga5b7ef51"
+
+        self.ui.lbl_hardware_name_dyn.setStyleSheet(constants.style_default_label)
 
         self.ui.lbl_hardware_name_dyn.setText(hardware_name)
         self.ui.lbl_vendor_dyn.setText(vendor)
@@ -300,6 +341,10 @@ class MainWindow(QtWidgets.QMainWindow):
             self.monitors.start_monitoring_lock_tx(self.ui.cw_lock_detect_tx)
             self.monitors.start_monitoring_temp_tx(self.ui.lbl_temp_tx_dyn)
             self.monitors.start_monitoring_power_tx(self.ui.lbl_power_usage_tx_dyn)
+
+            # Turn ON TX
+            list(self.iio_ctx.find_device("adc_demo").attrs.values())[0]._write("1000")
+            print("Wrote 1000 to TX")
         else:
             # Change appearance of power switch
             self.ui.btn_power_tx.setStyleSheet(constants.style_btn_off)
@@ -316,6 +361,10 @@ class MainWindow(QtWidgets.QMainWindow):
             self.monitors.stop_monitoring_lock_tx()
             self.monitors.stop_monitoring_temp_tx()
             self.monitors.stop_monitoring_power_tx()
+
+            # Turn OFF TX
+            list(self.iio_ctx.find_device("adc_demo").attrs.values())[0]._write("2000")
+            print("Wrote 2000 to TX")
 
     def power_switch_rx(self, value):
         if value == 1:
@@ -335,6 +384,10 @@ class MainWindow(QtWidgets.QMainWindow):
             self.monitors.start_monitoring_lock_rx(self.ui.cw_lock_detect_rx)
             self.monitors.start_monitoring_temp_rx(self.ui.lbl_temp_rx_dyn)
             self.monitors.start_monitoring_power_rx(self.ui.lbl_power_usage_rx_dyn)
+
+            # Turn ON RX
+            list(self.iio_ctx.find_device("dac_demo").attrs.values())[0]._write("1000")
+            print("Wrote 1000 to RX")
         else:
             # Change appearance of power switch
             self.ui.btn_power_rx.setStyleSheet(constants.style_btn_off)
@@ -351,6 +404,10 @@ class MainWindow(QtWidgets.QMainWindow):
             self.monitors.stop_monitoring_lock_rx()
             self.monitors.stop_monitoring_temp_rx()
             self.monitors.stop_monitoring_power_rx()
+
+            # Turn OFF RX
+            list(self.iio_ctx.find_device("dac_demo").attrs.values())[0]._write("2000")
+            print("Wrote 2000 to RX")
 
     def autotuning_switch_tx(self, state):
         self.switch_tuning_options_tx(not state)

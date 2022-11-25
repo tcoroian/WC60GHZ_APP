@@ -30,7 +30,7 @@ class Ui_AlternativeWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayoutWidget = QWidget(self.centralwidget)
         self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QRect(0, 0, 981, 461))
+        self.verticalLayoutWidget.setGeometry(QRect(0, 0, 982, 482))
         self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -556,6 +556,7 @@ class Ui_AlternativeWindow(object):
         __qtablewidgetitem85 = QTableWidgetItem()
         self.tb_registers_tx.setItem(27, 1, __qtablewidgetitem85)
         self.tb_registers_tx.setObjectName(u"tb_registers_tx")
+        self.tb_registers_tx.setMinimumSize(QSize(218, 0))
         self.tb_registers_tx.setMaximumSize(QSize(221, 581))
         self.tb_registers_tx.verticalHeader().setVisible(False)
 
@@ -928,6 +929,7 @@ class Ui_AlternativeWindow(object):
         __qtablewidgetitem171 = QTableWidgetItem()
         self.tb_registers_rx.setItem(27, 1, __qtablewidgetitem171)
         self.tb_registers_rx.setObjectName(u"tb_registers_rx")
+        self.tb_registers_rx.setMinimumSize(QSize(218, 0))
         self.tb_registers_rx.setMaximumSize(QSize(221, 581))
         self.tb_registers_rx.verticalHeader().setVisible(False)
 

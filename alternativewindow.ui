@@ -19,8 +19,8 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>981</width>
-      <height>461</height>
+      <width>982</width>
+      <height>482</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -551,6 +551,12 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                   <layout class="QVBoxLayout" name="verticalLayout_5">
                    <item>
                     <widget class="QTableWidget" name="tb_registers_tx">
+                     <property name="minimumSize">
+                      <size>
+                       <width>218</width>
+                       <height>0</height>
+                      </size>
+                     </property>
                      <property name="maximumSize">
                       <size>
                        <width>221</width>
@@ -1266,6 +1272,12 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                   <layout class="QVBoxLayout" name="verticalLayout_11">
                    <item>
                     <widget class="QTableWidget" name="tb_registers_rx">
+                     <property name="minimumSize">
+                      <size>
+                       <width>218</width>
+                       <height>0</height>
+                      </size>
+                     </property>
                      <property name="maximumSize">
                       <size>
                        <width>221</width>
