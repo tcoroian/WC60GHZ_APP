@@ -4,12 +4,13 @@ from PySide6.QtCore import Qt
 from ui_alternativewindow import Ui_AlternativeWindow
 
 import iio
-import constants
+import constants as ct
 import status_monitor
 import sys
 import glob
 import serial
 
+attr_ENABLED = 0
 
 class MainWindow(QtWidgets.QMainWindow):
 
@@ -47,11 +48,15 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.tb_registers_tx.setEnabled(enable)
         self.ui.btn_refresh_regs_tx.setEnabled(enable)
         self.ui.btn_reset_regs_tx.setEnabled(enable)
+        self.ui.btn_save_regs_tx.setEnabled(enable)
+        self.ui.btn_load_regs_tx.setEnabled(enable)
 
     def switch_register_map_rx(self, enable = True):
         self.ui.tb_registers_rx.setEnabled(enable)
         self.ui.btn_refresh_regs_rx.setEnabled(enable)
         self.ui.btn_reset_regs_rx.setEnabled(enable)
+        self.ui.btn_save_regs_rx.setEnabled(enable)
+        self.ui.btn_load_regs_rx.setEnabled(enable)
 
     def clear_table_tx(self):
         self.ui.tb_registers_tx.blockSignals(True)
@@ -81,17 +86,17 @@ class MainWindow(QtWidgets.QMainWindow):
         self.switch_register_map_tx(False)
 
         # Disable leds for lock detection
-        self.ui.cw_lock_detect_tx.setStyleSheet(constants.style_led_grey)
-        self.ui.cw_lock_detect_rx.setStyleSheet(constants.style_led_grey)
+        self.ui.cw_lock_detect_tx.setStyleSheet(ct.style_led_grey)
+        self.ui.cw_lock_detect_rx.setStyleSheet(ct.style_led_grey)
 
     def reset_ui(self):
         self.ui.btn_power_tx.setChecked(False)
         self.ui.btn_power_rx.setChecked(False)
 
         # Change appearance of power switches
-        self.ui.btn_power_tx.setStyleSheet(constants.style_btn_off)
+        self.ui.btn_power_tx.setStyleSheet(ct.style_btn_off)
         self.ui.btn_power_tx.setText("Turn ON")
-        self.ui.btn_power_rx.setStyleSheet(constants.style_btn_off)
+        self.ui.btn_power_rx.setStyleSheet(ct.style_btn_off)
         self.ui.btn_power_rx.setText("Turn ON")
 
         # Disable status and monitoring options
@@ -118,16 +123,16 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.chk_autotuning_rx.setChecked(False)
         self.disable_options()
 
-        self.ui.lbl_hardware_name_dyn.setText(constants.text_no_context)
-        self.ui.lbl_vendor_dyn.setText(constants.text_no_context)
-        self.ui.lbl_hardware_carrier_dyn.setText(constants.text_no_context)
-        self.ui.lbl_hardware_serial_dyn.setText(constants.text_no_context)
-        self.ui.lbl_local_dyn.setText(constants.text_no_context)
+        self.ui.lbl_hardware_name_dyn.setText(ct.text_no_context)
+        self.ui.lbl_vendor_dyn.setText(ct.text_no_context)
+        self.ui.lbl_hardware_carrier_dyn.setText(ct.text_no_context)
+        self.ui.lbl_hardware_serial_dyn.setText(ct.text_no_context)
+        self.ui.lbl_local_dyn.setText(ct.text_no_context)
 
-        self.ui.lbl_temp_tx_dyn.setText(constants.text_no_context)
-        self.ui.lbl_temp_rx_dyn.setText(constants.text_no_context)
-        self.ui.lbl_power_usage_tx_dyn.setText(constants.text_no_context)
-        self.ui.lbl_power_usage_rx_dyn.setText(constants.text_no_context)
+        self.ui.lbl_temp_tx_dyn.setText(ct.text_no_context)
+        self.ui.lbl_temp_rx_dyn.setText(ct.text_no_context)
+        self.ui.lbl_power_usage_tx_dyn.setText(ct.text_no_context)
+        self.ui.lbl_power_usage_rx_dyn.setText(ct.text_no_context)
 
         self.clear_table_tx()
         self.clear_table_rx()
@@ -139,16 +144,32 @@ class MainWindow(QtWidgets.QMainWindow):
         self.populate_rf_index()
         self.populate_bb_index()
 
-    def populate_lo_frequency_tx(self):
+    def populate_lo_frequency_tx(self, freqs = []):
         self.ui.cb_lo_frequency_tx.clear()
         self.ui.cb_lo_frequency_tx.addItems(["Select frequency..."])
-        frequencies = ["56.2", "57.0", "59.2", "60.0", "61.2", "63.0"]
+        frequencies = []
+
+        if freqs == []:
+            return
+
+        for freq in freqs:
+            if freq != '0' and freq != '':
+                text = str(int(freq) / 1000000)
+                frequencies.append(text)
         self.ui.cb_lo_frequency_tx.addItems(frequencies)
 
-    def populate_lo_frequency_rx(self):
+    def populate_lo_frequency_rx(self, freqs = []):
         self.ui.cb_lo_frequency_rx.clear()
         self.ui.cb_lo_frequency_rx.addItems(["Select frequency..."])
-        frequencies = ["56.2", "57.0", "59.2", "60.0", "61.2", "63.0"]
+        frequencies = []
+
+        if freqs == []:
+            return
+
+        for freq in freqs:
+            if freq != '0' and freq != '':
+                text = str(int(freq) / 1000000)
+                frequencies.append(text)
         self.ui.cb_lo_frequency_rx.addItems(frequencies)
 
     def populate_gain_tx(self):
@@ -258,6 +279,12 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.tb_registers_tx.cellChanged.connect(self.update_cell_tx)
         self.ui.tb_registers_rx.cellChanged.connect(self.update_cell_rx)
 
+        # Connect slots to load/save buttons
+        self.ui.btn_load_regs_tx.clicked.connect(self.load_regs_tx)
+        self.ui.btn_load_regs_rx.clicked.connect(self.load_regs_rx)
+        self.ui.btn_save_regs_tx.clicked.connect(self.save_regs_tx)
+        self.ui.btn_save_regs_rx.clicked.connect(self.save_regs_rx)
+
     def update_cell_tx(self, row, column):
         # Get reg address and value to write
         reg = int(self.ui.tb_registers_tx.item(row, 0).text().split("x")[1], 16)
@@ -273,13 +300,13 @@ class MainWindow(QtWidgets.QMainWindow):
                 buttons = QtWidgets.QMessageBox.Ok,
                 defaultButton = QtWidgets.QMessageBox.Ok
             )
-            from_reg = self.iio_ctx.find_device("adc_demo").reg_read(reg)
+            from_reg = self.iio_ctx.find_device(ct.dev_HMC6300).reg_read(reg)
             self.ui.tb_registers_tx.blockSignals(True)
             self.ui.tb_registers_tx.setItem(row, column, QtWidgets.QTableWidgetItem(hex(from_reg)))
             self.ui.tb_registers_tx.blockSignals(False)
             return
 
-        self.iio_ctx.find_device("adc_demo").reg_write(reg, value)
+        self.iio_ctx.find_device(ct.dev_HMC6300).reg_write(reg, value)
 
         self.ui.tb_registers_tx.blockSignals(True)
         self.ui.tb_registers_tx.setItem(row, column, QtWidgets.QTableWidgetItem(hex(value)))
@@ -299,13 +326,13 @@ class MainWindow(QtWidgets.QMainWindow):
                 buttons = QtWidgets.QMessageBox.Ok,
                 defaultButton = QtWidgets.QMessageBox.Ok
             )
-            from_reg = self.iio_ctx.find_device("dac_demo").reg_read(reg)
+            from_reg = self.iio_ctx.find_device(ct.dev_HMC6301).reg_read(reg)
             self.ui.tb_registers_rx.blockSignals(True)
             self.ui.tb_registers_rx.setItem(row, column, QtWidgets.QTableWidgetItem(hex(from_reg)))
             self.ui.tb_registers_rx.blockSignals(False)
             return
 
-        self.iio_ctx.find_device("dac_demo").reg_write(reg, value)
+        self.iio_ctx.find_device(ct.dev_HMC6301).reg_write(reg, value)
 
         self.ui.tb_registers_rx.blockSignals(True)
         self.ui.tb_registers_rx.setItem(row, column, QtWidgets.QTableWidgetItem(hex(value)))
@@ -328,48 +355,62 @@ class MainWindow(QtWidgets.QMainWindow):
             self.iio_ctx = iio.Context("serial:" + text + ",57600,8n1n")
             # print(self.iio_ctx.description)
         except Exception as e:
-            if str(e).__contains__("Errno 5") or str(e).__contains__("Errno 16"):
+            if str(e).__contains__("[Errno 5]"):
                 # Context already created
                 pass
-            elif str(e).__contains__("Errno 2"):
+            elif str(e).__contains__("[Errno 2]"):
                 # Device not connected
                 # Used when disconnecting a device
                 self.iio_ctx = None
                 self.ui.cb_available_contexts.removeItem(index)
                 self.ui.cb_available_contexts.setCurrentIndex(0)
                 self.reset_ui()
-            elif str(e).__contains__("Errno 1460") or str(e).__contains__("Errno 110"):
+            elif str(e).__contains__("[Errno 1460]") or str(e).__contains__("Errno 110"):
                 # Not an IIO device
                 self.iio_ctx = None
                 self.reset_ui()
-                self.ui.lbl_hardware_name_dyn.setText(constants.text_not_iio)
-                self.ui.lbl_hardware_name_dyn.setStyleSheet(constants.style_error_label)
+                self.ui.lbl_hardware_name_dyn.setText(ct.text_not_iio)
+                self.ui.lbl_hardware_name_dyn.setStyleSheet(ct.style_error_label)
+            elif str(e).__contains__("[Errno 16]"):
+                self.iio_ctx = None
+                QtWidgets.QMessageBox.critical(
+                    self,
+                    "Device busy",
+                    "Cannot create context on port " + text + ". The device might already be in use.",
+                    buttons = QtWidgets.QMessageBox.Ok,
+                    defaultButton = QtWidgets.QMessageBox.Ok
+                )
             return
 
         # Reset user interface after changing context
         self.reset_ui()
 
-        adc_attr_value = list(self.iio_ctx.find_device("adc_demo").attrs.values())[0]._read()
-        dac_attr_value = list(self.iio_ctx.find_device("dac_demo").attrs.values())[0]._read()
-        print(adc_attr_value)
-        print(dac_attr_value)
-        state_tx = True if adc_attr_value == "1000" else False
-        state_rx = True if dac_attr_value == "1000" else False
+        # Repopulate the dropdowns
+        freqs = self.iio_ctx.find_device(ct.dev_HMC6300).attrs.get(ct.dev_attr_LO_FREQ_AVB).value.split(' ')
+        self.populate_lo_frequency_tx(freqs)
+        freqs = self.iio_ctx.find_device(ct.dev_HMC6301).attrs.get(ct.dev_attr_LO_FREQ_AVB).value.split(' ')
+        self.populate_lo_frequency_rx(freqs)
+
+        tx_enabled = self.iio_ctx.find_device(ct.dev_HMC6300).attrs.get(ct.dev_attr_ENABLED).value
+        rx_enabled = self.iio_ctx.find_device(ct.dev_HMC6301).attrs.get(ct.dev_attr_ENABLED).value
+        state_tx = True if tx_enabled == "1" else False
+        state_rx = True if rx_enabled == "1" else False
         self.ui.btn_power_tx.setChecked(state_tx)
         self.ui.btn_power_rx.setChecked(state_rx)
         self.power_switch_tx(state_tx)
         self.power_switch_rx(state_rx)
 
         # Check device type (9615 or 9625)
+        hw_model = self.iio_ctx.attrs.get(ct.ctx_HW_MODEL)
 
         # Update labels about the context
-        hardware_name = "ADMV9625"
+        hardware_name = hw_model
         vendor = "Analog Devices, Inc."
         hardware_carrier = "ETHERNET-MICROWAVE-EVAL Rev1.0"
         hardware_serial = "0ad9040001fbff16004f8ba6adf7"
         local = "no-OS 1.1.0-ga5b7ef51"
 
-        self.ui.lbl_hardware_name_dyn.setStyleSheet(constants.style_default_label)
+        self.ui.lbl_hardware_name_dyn.setStyleSheet(ct.style_default_label)
 
         self.ui.lbl_hardware_name_dyn.setText(hardware_name)
         self.ui.lbl_vendor_dyn.setText(vendor)
@@ -386,7 +427,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def power_switch_tx(self, value):
         if value == 1:
             # Change appearance of power switch
-            self.ui.btn_power_tx.setStyleSheet(constants.style_btn_on)
+            self.ui.btn_power_tx.setStyleSheet(ct.style_btn_on)
             self.ui.btn_power_tx.setText("Turn OFF")
 
             # Enable status and monitoring options
@@ -399,15 +440,19 @@ class MainWindow(QtWidgets.QMainWindow):
 
             # Start all monitoring threads
             self.monitors.start_monitoring_lock_tx(self.ui.cw_lock_detect_tx)
-            self.monitors.start_monitoring_temp_tx(self.ui.lbl_temp_tx_dyn)
+            self.monitors.start_monitoring_temp_tx(self.ui.lbl_temp_tx_dyn, self.iio_ctx)
             self.monitors.start_monitoring_power_tx(self.ui.lbl_power_usage_tx_dyn)
 
             # Turn ON TX
-            list(self.iio_ctx.find_device("adc_demo").attrs.values())[0]._write("1000")
-            print("Wrote 1000 to TX")
+            self.iio_ctx.find_device(ct.dev_HMC6300).attrs.get(ct.dev_attr_ENABLED).value = '1'
+
+            # Select frequency in dropdown
+            freq = self.iio_ctx.find_device(ct.dev_HMC6300).attrs.get(ct.dev_attr_LO_FREQ).value
+            freq = str(float(int(freq) / 1000000))
+            self.ui.cb_lo_frequency_tx.setCurrentText(freq)
         else:
             # Change appearance of power switch
-            self.ui.btn_power_tx.setStyleSheet(constants.style_btn_off)
+            self.ui.btn_power_tx.setStyleSheet(ct.style_btn_off)
             self.ui.btn_power_tx.setText("Turn ON")
 
             # Disable status and monitoring options
@@ -423,13 +468,12 @@ class MainWindow(QtWidgets.QMainWindow):
             self.monitors.stop_monitoring_power_tx()
 
             # Turn OFF TX
-            list(self.iio_ctx.find_device("adc_demo").attrs.values())[0]._write("2000")
-            print("Wrote 2000 to TX")
+            self.iio_ctx.find_device(ct.dev_HMC6300).attrs.get(ct.dev_attr_ENABLED).value = '0'
 
     def power_switch_rx(self, value):
         if value == 1:
             # Change appearance of power switch
-            self.ui.btn_power_rx.setStyleSheet(constants.style_btn_on)
+            self.ui.btn_power_rx.setStyleSheet(ct.style_btn_on)
             self.ui.btn_power_rx.setText("Turn OFF")
 
             # Enable status and monitoring options
@@ -442,15 +486,19 @@ class MainWindow(QtWidgets.QMainWindow):
 
             # Start all monitoring threads
             self.monitors.start_monitoring_lock_rx(self.ui.cw_lock_detect_rx)
-            self.monitors.start_monitoring_temp_rx(self.ui.lbl_temp_rx_dyn)
+            self.monitors.start_monitoring_temp_rx(self.ui.lbl_temp_rx_dyn, self.iio_ctx)
             self.monitors.start_monitoring_power_rx(self.ui.lbl_power_usage_rx_dyn)
 
             # Turn ON RX
-            list(self.iio_ctx.find_device("dac_demo").attrs.values())[0]._write("1000")
-            print("Wrote 1000 to RX")
+            self.iio_ctx.find_device(ct.dev_HMC6301).attrs.get(ct.dev_attr_ENABLED).value = '1'
+
+            # Select frequency in dropdown
+            freq = self.iio_ctx.find_device(ct.dev_HMC6301).attrs.get(ct.dev_attr_LO_FREQ).value
+            freq = str(float(int(freq) / 1000000))
+            self.ui.cb_lo_frequency_rx.setCurrentText(freq)
         else:
             # Change appearance of power switch
-            self.ui.btn_power_rx.setStyleSheet(constants.style_btn_off)
+            self.ui.btn_power_rx.setStyleSheet(ct.style_btn_off)
             self.ui.btn_power_rx.setText("Turn ON")
 
             # Disable status and monitoring options
@@ -466,8 +514,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.monitors.stop_monitoring_power_rx()
 
             # Turn OFF RX
-            list(self.iio_ctx.find_device("dac_demo").attrs.values())[0]._write("2000")
-            print("Wrote 2000 to RX")
+            self.iio_ctx.find_device(ct.dev_HMC6301).attrs.get(ct.dev_attr_ENABLED).value = '0'
 
     def autotuning_switch_tx(self, state):
         self.switch_tuning_options_tx(not state)
@@ -477,17 +524,26 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def read_regs_tx(self):
         self.ui.tb_registers_tx.blockSignals(True)
-        for i in range(16):
-            reg_value = hex(self.iio_ctx.find_device("adc_demo").reg_read(i))
-            self.ui.tb_registers_tx.setItem(i, 1, QtWidgets.QTableWidgetItem(str(reg_value)))
+        row = 0
+        for i in range(28):
+            if i == 0 or (i > 12 and i < 16):
+                continue
+            reg_value = hex(self.iio_ctx.find_device(ct.dev_HMC6300).reg_read(i))
+            self.ui.tb_registers_tx.setItem(row, 1, QtWidgets.QTableWidgetItem(str(reg_value)))
+            row = row + 1
         self.ui.tb_registers_tx.blockSignals(False)
 
     def read_regs_rx(self):
         self.ui.tb_registers_rx.blockSignals(True)
-        for i in range(16):
-            reg_value = hex(self.iio_ctx.find_device("dac_demo").reg_read(i))
-            self.ui.tb_registers_rx.setItem(i, 1, QtWidgets.QTableWidgetItem(str(reg_value)))
+        row = 0
+        for i in range(28):
+            if i > 9 and i < 16:
+                continue
+            reg_value = hex(self.iio_ctx.find_device(ct.dev_HMC6301).reg_read(i))
+            self.ui.tb_registers_rx.setItem(row, 1, QtWidgets.QTableWidgetItem(str(reg_value)))
+            row = row + 1
         self.ui.tb_registers_rx.blockSignals(False)
+
     def reset_regs_tx(self):
         btn_option = QtWidgets.QMessageBox.warning(
             self,
@@ -498,8 +554,7 @@ class MainWindow(QtWidgets.QMainWindow):
         )
 
         if btn_option == QtWidgets.QMessageBox.Yes:
-            for i in range(16):
-                self.iio_ctx.find_device("adc_demo").reg_write(i, 0)
+            # Reset in firmware
             self.read_regs_tx()
         else:
             return
@@ -514,8 +569,7 @@ class MainWindow(QtWidgets.QMainWindow):
         )
 
         if btn_option == QtWidgets.QMessageBox.Yes:
-            for i in range(16):
-                self.iio_ctx.find_device("dac_demo").reg_write(i, 0)
+            # Reset in firmware
             self.read_regs_rx()
         else:
             return
@@ -525,14 +579,18 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.cb_lo_frequency_tx.model().item(0).setEnabled(False)
 
         # Set new LO frequency
-        print(text)
+        freq = str(int(float(text) * 1000000))
+        self.iio_ctx.find_device(ct.dev_HMC6300).attrs.get(ct.dev_attr_LO_FREQ).value = freq
+        print(self.iio_ctx.find_device(ct.dev_HMC6300).attrs.get(ct.dev_attr_LO_FREQ).value)
 
     def lo_changed_rx(self):
         text = self.ui.cb_lo_frequency_rx.currentText()
         self.ui.cb_lo_frequency_rx.model().item(0).setEnabled(False)
 
         # Set new LO frequency
-        print(text)
+        freq = str(int(float(text) * 1000000))
+        self.iio_ctx.find_device(ct.dev_HMC6301).attrs.get(ct.dev_attr_LO_FREQ).value = freq
+        print(self.iio_ctx.find_device(ct.dev_HMC6301).attrs.get(ct.dev_attr_LO_FREQ).value)
 
     def gain_changed_tx(self):
         text = self.ui.cb_gain_tx.currentText()
@@ -561,3 +619,51 @@ class MainWindow(QtWidgets.QMainWindow):
 
         # Set new BB attenuation index frequency
         print(text)
+
+    def load_regs_tx(self):
+        fileName, type = QtWidgets.QFileDialog.getOpenFileName(self, "Open TX registers file", "Text files (*.txt)")
+        with open(fileName, 'r') as infile:
+            infile.readline()
+            for i in range(28):
+                if i == 0 or (i > 12 and i < 16):
+                    continue
+                line = infile.readline()
+                reg = int(line.split(',')[0].strip('"'))
+                value = int(str(line.split(',')[1]).strip('"\n'))
+
+                print(reg, value)
+                self.iio_ctx.find_device(ct.dev_HMC6300).reg_write(reg, value)
+
+    def load_regs_rx(self):
+        fileName, type = QtWidgets.QFileDialog.getOpenFileName(self, "Open RX registers file", "Text files (*.txt)")
+        with open(fileName, 'r') as infile:
+            infile.readline()
+            for i in range(28):
+                if i > 9 and i < 16:
+                    continue
+                line = infile.readline()
+                reg = int(line.split(',')[0].strip('"'))
+                value = int(str(line.split(',')[1]).strip('"\n'))
+
+                print(reg, value)
+                self.iio_ctx.find_device(ct.dev_HMC6301).reg_write(reg, value)
+
+    def save_regs_tx(self):
+        with open("tx_regs_content.txt", 'w') as outfile:
+            outfile.write("\"Address\",\"Data\"\n")
+            for i in range(28):
+                if i == 0 or (i > 12 and i < 16):
+                    continue
+                reg_value = self.iio_ctx.find_device(ct.dev_HMC6300).reg_read(i)
+                outfile.write("\"" + str(i) + "\",")
+                outfile.write("\"" + str(int(reg_value)) + "\"\n")
+
+    def save_regs_rx(self):
+        with open("rx_regs_content.txt", 'w') as outfile:
+            outfile.write("\"Address\",\"Data\"\n")
+            for i in range(28):
+                if i > 9 and i < 16:
+                    continue
+                reg_value = self.iio_ctx.find_device(ct.dev_HMC6301).reg_read(i)
+                outfile.write("\"" + str(i) + "\",")
+                outfile.write("\"" + str(int(reg_value, base = 16)) + "\"\n")

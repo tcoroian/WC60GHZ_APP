@@ -26,3 +26,20 @@ style_btn_off = "background-color: lightgrey"
 
 text_no_context = "No context"
 text_not_iio = "Not an IIO device"
+
+# IIO attribute names
+
+dev_HMC6300 = "hmc6300"
+dev_HMC6301 = "hmc6301"
+dev_PHY = "adin1300"
+dev_SERIAL = ""
+
+ctx_HW_MODEL = "hw_model"
+ctx_FW_VERSION = "fw_version"
+
+dev_attr_LO_FREQ = "vco"
+dev_attr_LO_FREQ_AVB = "vco_available"
+dev_attr_ENABLED = "enabled"
+
+chn_TEMP = "temp"
+chn_attr_RAW = "raw"

@@ -686,26 +686,6 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                        <string>23</string>
                       </property>
                      </row>
-                     <row>
-                      <property name="text">
-                       <string>24</string>
-                      </property>
-                     </row>
-                     <row>
-                      <property name="text">
-                       <string>25</string>
-                      </property>
-                     </row>
-                     <row>
-                      <property name="text">
-                       <string>26</string>
-                      </property>
-                     </row>
-                     <row>
-                      <property name="text">
-                       <string>27</string>
-                      </property>
-                     </row>
                      <column>
                       <property name="text">
                        <string>Address</string>
@@ -718,7 +698,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </column>
                      <item row="0" column="0">
                       <property name="text">
-                       <string>0x00</string>
+                       <string>0x01</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -731,7 +711,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="1" column="0">
                       <property name="text">
-                       <string>0x01</string>
+                       <string>0x02</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -744,7 +724,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="2" column="0">
                       <property name="text">
-                       <string>0x02</string>
+                       <string>0x03</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -757,7 +737,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="3" column="0">
                       <property name="text">
-                       <string>0x03</string>
+                       <string>0x04</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -770,7 +750,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="4" column="0">
                       <property name="text">
-                       <string>0x04</string>
+                       <string>0x05</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -783,7 +763,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="5" column="0">
                       <property name="text">
-                       <string>0x05</string>
+                       <string>0x06</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -796,7 +776,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="6" column="0">
                       <property name="text">
-                       <string>0x06</string>
+                       <string>0x07</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -809,7 +789,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="7" column="0">
                       <property name="text">
-                       <string>0x07</string>
+                       <string>0x08</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -822,7 +802,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="8" column="0">
                       <property name="text">
-                       <string>0x08</string>
+                       <string>0x09</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -835,7 +815,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="9" column="0">
                       <property name="text">
-                       <string>0x09</string>
+                       <string>0x0A</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -848,7 +828,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="10" column="0">
                       <property name="text">
-                       <string>0x0A</string>
+                       <string>0x0B</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -861,7 +841,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="11" column="0">
                       <property name="text">
-                       <string>0x0B</string>
+                       <string>0x0C</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -874,7 +854,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="12" column="0">
                       <property name="text">
-                       <string>0x0C</string>
+                       <string>0x10</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -887,7 +867,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="13" column="0">
                       <property name="text">
-                       <string>0x0D</string>
+                       <string>0x11</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -900,7 +880,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="14" column="0">
                       <property name="text">
-                       <string>0x0E</string>
+                       <string>0x12</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -913,7 +893,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="15" column="0">
                       <property name="text">
-                       <string>0x0F</string>
+                       <string>0x13</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -926,7 +906,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="16" column="0">
                       <property name="text">
-                       <string>0x10</string>
+                       <string>0x14</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -939,7 +919,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="17" column="0">
                       <property name="text">
-                       <string>0x11</string>
+                       <string>0x15</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -952,7 +932,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="18" column="0">
                       <property name="text">
-                       <string>0x12</string>
+                       <string>0x16</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -965,7 +945,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="19" column="0">
                       <property name="text">
-                       <string>0x13</string>
+                       <string>0x17</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -978,7 +958,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="20" column="0">
                       <property name="text">
-                       <string>0x14</string>
+                       <string>0x18</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -991,7 +971,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="21" column="0">
                       <property name="text">
-                       <string>0x15</string>
+                       <string>0x19</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -1004,7 +984,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="22" column="0">
                       <property name="text">
-                       <string>0x16</string>
+                       <string>0x1A</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -1017,65 +997,13 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="23" column="0">
                       <property name="text">
-                       <string>0x17</string>
-                      </property>
-                      <property name="flags">
-                       <set>ItemIsEnabled</set>
-                      </property>
-                     </item>
-                     <item row="23" column="1">
-                      <property name="text">
-                       <string/>
-                      </property>
-                     </item>
-                     <item row="24" column="0">
-                      <property name="text">
-                       <string>0x18</string>
-                      </property>
-                      <property name="flags">
-                       <set>ItemIsEnabled</set>
-                      </property>
-                     </item>
-                     <item row="24" column="1">
-                      <property name="text">
-                       <string/>
-                      </property>
-                     </item>
-                     <item row="25" column="0">
-                      <property name="text">
-                       <string>0x19</string>
-                      </property>
-                      <property name="flags">
-                       <set>ItemIsEnabled</set>
-                      </property>
-                     </item>
-                     <item row="25" column="1">
-                      <property name="text">
-                       <string/>
-                      </property>
-                     </item>
-                     <item row="26" column="0">
-                      <property name="text">
-                       <string>0x1A</string>
-                      </property>
-                      <property name="flags">
-                       <set>ItemIsEnabled</set>
-                      </property>
-                     </item>
-                     <item row="26" column="1">
-                      <property name="text">
-                       <string/>
-                      </property>
-                     </item>
-                     <item row="27" column="0">
-                      <property name="text">
                        <string>0x1B</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
                       </property>
                      </item>
-                     <item row="27" column="1">
+                     <item row="23" column="1">
                       <property name="text">
                        <string/>
                       </property>
@@ -1095,6 +1023,24 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                       <widget class="QPushButton" name="btn_refresh_regs_tx">
                        <property name="text">
                         <string>Refresh</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_33">
+                     <item>
+                      <widget class="QPushButton" name="btn_load_regs_tx">
+                       <property name="text">
+                        <string>Load</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btn_save_regs_tx">
+                       <property name="text">
+                        <string>Save</string>
                        </property>
                       </widget>
                      </item>
@@ -1481,36 +1427,6 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                        <string>21</string>
                       </property>
                      </row>
-                     <row>
-                      <property name="text">
-                       <string>22</string>
-                      </property>
-                     </row>
-                     <row>
-                      <property name="text">
-                       <string>23</string>
-                      </property>
-                     </row>
-                     <row>
-                      <property name="text">
-                       <string>24</string>
-                      </property>
-                     </row>
-                     <row>
-                      <property name="text">
-                       <string>25</string>
-                      </property>
-                     </row>
-                     <row>
-                      <property name="text">
-                       <string>26</string>
-                      </property>
-                     </row>
-                     <row>
-                      <property name="text">
-                       <string>27</string>
-                      </property>
-                     </row>
                      <column>
                       <property name="text">
                        <string>Address</string>
@@ -1653,7 +1569,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="10" column="0">
                       <property name="text">
-                       <string>0x0A</string>
+                       <string>0x10</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -1666,7 +1582,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="11" column="0">
                       <property name="text">
-                       <string>0x0B</string>
+                       <string>0x11</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -1679,7 +1595,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="12" column="0">
                       <property name="text">
-                       <string>0x0C</string>
+                       <string>0x12</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -1692,7 +1608,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="13" column="0">
                       <property name="text">
-                       <string>0x0D</string>
+                       <string>0x13</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -1705,7 +1621,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="14" column="0">
                       <property name="text">
-                       <string>0x0E</string>
+                       <string>0x14</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -1718,7 +1634,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="15" column="0">
                       <property name="text">
-                       <string>0x0F</string>
+                       <string>0x15</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -1731,7 +1647,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="16" column="0">
                       <property name="text">
-                       <string>0x10</string>
+                       <string>0x16</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -1744,7 +1660,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="17" column="0">
                       <property name="text">
-                       <string>0x11</string>
+                       <string>0x17</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -1757,7 +1673,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="18" column="0">
                       <property name="text">
-                       <string>0x12</string>
+                       <string>0x18</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -1770,7 +1686,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="19" column="0">
                       <property name="text">
-                       <string>0x13</string>
+                       <string>0x19</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -1783,7 +1699,7 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="20" column="0">
                       <property name="text">
-                       <string>0x14</string>
+                       <string>0x1A</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
@@ -1796,91 +1712,13 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                      </item>
                      <item row="21" column="0">
                       <property name="text">
-                       <string>0x15</string>
-                      </property>
-                      <property name="flags">
-                       <set>ItemIsEnabled</set>
-                      </property>
-                     </item>
-                     <item row="21" column="1">
-                      <property name="text">
-                       <string/>
-                      </property>
-                     </item>
-                     <item row="22" column="0">
-                      <property name="text">
-                       <string>0x16</string>
-                      </property>
-                      <property name="flags">
-                       <set>ItemIsEnabled</set>
-                      </property>
-                     </item>
-                     <item row="22" column="1">
-                      <property name="text">
-                       <string/>
-                      </property>
-                     </item>
-                     <item row="23" column="0">
-                      <property name="text">
-                       <string>0x17</string>
-                      </property>
-                      <property name="flags">
-                       <set>ItemIsEnabled</set>
-                      </property>
-                     </item>
-                     <item row="23" column="1">
-                      <property name="text">
-                       <string/>
-                      </property>
-                     </item>
-                     <item row="24" column="0">
-                      <property name="text">
-                       <string>0x18</string>
-                      </property>
-                      <property name="flags">
-                       <set>ItemIsEnabled</set>
-                      </property>
-                     </item>
-                     <item row="24" column="1">
-                      <property name="text">
-                       <string/>
-                      </property>
-                     </item>
-                     <item row="25" column="0">
-                      <property name="text">
-                       <string>0x19</string>
-                      </property>
-                      <property name="flags">
-                       <set>ItemIsEnabled</set>
-                      </property>
-                     </item>
-                     <item row="25" column="1">
-                      <property name="text">
-                       <string/>
-                      </property>
-                     </item>
-                     <item row="26" column="0">
-                      <property name="text">
-                       <string>0x1A</string>
-                      </property>
-                      <property name="flags">
-                       <set>ItemIsEnabled</set>
-                      </property>
-                     </item>
-                     <item row="26" column="1">
-                      <property name="text">
-                       <string/>
-                      </property>
-                     </item>
-                     <item row="27" column="0">
-                      <property name="text">
                        <string>0x1B</string>
                       </property>
                       <property name="flags">
                        <set>ItemIsEnabled</set>
                       </property>
                      </item>
-                     <item row="27" column="1">
+                     <item row="21" column="1">
                       <property name="text">
                        <string/>
                       </property>
@@ -1900,6 +1738,24 @@ background-color: qlineargradient(spread:pad, x1:0.145, y1:0.16, x2:1, y2:1, sto
                       <widget class="QPushButton" name="btn_refresh_regs_rx">
                        <property name="text">
                         <string>Refresh</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_34">
+                     <item>
+                      <widget class="QPushButton" name="btn_load_regs_rx">
+                       <property name="text">
+                        <string>Load</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btn_save_regs_rx">
+                       <property name="text">
+                        <string>Save</string>
                        </property>
                       </widget>
                      </item>

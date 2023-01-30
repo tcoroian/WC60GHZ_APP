@@ -3,7 +3,7 @@ from PySide6.QtSerialPort import QSerialPortInfo
 
 import threading
 import time
-import constants
+import constants as ct
 import iio
 
 class StatusMonitor:
@@ -58,8 +58,9 @@ class StatusMonitor:
                     ctx = iio.Context("serial:" + cb.currentText() + ",57600,8n1n")
                     ctx = None
                 except Exception as e:
-                    if str(e).__contains__("Errno 2"):
+                    if str(e).__contains__("[Errno 2]"):
                         # cb.setItemText(cb.currentIndex(), "Device disconected")
+                        print(e)
                         cb.currentIndexChanged.emit(cb.currentIndex())
                     else:
                         pass
@@ -73,43 +74,45 @@ class StatusMonitor:
 
     def monitor_lock_mechanism_tx(self, led):
         while True:
-            led.setStyleSheet(constants.style_led_green)
+            led.setStyleSheet(ct.style_led_green)
             time.sleep(1)
-            led.setStyleSheet(constants.style_led_red)
+            led.setStyleSheet(ct.style_led_red)
             time.sleep(1)
             if self.LOCK_TX_EXIT.is_set():
                 break
-        led.setStyleSheet(constants.style_led_grey)
+        led.setStyleSheet(ct.style_led_grey)
 
     def monitor_lock_mechanism_rx(self, led):
         while True:
-            led.setStyleSheet(constants.style_led_green)
+            led.setStyleSheet(ct.style_led_green)
             time.sleep(1)
-            led.setStyleSheet(constants.style_led_red)
+            led.setStyleSheet(ct.style_led_red)
             time.sleep(1)
             if self.LOCK_RX_EXIT.is_set():
                 break
-        led.setStyleSheet(constants.style_led_grey)
+        led.setStyleSheet(ct.style_led_grey)
 
-    def monitor_temp_tx(self, lbl):
+    def monitor_temp_tx(self, lbl, ctx):
         while True:
-            lbl.setText("16 °C")
-            time.sleep(1)
+            temp = ctx.find_device(ct.dev_HMC6300).find_channel(ct.chn_TEMP).attrs.get(ct.chn_attr_RAW).value
+            lbl.setText(str(temp) + " °C")
+            time.sleep(5)
             lbl.setText("18 °C")
             time.sleep(1)
             if self.TEMP_TX_EXIT.is_set():
                 break
-        lbl.setText(constants.text_no_context)
+        lbl.setText(ct.text_no_context)
 
-    def monitor_temp_rx(self, lbl):
+    def monitor_temp_rx(self, lbl, ctx):
         while True:
-            lbl.setText("19 °C")
-            time.sleep(1)
+            temp = ctx.find_device(ct.dev_HMC6301).find_channel(ct.chn_TEMP).attrs.get(ct.chn_attr_RAW).value
+            lbl.setText(str(temp) + " °C")
+            time.sleep(5)
             lbl.setText("20 °C")
             time.sleep(1)
             if self.TEMP_RX_EXIT.is_set():
                 break
-        lbl.setText(constants.text_no_context)
+        lbl.setText(ct.text_no_context)
 
     def monitor_power_tx(self, lbl):
         while True:
@@ -119,7 +122,7 @@ class StatusMonitor:
             time.sleep(1)
             if self.POWR_TX_EXIT.is_set():
                 break
-        lbl.setText(constants.text_no_context)
+        lbl.setText(ct.text_no_context)
 
     def monitor_power_rx(self, lbl):
         while True:
@@ -129,7 +132,7 @@ class StatusMonitor:
             time.sleep(1)
             if self.POWR_RX_EXIT.is_set():
                 break
-        lbl.setText(constants.text_no_context)
+        lbl.setText(ct.text_no_context)
 
     def start_monitoring_lock_tx(self, led_tx):
         self.LOCK_TX_EXIT.clear()
@@ -152,15 +155,15 @@ class StatusMonitor:
         thread = threading.Thread(target = self.context_search, args = (window,), daemon = True)
         self.threads.append(thread)
         thread.start()
-    def start_monitoring_temp_tx(self, lbl):
+    def start_monitoring_temp_tx(self, lbl, ctx):
         self.TEMP_TX_EXIT.clear()
-        thread = threading.Thread(target = self.monitor_temp_tx, args = (lbl,), daemon = True)
+        thread = threading.Thread(target = self.monitor_temp_tx, args = (lbl, ctx,), daemon = True)
         self.threads.append(thread)
         thread.start()
 
-    def start_monitoring_temp_rx(self, lbl):
+    def start_monitoring_temp_rx(self, lbl, ctx):
         self.TEMP_RX_EXIT.clear()
-        thread = threading.Thread(target = self.monitor_temp_rx, args = (lbl,), daemon = True)
+        thread = threading.Thread(target = self.monitor_temp_rx, args = (lbl, ctx,), daemon = True)
         self.threads.append(thread)
         thread.start()
 
