@@ -48,14 +48,12 @@ class MainWindow(QtWidgets.QMainWindow):
     def switch_register_map_tx(self, enable = True):
         self.ui.tb_registers_tx.setEnabled(enable)
         self.ui.btn_refresh_regs_tx.setEnabled(enable)
-        self.ui.btn_reset_regs_tx.setEnabled(enable)
         self.ui.btn_save_regs_tx.setEnabled(enable)
         self.ui.btn_load_regs_tx.setEnabled(enable)
 
     def switch_register_map_rx(self, enable = True):
         self.ui.tb_registers_rx.setEnabled(enable)
         self.ui.btn_refresh_regs_rx.setEnabled(enable)
-        self.ui.btn_reset_regs_rx.setEnabled(enable)
         self.ui.btn_save_regs_rx.setEnabled(enable)
         self.ui.btn_load_regs_rx.setEnabled(enable)
 
@@ -85,6 +83,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.switch_status_options_rx(False)
         self.switch_register_map_rx(False)
         self.switch_register_map_tx(False)
+        self.ui.btn_reset_device.setEnabled(False)
 
         # Disable leds for lock detection
         self.ui.cw_lock_detect_tx.setStyleSheet(ct.style_led_grey)
@@ -260,9 +259,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.btn_refresh_regs_tx.clicked.connect(self.read_regs_tx)
         self.ui.btn_refresh_regs_rx.clicked.connect(self.read_regs_rx)
 
-        # Connect slots to reset registers buttons
-        self.ui.btn_reset_regs_tx.clicked.connect(self.reset_regs_tx)
-        self.ui.btn_reset_regs_rx.clicked.connect(self.reset_regs_rx)
+        # Connect slots to reset device button
+        self.ui.btn_reset_device.clicked.connect(self.reset_device)
 
         # Connect slots to LO frequency combo boxes
         self.ui.cb_lo_frequency_tx.activated.connect(self.lo_changed_tx)
@@ -390,6 +388,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.update_dyn_ui()
 
     def update_dyn_ui(self):
+        self.ui.btn_reset_device.setEnabled(True)
+
         # Repopulate the dropdowns
         freqs = self.iio_ctx.find_device(ct.dev_HMC6300).attrs.get(ct.dev_attr_LO_FREQ_AVB).value.split(' ')
         self.populate_lo_frequency_tx(freqs)
@@ -549,7 +549,7 @@ class MainWindow(QtWidgets.QMainWindow):
             row = row + 1
         self.ui.tb_registers_rx.blockSignals(False)
 
-    def reset_regs_tx(self):
+    def reset_device(self):
         btn_option = QtWidgets.QMessageBox.warning(
             self,
             "Reset device",
@@ -560,26 +560,11 @@ class MainWindow(QtWidgets.QMainWindow):
 
         if btn_option == QtWidgets.QMessageBox.Yes:
             self.iio_ctx.find_device(ct.dev_MWC).attrs.get(ct.dev_attr_RESET).value = '1'
-            time.sleep(1)
+            # time.sleep(1)
             # Reset user interface after changing context
             self.reset_ui()
             # Update all dynamic data in the UI
             self.update_dyn_ui()
-        else:
-            return
-
-    def reset_regs_rx(self):
-        btn_option = QtWidgets.QMessageBox.warning(
-            self,
-            "Reset RX registers",
-            "Do you want to reset the registers of RX to their default values?",
-            buttons = QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No,
-            defaultButton = QtWidgets.QMessageBox.No
-        )
-
-        if btn_option == QtWidgets.QMessageBox.Yes:
-            # Reset in firmware
-            self.read_regs_rx()
         else:
             return
 

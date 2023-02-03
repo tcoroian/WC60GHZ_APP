@@ -17,46 +17,48 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QFrame,
     QGroupBox, QHBoxLayout, QHeaderView, QLabel,
-    QMainWindow, QMenuBar, QPushButton, QSizePolicy,
-    QSpacerItem, QStatusBar, QTabWidget, QTableWidget,
-    QTableWidgetItem, QVBoxLayout, QWidget)
+    QLayout, QMainWindow, QMenuBar, QPushButton,
+    QSizePolicy, QSpacerItem, QStatusBar, QTabWidget,
+    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
 
 class Ui_AlternativeWindow(object):
     def setupUi(self, AlternativeWindow):
         if not AlternativeWindow.objectName():
             AlternativeWindow.setObjectName(u"AlternativeWindow")
-        AlternativeWindow.resize(984, 506)
+        AlternativeWindow.resize(1062, 553)
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(AlternativeWindow.sizePolicy().hasHeightForWidth())
+        AlternativeWindow.setSizePolicy(sizePolicy)
         self.centralwidget = QWidget(AlternativeWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.verticalLayoutWidget = QWidget(self.centralwidget)
-        self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QRect(0, 0, 982, 482))
-        self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.tabWidget = QTabWidget(self.verticalLayoutWidget)
+        sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
+        self.centralwidget.setSizePolicy(sizePolicy)
+        self.tabWidget = QTabWidget(self.centralwidget)
         self.tabWidget.setObjectName(u"tabWidget")
+        self.tabWidget.setGeometry(QRect(10, 10, 1044, 497))
+        self.tabWidget.setSizeIncrement(QSize(5, 5))
         self.tabWidget.setBaseSize(QSize(20, 20))
         self.transceiver_tab = QWidget()
         self.transceiver_tab.setObjectName(u"transceiver_tab")
-        self.layoutWidget = QWidget(self.transceiver_tab)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(10, 10, 964, 419))
-        self.verticalLayout_14 = QVBoxLayout(self.layoutWidget)
+        self.verticalLayout = QVBoxLayout(self.transceiver_tab)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout_14 = QVBoxLayout()
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
-        self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_14.setSizeConstraint(QLayout.SetNoConstraint)
         self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.lbl_available_contexts = QLabel(self.layoutWidget)
+        self.lbl_available_contexts = QLabel(self.transceiver_tab)
         self.lbl_available_contexts.setObjectName(u"lbl_available_contexts")
 
         self.horizontalLayout_2.addWidget(self.lbl_available_contexts)
 
-        self.cb_available_contexts = QComboBox(self.layoutWidget)
+        self.cb_available_contexts = QComboBox(self.transceiver_tab)
         self.cb_available_contexts.addItem("")
         self.cb_available_contexts.addItem("")
         self.cb_available_contexts.setObjectName(u"cb_available_contexts")
@@ -68,7 +70,7 @@ class Ui_AlternativeWindow(object):
 
         self.horizontalLayout_22 = QHBoxLayout()
         self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
-        self.lbl_hardware_name = QLabel(self.layoutWidget)
+        self.lbl_hardware_name = QLabel(self.transceiver_tab)
         self.lbl_hardware_name.setObjectName(u"lbl_hardware_name")
 
         self.horizontalLayout_22.addWidget(self.lbl_hardware_name)
@@ -77,7 +79,7 @@ class Ui_AlternativeWindow(object):
 
         self.horizontalLayout_22.addItem(self.horizontalSpacer_8)
 
-        self.lbl_hardware_name_dyn = QLabel(self.layoutWidget)
+        self.lbl_hardware_name_dyn = QLabel(self.transceiver_tab)
         self.lbl_hardware_name_dyn.setObjectName(u"lbl_hardware_name_dyn")
         font = QFont()
         font.setFamilies([u"Ubuntu Mono"])
@@ -92,7 +94,7 @@ class Ui_AlternativeWindow(object):
 
         self.horizontalLayout_5.addLayout(self.verticalLayout_2)
 
-        self.line = QFrame(self.layoutWidget)
+        self.line = QFrame(self.transceiver_tab)
         self.line.setObjectName(u"line")
         self.line.setFrameShape(QFrame.VLine)
         self.line.setFrameShadow(QFrame.Sunken)
@@ -105,7 +107,7 @@ class Ui_AlternativeWindow(object):
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.horizontalLayout_23 = QHBoxLayout()
         self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
-        self.lbl_vendor = QLabel(self.layoutWidget)
+        self.lbl_vendor = QLabel(self.transceiver_tab)
         self.lbl_vendor.setObjectName(u"lbl_vendor")
 
         self.horizontalLayout_23.addWidget(self.lbl_vendor)
@@ -114,7 +116,7 @@ class Ui_AlternativeWindow(object):
 
         self.horizontalLayout_23.addItem(self.horizontalSpacer_4)
 
-        self.lbl_vendor_dyn = QLabel(self.layoutWidget)
+        self.lbl_vendor_dyn = QLabel(self.transceiver_tab)
         self.lbl_vendor_dyn.setObjectName(u"lbl_vendor_dyn")
         self.lbl_vendor_dyn.setFont(font)
 
@@ -125,7 +127,7 @@ class Ui_AlternativeWindow(object):
 
         self.horizontalLayout_24 = QHBoxLayout()
         self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
-        self.lbl_hardware_carrier = QLabel(self.layoutWidget)
+        self.lbl_hardware_carrier = QLabel(self.transceiver_tab)
         self.lbl_hardware_carrier.setObjectName(u"lbl_hardware_carrier")
 
         self.horizontalLayout_24.addWidget(self.lbl_hardware_carrier)
@@ -134,7 +136,7 @@ class Ui_AlternativeWindow(object):
 
         self.horizontalLayout_24.addItem(self.horizontalSpacer_5)
 
-        self.lbl_hardware_carrier_dyn = QLabel(self.layoutWidget)
+        self.lbl_hardware_carrier_dyn = QLabel(self.transceiver_tab)
         self.lbl_hardware_carrier_dyn.setObjectName(u"lbl_hardware_carrier_dyn")
         self.lbl_hardware_carrier_dyn.setFont(font)
 
@@ -146,7 +148,7 @@ class Ui_AlternativeWindow(object):
 
         self.horizontalLayout_3.addLayout(self.verticalLayout_3)
 
-        self.line_2 = QFrame(self.layoutWidget)
+        self.line_2 = QFrame(self.transceiver_tab)
         self.line_2.setObjectName(u"line_2")
         self.line_2.setFrameShape(QFrame.VLine)
         self.line_2.setFrameShadow(QFrame.Sunken)
@@ -157,7 +159,7 @@ class Ui_AlternativeWindow(object):
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.horizontalLayout_25 = QHBoxLayout()
         self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
-        self.lbl_hardware_serial = QLabel(self.layoutWidget)
+        self.lbl_hardware_serial = QLabel(self.transceiver_tab)
         self.lbl_hardware_serial.setObjectName(u"lbl_hardware_serial")
 
         self.horizontalLayout_25.addWidget(self.lbl_hardware_serial)
@@ -166,7 +168,7 @@ class Ui_AlternativeWindow(object):
 
         self.horizontalLayout_25.addItem(self.horizontalSpacer_6)
 
-        self.lbl_hardware_serial_dyn = QLabel(self.layoutWidget)
+        self.lbl_hardware_serial_dyn = QLabel(self.transceiver_tab)
         self.lbl_hardware_serial_dyn.setObjectName(u"lbl_hardware_serial_dyn")
         self.lbl_hardware_serial_dyn.setFont(font)
 
@@ -177,7 +179,7 @@ class Ui_AlternativeWindow(object):
 
         self.horizontalLayout_26 = QHBoxLayout()
         self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
-        self.lbl_local = QLabel(self.layoutWidget)
+        self.lbl_local = QLabel(self.transceiver_tab)
         self.lbl_local.setObjectName(u"lbl_local")
 
         self.horizontalLayout_26.addWidget(self.lbl_local)
@@ -186,7 +188,7 @@ class Ui_AlternativeWindow(object):
 
         self.horizontalLayout_26.addItem(self.horizontalSpacer_7)
 
-        self.lbl_local_dyn = QLabel(self.layoutWidget)
+        self.lbl_local_dyn = QLabel(self.transceiver_tab)
         self.lbl_local_dyn.setObjectName(u"lbl_local_dyn")
         self.lbl_local_dyn.setFont(font)
 
@@ -204,7 +206,7 @@ class Ui_AlternativeWindow(object):
 
         self.verticalLayout_14.addLayout(self.horizontalLayout_5)
 
-        self.line_3 = QFrame(self.layoutWidget)
+        self.line_3 = QFrame(self.transceiver_tab)
         self.line_3.setObjectName(u"line_3")
         self.line_3.setFrameShape(QFrame.HLine)
         self.line_3.setFrameShadow(QFrame.Sunken)
@@ -213,7 +215,7 @@ class Ui_AlternativeWindow(object):
 
         self.horizontalLayout_21 = QHBoxLayout()
         self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
-        self.gb_transmitter = QGroupBox(self.layoutWidget)
+        self.gb_transmitter = QGroupBox(self.transceiver_tab)
         self.gb_transmitter.setObjectName(u"gb_transmitter")
         self.verticalLayout_12 = QVBoxLayout(self.gb_transmitter)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
@@ -564,11 +566,6 @@ class Ui_AlternativeWindow(object):
 
         self.horizontalLayout_27 = QHBoxLayout()
         self.horizontalLayout_27.setObjectName(u"horizontalLayout_27")
-        self.btn_reset_regs_tx = QPushButton(self.gb_transmitter)
-        self.btn_reset_regs_tx.setObjectName(u"btn_reset_regs_tx")
-
-        self.horizontalLayout_27.addWidget(self.btn_reset_regs_tx)
-
         self.btn_refresh_regs_tx = QPushButton(self.gb_transmitter)
         self.btn_refresh_regs_tx.setObjectName(u"btn_refresh_regs_tx")
 
@@ -601,7 +598,7 @@ class Ui_AlternativeWindow(object):
 
         self.horizontalLayout_21.addWidget(self.gb_transmitter)
 
-        self.gb_receiver = QGroupBox(self.layoutWidget)
+        self.gb_receiver = QGroupBox(self.transceiver_tab)
         self.gb_receiver.setObjectName(u"gb_receiver")
         self.verticalLayout_13 = QVBoxLayout(self.gb_receiver)
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
@@ -938,11 +935,6 @@ class Ui_AlternativeWindow(object):
 
         self.horizontalLayout_4 = QHBoxLayout()
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.btn_reset_regs_rx = QPushButton(self.gb_receiver)
-        self.btn_reset_regs_rx.setObjectName(u"btn_reset_regs_rx")
-
-        self.horizontalLayout_4.addWidget(self.btn_reset_regs_rx)
-
         self.btn_refresh_regs_rx = QPushButton(self.gb_receiver)
         self.btn_refresh_regs_rx.setObjectName(u"btn_refresh_regs_rx")
 
@@ -978,9 +970,26 @@ class Ui_AlternativeWindow(object):
 
         self.verticalLayout_14.addLayout(self.horizontalLayout_21)
 
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.horizontalLayout_35 = QHBoxLayout()
+        self.horizontalLayout_35.setObjectName(u"horizontalLayout_35")
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.verticalLayout_14.addItem(self.verticalSpacer)
+        self.horizontalLayout_35.addItem(self.horizontalSpacer)
+
+        self.btn_reset_device = QPushButton(self.transceiver_tab)
+        self.btn_reset_device.setObjectName(u"btn_reset_device")
+
+        self.horizontalLayout_35.addWidget(self.btn_reset_device)
+
+        self.horizontalSpacer_10 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_35.addItem(self.horizontalSpacer_10)
+
+
+        self.verticalLayout_14.addLayout(self.horizontalLayout_35)
+
+
+        self.verticalLayout.addLayout(self.verticalLayout_14)
 
         self.tabWidget.addTab(self.transceiver_tab, "")
         self.tab_3 = QWidget()
@@ -1397,13 +1406,10 @@ class Ui_AlternativeWindow(object):
         self.verticalLayout_17.addLayout(self.horizontalLayout_32)
 
         self.tabWidget.addTab(self.tab_2, "")
-
-        self.verticalLayout.addWidget(self.tabWidget)
-
         AlternativeWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(AlternativeWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 984, 22))
+        self.menubar.setGeometry(QRect(0, 0, 1062, 22))
         AlternativeWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(AlternativeWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -1560,7 +1566,6 @@ class Ui_AlternativeWindow(object):
         ___qtablewidgetitem49.setText(QCoreApplication.translate("AlternativeWindow", u"0x1B", None));
         self.tb_registers_tx.setSortingEnabled(__sortingEnabled)
 
-        self.btn_reset_regs_tx.setText(QCoreApplication.translate("AlternativeWindow", u"Reset", None))
         self.btn_refresh_regs_tx.setText(QCoreApplication.translate("AlternativeWindow", u"Refresh", None))
         self.btn_load_regs_tx.setText(QCoreApplication.translate("AlternativeWindow", u"Load", None))
         self.btn_save_regs_tx.setText(QCoreApplication.translate("AlternativeWindow", u"Save", None))
@@ -1683,10 +1688,10 @@ class Ui_AlternativeWindow(object):
         ___qtablewidgetitem95.setText(QCoreApplication.translate("AlternativeWindow", u"0x1B", None));
         self.tb_registers_rx.setSortingEnabled(__sortingEnabled1)
 
-        self.btn_reset_regs_rx.setText(QCoreApplication.translate("AlternativeWindow", u"Reset", None))
         self.btn_refresh_regs_rx.setText(QCoreApplication.translate("AlternativeWindow", u"Refresh", None))
         self.btn_load_regs_rx.setText(QCoreApplication.translate("AlternativeWindow", u"Load", None))
         self.btn_save_regs_rx.setText(QCoreApplication.translate("AlternativeWindow", u"Save", None))
+        self.btn_reset_device.setText(QCoreApplication.translate("AlternativeWindow", u"Reset device", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.transceiver_tab), QCoreApplication.translate("AlternativeWindow", u"Transceiver", None))
         ___qtablewidgetitem96 = self.tableWidget_3.horizontalHeaderItem(0)
         ___qtablewidgetitem96.setText(QCoreApplication.translate("AlternativeWindow", u"Address", None));
