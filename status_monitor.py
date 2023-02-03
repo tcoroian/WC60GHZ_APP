@@ -55,7 +55,7 @@ class StatusMonitor:
             # Check if the selected device is still connected
             if (cb.currentIndex() > 0):
                 try:
-                    ctx = iio.Context("serial:" + cb.currentText() + ",57600,8n1n")
+                    ctx = iio.Context("serial:" + cb.currentText() + ",115200,8n2n")
                     ctx = None
                 except Exception as e:
                     if str(e).__contains__("[Errno 2]"):

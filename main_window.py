@@ -9,6 +9,7 @@ import status_monitor
 import sys
 import glob
 import serial
+import time
 
 attr_ENABLED = 0
 
@@ -352,7 +353,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.cb_available_contexts.model().item(0).setEnabled(False)
 
         try:
-            self.iio_ctx = iio.Context("serial:" + text + ",57600,8n1n")
+            self.iio_ctx = iio.Context("serial:" + text + ",115200,8n2n")
             # print(self.iio_ctx.description)
         except Exception as e:
             if str(e).__contains__("[Errno 5]"):
@@ -385,6 +386,10 @@ class MainWindow(QtWidgets.QMainWindow):
         # Reset user interface after changing context
         self.reset_ui()
 
+        # Update all dynamic data in the UI
+        self.update_dyn_ui()
+
+    def update_dyn_ui(self):
         # Repopulate the dropdowns
         freqs = self.iio_ctx.find_device(ct.dev_HMC6300).attrs.get(ct.dev_attr_LO_FREQ_AVB).value.split(' ')
         self.populate_lo_frequency_tx(freqs)
@@ -547,15 +552,19 @@ class MainWindow(QtWidgets.QMainWindow):
     def reset_regs_tx(self):
         btn_option = QtWidgets.QMessageBox.warning(
             self,
-            "Reset TX registers",
-            "Do you want to reset the registers of TX to their default values?",
+            "Reset device",
+            "Do you want to reset the device?",
             buttons = QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No,
             defaultButton = QtWidgets.QMessageBox.No
         )
 
         if btn_option == QtWidgets.QMessageBox.Yes:
-            # Reset in firmware
-            self.read_regs_tx()
+            self.iio_ctx.find_device(ct.dev_MWC).attrs.get(ct.dev_attr_RESET).value = '1'
+            time.sleep(1)
+            # Reset user interface after changing context
+            self.reset_ui()
+            # Update all dynamic data in the UI
+            self.update_dyn_ui()
         else:
             return
 
@@ -635,6 +644,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
                 print(reg, value)
                 self.iio_ctx.find_device(ct.dev_HMC6300).reg_write(reg, value)
+        self.read_regs_tx()
 
     def load_regs_rx(self):
         fileName, type = QtWidgets.QFileDialog.getOpenFileName(self, "Open RX registers file", "Text files (*.txt)")
@@ -651,6 +661,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
                 print(reg, value)
                 self.iio_ctx.find_device(ct.dev_HMC6301).reg_write(reg, value)
+        self.read_regs_rx()
 
     def save_regs_tx(self):
         fileName, type = QtWidgets.QFileDialog.getSaveFileName(self, "Save TX registers content", "tx_regs_content.txt", "Text files (*.txt)")
