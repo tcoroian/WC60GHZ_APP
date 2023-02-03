@@ -622,6 +622,8 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def load_regs_tx(self):
         fileName, type = QtWidgets.QFileDialog.getOpenFileName(self, "Open TX registers file", "Text files (*.txt)")
+        if fileName == "":
+            return
         with open(fileName, 'r') as infile:
             infile.readline()
             for i in range(28):
@@ -636,6 +638,8 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def load_regs_rx(self):
         fileName, type = QtWidgets.QFileDialog.getOpenFileName(self, "Open RX registers file", "Text files (*.txt)")
+        if fileName == "":
+            return
         with open(fileName, 'r') as infile:
             infile.readline()
             for i in range(28):
@@ -649,7 +653,10 @@ class MainWindow(QtWidgets.QMainWindow):
                 self.iio_ctx.find_device(ct.dev_HMC6301).reg_write(reg, value)
 
     def save_regs_tx(self):
-        with open("tx_regs_content.txt", 'w') as outfile:
+        fileName, type = QtWidgets.QFileDialog.getSaveFileName(self, "Save TX registers content", "tx_regs_content.txt", "Text files (*.txt)")
+        if fileName == "":
+            return
+        with open(fileName, 'w') as outfile:
             outfile.write("\"Address\",\"Data\"\n")
             for i in range(28):
                 if i == 0 or (i > 12 and i < 16):
@@ -659,7 +666,10 @@ class MainWindow(QtWidgets.QMainWindow):
                 outfile.write("\"" + str(int(reg_value)) + "\"\n")
 
     def save_regs_rx(self):
-        with open("rx_regs_content.txt", 'w') as outfile:
+        fileName, type = QtWidgets.QFileDialog.getSaveFileName(self, "Save RX registers content", "rx_regs_content.txt", "Text files (*.txt)")
+        if fileName == "":
+            return
+        with open(fileName, 'w') as outfile:
             outfile.write("\"Address\",\"Data\"\n")
             for i in range(28):
                 if i > 9 and i < 16:
